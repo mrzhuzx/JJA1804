@@ -6,5 +6,7 @@ package com.ssm.teamgys.svntest;
 public class TestLan {
     public static void main(String[] args) {
         System.out.println("git 提交第一次！！！");
+        System.out.println("stu_008 git 提交第一次！！！");
+
     }
 }

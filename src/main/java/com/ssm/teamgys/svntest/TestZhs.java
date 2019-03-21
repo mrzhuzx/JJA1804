@@ -8,5 +8,8 @@ public class TestZhs {
         System.out.println("hello  Git");
         System.out.println("hello  Git");
         System.out.println("hello  Git");
+        System.out.println("hello  Git");
+        System.out.println("hello  Git");
+        System.out.println("hello  Git");
     }
 }

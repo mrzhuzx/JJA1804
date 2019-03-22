@@ -1,0 +1,27 @@
+
+
+-- 添加CreateTime 设置默认时间 CURRENT_TIMESTAMP
+ALTER TABLE `smbms_bill`
+  ADD COLUMN  `creation_date` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间' ;
+
+
+
+-- 修改CreateTime 设置默认时间 CURRENT_TIMESTAMP
+ALTER TABLE `smbms_bill`
+  MODIFY COLUMN  `creation_date` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间' ;
+
+
+
+
+-- 添加UpdateTime 设置 默认时间 CURRENT_TIMESTAMP   设置更新时间为 ON UPDATE CURRENT_TIMESTAMP
+ALTER TABLE `smbms_bill`
+ADD COLUMN `modify_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间' ;
+
+
+
+-- 修改 UpdateTime 设置 默认时间 CURRENT_TIMESTAMP   设置更新时间为 ON UPDATE CURRENT_TIMESTAMP
+
+ALTER TABLE `smbms_bill`
+MODIFY COLUMN `modify_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间' ;
+
+

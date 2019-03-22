@@ -7,7 +7,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TeamgysApplicationTests {
+/**
+ * shift+F6
+ */
+public class ChenZFTest {
+
 
     @Test
     public void contextLoads() {

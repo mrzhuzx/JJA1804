@@ -6,12 +6,14 @@ import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
+
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -41,7 +43,7 @@ public class CowRepositoryTest {
         //Pageable pageable = new PageRequest(pageNum-1, size,sort); //根据start、size、sort创建分页对象
 
         Page<Cow> page = cowRepository.findAll(pageable);
-       page.interator();
+        final Iterator<Cow> iter = page.iterator();
         System.out.println(page.getNumber());
         System.out.println(page.getSize());
 

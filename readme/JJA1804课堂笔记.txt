@@ -35,6 +35,9 @@ spring.jpa.properties.hibernate.hbm2ddl.auto=update
  naming:
    implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
    physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  properties:
+    hibernate.dialect: com.jane.utils.MySQL5DialectUTF8
+
 
    6  实体类配置
        @Entity
@@ -71,7 +74,31 @@ public interface DogRepository  extends JpaRepository<Dog,Integer> {
  @Log4j2
 
 
-9
+9 分页
+    @Test
+    public void testPage(){
+     //import org.springframework.data.domain.Sort;
+           Sort sort=new Sort(Sort.Direction.ASC,"dogId");//属性名dogid XXX
+           //Sort sort=new Sort(Sort.Direction.DESC,"dogId");
+            Integer pageNum=3; //  2   3页
+            Integer size=5;
+
+        Pageable pageable = new PageRequest(pageNum-1, size,new Sort(Sort.Direction.ASC,"dogId")); //根据start、size、sort创建分页对象
+        //Pageable pageable = new PageRequest(pageNum-1, size,sort); //根据start、size、sort创建分页对象
+
+        Page<Dog> page = dogRepository.findAll(pageable);
+
+        Iterator<Dog> iter = page.iterator();
+        System.out.println(page.getNumber());
+        System.out.println(page.getSize());
+
+        while (iter.hasNext()){
+            Dog dog = iter.next();
+            System.out.println(dog.toString());
+
+
+
+
 
 
 

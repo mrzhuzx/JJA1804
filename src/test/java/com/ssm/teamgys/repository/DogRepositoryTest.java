@@ -42,16 +42,14 @@ public class DogRepositoryTest {
         //Pageable pageable = new PageRequest(pageNum-1, size,sort); //根据start、size、sort创建分页对象
 
         Page<Dog> page = dogRepository.findAll(pageable);
-      
-        Iterator<Dog> iter = page.iterator();
-        System.out.println(page.getNumber());
-        System.out.println(page.getSize());
+        List<Dog> dogList = page.getContent();
 
-        while (iter.hasNext()){
-            Dog dog = iter.next();
-            System.out.println(dog.toString());
+        for (int i = 0; i < dogList.size(); i++) {
 
+            Dog dog = dogList.get(i);
+            log.info(dog.toString());
         }
+
 
 
 

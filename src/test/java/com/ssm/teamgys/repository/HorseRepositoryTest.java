@@ -1,10 +1,8 @@
-package com.ssm.teamgys.Repository;
+package com.ssm.teamgys.repository;
 
 import com.ssm.teamgys.entity.Horse;
-import com.ssm.teamgys.repository.HorseRepository;
 import lombok.extern.log4j.Log4j2;
 
-import org.assertj.core.internal.bytebuddy.description.type.TypeDefinition;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,16 @@
 练习库：
 teacherzhu.uicp.net
 34626
-jja1801
-jja1801
+jja1804
+jja1804
 
 
+@Entity
+@Table(name = "dog")
+@Data // get/set/toString
+public class Dog {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
+  private long dogId;
+  private String dogName;

@@ -13,8 +13,12 @@ public class Dog {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
-  private long dogId;
+  private Integer dogId;
   private String dogName;
+  private String  dogHobby;
+  private Integer  dogAge;
+
+
 
 
 }

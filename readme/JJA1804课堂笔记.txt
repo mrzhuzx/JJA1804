@@ -1,0 +1,82 @@
+ 1 创建springBoot项目 添加上支持
+
+ 2 pom.xml
+
+ 3  添加上插件（bomlok  git   maven ）
+
+ 4 git远程仓库配置（创建远程仓库，创建团队，加入项目中，开启提交权限）
+
+
+ 5 远程数据库配置 （反向生成实体， 正向生成表结构，）
+
+application.properties
+spring.datasource.url=jdbc:mysql://teacherzhu.uicp.net:34626/jja1804?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+spring.datasource.username=jja1804
+spring.datasource.password=jja1804
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.jpa.properties.hibernate.hbm2ddl.auto=update
+----------------------------------------------------------------------------------------------------
+ application.yml
+ spring:
+   profiles:
+     active: product
+   datasource:
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://teacherzhu.uicp.net:34626/jja1804?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+     username: jja1804
+     password: jja1804
+   jpa:
+     hibernate:
+       ddl-auto: update  #修改  create 创建
+     show-sql: true
+   jackson:
+     date-format: yyyy-MM-dd HH:mm:ss
+     time-zone: UTC
+ naming:
+   implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+   physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+   6  实体类配置
+       @Entity
+       @Table(name = "dog")
+       @Data // get/set/toString
+       public class Dog {
+
+         @Id
+         @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
+         private Integer dogId;
+         @Column
+         private String dogName;
+         @Column
+         private String  dogHobby;
+         @Column
+         private Integer  dogAge;
+
+7  repository   数据仓库
+
+import javax.transaction.Transactional;
+@Repository
+public interface DogRepository  extends JpaRepository<Dog,Integer> {
+    //CURD
+    @javax.transaction.Transactional
+    @Modifying(clearAutomatically = true) //    代码提示ctrl+p
+    @Query(" update Dog set dogHobby=?2 where dogId=?1") // :dogHobby
+    int  update(Integer dogId,String dogHobby);
+
+
+8 测试类
+
+ @RunWith(SpringRunner.class)
+ @SpringBootTest
+ @Log4j2
+
+
+9
+
+
+
+
+
+
+
+

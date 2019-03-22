@@ -2,10 +2,7 @@ package com.ssm.teamgys.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="horse")
@@ -13,9 +10,11 @@ import javax.persistence.Table;
 public class Horse {
 
   @Id
-  @GeneratedValue()
-  private long horseId;
+  @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
+  private Integer horseId;
   private String horseName;
+  private String horsehobby;
+  private Integer horseage;
 
 
 

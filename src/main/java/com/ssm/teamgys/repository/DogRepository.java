@@ -20,10 +20,15 @@ public interface DogRepository  extends JpaRepository<Dog,Integer> {
     //CURD
 
 
-    @Transactional
+    @javax.transaction.Transactional
     @Modifying(clearAutomatically = true) //    代码提示ctrl+p
-    @Query(" update Dog set dogHobby=?2 where dogId=?1") // :dogHobby
+    @Query(" update Dog set dogHobby=?2 where dogId=?1") // :dogHobby   hibernate :  HQL QBC
     int  update(Integer dogId,String dogHobby);
+
+    @Transactional
+    @Modifying(clearAutomatically = true)
+    @Query("update Dog d set d.dogName=:dogName where d.dogId=:dogId") //对象查询语句
+    int updateDogName(Integer dogId,String dogName);
 
 
 }

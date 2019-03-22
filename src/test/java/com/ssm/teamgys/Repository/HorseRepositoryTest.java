@@ -29,6 +29,13 @@ public class HorseRepositoryTest {
     HorseRepository horseRepository;
 
     @Test
+    public void testPage(){
+
+
+    }
+
+
+    @Test
     public void testAdd(){
 
         Horse horse=new Horse();

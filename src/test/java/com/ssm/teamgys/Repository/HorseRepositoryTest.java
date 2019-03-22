@@ -4,13 +4,19 @@ import com.ssm.teamgys.entity.Horse;
 import com.ssm.teamgys.repository.HorseRepository;
 import lombok.extern.log4j.Log4j2;
 
+import org.assertj.core.internal.bytebuddy.description.type.TypeDefinition;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -30,6 +36,25 @@ public class HorseRepositoryTest {
 
     @Test
     public void testPage(){
+//import org.springframework.data.domain.Sort;
+        Sort sort=new Sort(Sort.Direction.ASC,"horseId");
+
+        Integer pageNum=1;
+        Integer size=5;
+        Pageable pageable=new PageRequest(pageNum-1,size,new Sort(Sort.Direction.ASC,"horseId"));
+
+
+        Page<Horse> page =horseRepository.findAll(pageable);
+
+        Iterator<Horse> iter=page.iterator();
+
+        System.out.println(page.getNumber());
+        System.out.println(page.getSize());
+
+        while (iter.hasNext()){
+            Horse horse=iter.next();
+            System.out.println(horse.toString());
+        }
 
 
     }

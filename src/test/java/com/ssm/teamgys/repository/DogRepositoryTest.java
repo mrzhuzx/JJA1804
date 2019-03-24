@@ -38,7 +38,7 @@ public class DogRepositoryTest {
             Integer pageNum=3; //  2   3页
             Integer size=5;
 
-        Pageable pageable = new PageRequest(pageNum-1, size,new Sort(Sort.Direction.ASC,"dogId")); //根据start、size、sort创建分页对象
+        PageRequest pageable = new PageRequest(pageNum-1, size,new Sort(Sort.Direction.ASC,"dogId")); //根据start、size、sort创建分页对象
         //Pageable pageable = new PageRequest(pageNum-1, size,sort); //根据start、size、sort创建分页对象
 
         Page<Dog> page = dogRepository.findAll(pageable);
@@ -49,10 +49,6 @@ public class DogRepositoryTest {
             Dog dog = dogList.get(i);
             log.info(dog.toString());
         }
-
-
-
-
 
     }
     @Test

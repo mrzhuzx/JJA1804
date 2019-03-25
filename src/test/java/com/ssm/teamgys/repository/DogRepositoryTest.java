@@ -42,6 +42,7 @@ public class DogRepositoryTest {
         //Pageable pageable = new PageRequest(pageNum-1, size,sort); //根据start、size、sort创建分页对象
 
         Page<Dog> page = dogRepository.findAll(pageable);
+
         List<Dog> dogList = page.getContent();
 
         for (int i = 0; i < dogList.size(); i++) {

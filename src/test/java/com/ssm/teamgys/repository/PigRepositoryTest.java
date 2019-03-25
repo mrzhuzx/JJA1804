@@ -1,9 +1,7 @@
 package com.ssm.teamgys.repository;
 
-import com.ssm.teamgys.entity.Dog;
 import com.ssm.teamgys.entity.Pig;
 import lombok.extern.log4j.Log4j2;
-import org.assertj.core.internal.bytebuddy.description.type.TypeDefinition;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +13,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /*
@@ -42,17 +39,16 @@ public class PigRepositoryTest {
 
         Page<Pig> page = pigRepository.findAll(pageable);
 
-        Iterator<Pig> iter = page.iterator();
-        System.out.println(page.getNumber());
-        System.out.println(page.getSize());
+        List<Pig> pigs = page.getContent();
 
-        while (iter.hasNext()){
-            Pig pig = iter.next();
-            System.out.println(pig.toString());
+        List<Pig> pigList = page.getContent();
+        for (int i = 0; i <pigList.size(); i++) {
+
+            Pig pig = pigList.get(i);
+            log.info(pig.toString());
+
         }
-
     }
-
     @Test
     public void testUpdatePigName(){
 

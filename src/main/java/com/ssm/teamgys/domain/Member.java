@@ -29,6 +29,7 @@ public class Member {
    * 状态
    */
   private String mStatus;
+
   private long mItemId;
 
 

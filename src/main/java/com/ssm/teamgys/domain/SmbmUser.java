@@ -1,24 +1,28 @@
 package com.ssm.teamgys.domain;
 
+
+import lombok.Data;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * 鑫杰、佳毅
+ *      智鹏/吉松   后台管理员
  */
-public class SmbmsAddress {
+
+@Data
+public class SmbmUser {
   @Id //这是一个主键
   @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
-  private Long addId;
-  private String addContact; //联系人
-  private String addDesc;
-  private String addPostCode;
-  private String addTelPhone;
+  private Long userId;
+  private String userCode;
+  private String userName;
+  private String userPassword;
+  private String userPhone;
+  private Long roleId;
   private java.sql.Timestamp creationDate;
   private java.sql.Timestamp modifyDate;
-
-
 
 
 }

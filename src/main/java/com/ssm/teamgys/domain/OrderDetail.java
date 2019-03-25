@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 
 /**
- * Created by zhuzx
+ * Created by 华铭、泽锋
  * 2017-06-11 17:20
  */
 @Entity

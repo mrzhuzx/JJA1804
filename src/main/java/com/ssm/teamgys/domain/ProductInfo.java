@@ -20,14 +20,14 @@ import java.util.Date;
 @DynamicUpdate
 public class ProductInfo {
 
-    @Id
+    @Id //uuid
     private String productId;
 
     /** 名字. */
     private String productName;
 
     /** 单价. */
-    private BigDecimal productPrice;
+    private Double productPrice;
 
     /** 库存. */
     private Integer productStock;
@@ -38,7 +38,7 @@ public class ProductInfo {
     /** 小图. */
     private String productIcon;
 
-    /** 状态, 0正常1下架. */
+    /** 状态, 1 正常   0下架. */
     private Integer productStatus = ProductStatusEnum.UP.getCode();
 
     /** 类目编号. */

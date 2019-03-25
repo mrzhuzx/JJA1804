@@ -28,7 +28,7 @@ public class SmbmsBill {
   
   private double totalPrice;
   
-  private long isPayment;
+  private long isPayment; //
   
   private long createdBy;
   

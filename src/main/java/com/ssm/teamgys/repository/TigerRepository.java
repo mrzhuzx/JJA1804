@@ -21,4 +21,9 @@ public interface TigerRepository extends JpaRepository<Tiger,Integer> {
     @Query(" update Tiger  set tigerHobby=?2 where tigerId=?1")
     int update(Integer tigerId,String tigerHobby);
 
+    @Transactional
+    @Modifying(clearAutomatically = true)
+    @Query("update Tiger t set t.tigerName=:tigerName where t.tigerId=:tigerId")
+    int updateDogName(Integer tigerId,String tigerName );
+
 }

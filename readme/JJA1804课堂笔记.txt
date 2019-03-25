@@ -1,6 +1,6 @@
  1 创建springBoot项目 添加上支持
 
- 2 pom.xml
+ 2 pom.xml(配置  msyql  jpa  redis web devtools bootstarter)
 
  3  添加上插件（bomlok  git   maven ）
 
@@ -35,6 +35,9 @@ spring.jpa.properties.hibernate.hbm2ddl.auto=update
  naming:
    implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
    physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  properties:
+    hibernate.dialect: com.jane.utils.MySQL5DialectUTF8
+
 
    6  实体类配置
        @Entity
@@ -71,7 +74,45 @@ public interface DogRepository  extends JpaRepository<Dog,Integer> {
  @Log4j2
 
 
-9
+9 分页
+       @Test
+        public void testPage(){
+         //import org.springframework.data.domain.Sort;
+               Sort sort=new Sort(Sort.Direction.ASC,"dogId");//属性名dogid XXX
+               //Sort sort=new Sort(Sort.Direction.DESC,"dogId");
+                Integer pageNum=3; //  2   3页
+                Integer size=5;
+
+            PageRequest pageable = new PageRequest(pageNum-1, size,new Sort(Sort.Direction.ASC,"dogId")); //根据start、size、sort创建分页对象
+            //Pageable pageable = new PageRequest(pageNum-1, size,sort); //根据start、size、sort创建分页对象
+
+            Page<Dog> page = dogRepository.findAll(pageable);
+            List<Dog> dogList = page.getContent();
+
+            for (int i = 0; i < dogList.size(); i++) {
+
+                Dog dog = dogList.get(i);
+                log.info(dog.toString());
+            }
+
+        }
+
+10 项目数据库设计 （完善中...）
+
+11 业务层接口和实现
+
+
+12  开发者和开发团队
+
+
+13添加后台bootstrap页面
+
+14 绑定项目功能 ，返回JSON
+
+
+
+
+
 
 
 

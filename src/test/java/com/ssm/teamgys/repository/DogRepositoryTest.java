@@ -16,9 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Stream;
-
-import static org.junit.Assert.*;
 
 /**
  * desc:
@@ -41,23 +38,17 @@ public class DogRepositoryTest {
             Integer pageNum=3; //  2   3页
             Integer size=5;
 
-        Pageable pageable = new PageRequest(pageNum-1, size,new Sort(Sort.Direction.ASC,"dogId")); //根据start、size、sort创建分页对象
+        PageRequest pageable = new PageRequest(pageNum-1, size,new Sort(Sort.Direction.ASC,"dogId")); //根据start、size、sort创建分页对象
         //Pageable pageable = new PageRequest(pageNum-1, size,sort); //根据start、size、sort创建分页对象
 
         Page<Dog> page = dogRepository.findAll(pageable);
-      
-        Iterator<Dog> iter = page.iterator();
-        System.out.println(page.getNumber());
-        System.out.println(page.getSize());
+        List<Dog> dogList = page.getContent();
 
-        while (iter.hasNext()){
-            Dog dog = iter.next();
-            System.out.println(dog.toString());
+        for (int i = 0; i < dogList.size(); i++) {
 
+            Dog dog = dogList.get(i);
+            log.info(dog.toString());
         }
-
-
-
 
     }
     @Test

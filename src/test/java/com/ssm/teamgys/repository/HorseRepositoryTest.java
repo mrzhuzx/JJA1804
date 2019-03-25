@@ -3,6 +3,9 @@ package com.ssm.teamgys.repository;
 import com.ssm.teamgys.entity.Horse;
 import lombok.extern.log4j.Log4j2;
 
+
+
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +17,12 @@ import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
  * desc:
  * author:lzp
- * {time}
+ * {time}：2019-3-25 11:13:42
  * version:1.2.3
  */
 
@@ -43,15 +45,11 @@ public class HorseRepositoryTest {
 
 
         Page<Horse> page =horseRepository.findAll(pageable);
+        List<Horse> horseList = page.getContent();
+        for (int i = 0; i <horseList.size() ; i++) {
+            Horse horse = horseList.get(i);
+            log.info(horse.toString());
 
-        Iterator<Horse> iter=page.iterator();
-
-        System.out.println(page.getNumber());
-        System.out.println(page.getSize());
-
-        while (iter.hasNext()){
-            Horse horse=iter.next();
-            System.out.println(horse.toString());
         }
 
 

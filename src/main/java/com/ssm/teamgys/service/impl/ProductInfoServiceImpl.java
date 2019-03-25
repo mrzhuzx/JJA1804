@@ -17,7 +17,7 @@ import java.util.List;
  * version: 1.2.3
  */
 @Service
-public class ProductInfoServiceImpl implements ProductInfoService {
+public class ProductInfoServiceImpl    implements ProductInfoService {
 
     //注入数据层
     @Autowired

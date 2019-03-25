@@ -5,8 +5,9 @@ import lombok.Data;
 import javax.persistence.*;
 
 /**
- * 开发人员表
+ *华铭、泽锋
  */
+
 @Entity
 @Table
 @Data
@@ -17,8 +18,8 @@ public class Member {
   private long mId;
   /*** 员工工号*/private String mNumber;
   private String mName;
-  private String mFaceImg;
-  private String mJob;
+  /**一寸照片*/private String mFaceImg;
+  private String mJob; //职位
   /**
    * 开发人员等级
    */
@@ -30,7 +31,7 @@ public class Member {
    */
   private String mStatus;
 
-  private long mItemId;
+  private long mItemId;  //团队
 
 
 }

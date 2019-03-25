@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * Created by zhuzx
+ * Created by 华铭、泽锋
  * 2017-06-11 17:08
  */
 @Entity

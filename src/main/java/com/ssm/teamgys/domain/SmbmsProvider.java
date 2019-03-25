@@ -1,19 +1,32 @@
 package com.ssm.teamgys.domain;
 
-/**
- * 供应商
- */
-public class SmbmsProvider {
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-  private long id;
+/**
+ *   鑫杰、佳毅 供应商信息
+ *
+ * */
+public class SmbmsProvider {
+  @Id //这是一个主键
+  @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
+  private Long proId;
   private String proCode;
   private String proName;
   private String proDesc;
-  private String proContact;//联系
+  /**
+   * 联系
+   */
+  private String proContact;
   private String proPhone;
   private String proAddress;
-  private String proFax;//传真
+  /**
+   * 传真
+   */
+  private String proFax;
   private java.sql.Timestamp creationDate;
   private java.sql.Timestamp modifyDate;
+
 
 }

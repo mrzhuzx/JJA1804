@@ -79,6 +79,12 @@ public void TestUpdate(){
 
         Page<Panda> page=pandaRepository.findAll(rt);
         List<Panda> content = page.getContent();
+
+
+
+
+
+
         for (int i = 0; i <content.size() ; i++) {
             Panda panda = content.get(i);
             log.info(panda.toString());

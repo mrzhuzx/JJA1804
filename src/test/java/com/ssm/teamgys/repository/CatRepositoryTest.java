@@ -85,10 +85,16 @@ public class CatRepositoryTest {
         Pageable pageable=new PageRequest(pageNum-1,size,new Sort(Sort.Direction.ASC,"catId"));
 
         Page<Cat> page = catRepository.findAll(pageable);
-        Iterator<Cat> iterator=page.iterator();
-        while (iterator.hasNext()){
-            Cat cat=iterator.next();
+        List<Cat> cats = page.getContent();
+        for (int i = 0; i < cats.size(); i++) {
+            Cat cat=cats.get(i);
             System.out.println(cat.toString());
+
         }
+//        Iterator<Cat> iterator=page.iterator();
+//        while (iterator.hasNext()){
+//            Cat cat=iterator.next();
+//            System.out.println(cat.toString());
+//        }
     }
 }

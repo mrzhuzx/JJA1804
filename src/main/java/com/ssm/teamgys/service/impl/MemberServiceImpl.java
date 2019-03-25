@@ -40,12 +40,12 @@ import static javafx.scene.input.KeyCode.J;
 
  @Override
  public List<Member> findAll(Sort sort) {
-  return null;
+  return memberRepository.findAll(sort);
  }
 
  @Override
  public Page<Member> findAll(Pageable pageable) {
-  return null;
+  return memberRepository.findAll(pageable);
  }
 
  @Override
@@ -75,7 +75,7 @@ import static javafx.scene.input.KeyCode.J;
 
  @Override
  public void deleteAll() {
-
+   memberRepository.deleteAll();
  }
 
  @Override

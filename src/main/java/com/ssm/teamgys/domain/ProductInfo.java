@@ -12,7 +12,7 @@ import java.util.Date;
 
 /**
  * 商品
- * Created by zhuzx
+ * Created by 华生、鑫海
  * 2017-05-09 11:30
  */
 @Entity

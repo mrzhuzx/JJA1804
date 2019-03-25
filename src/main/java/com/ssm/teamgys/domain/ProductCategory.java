@@ -5,11 +5,12 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
 /**
- * 类目
+ * 类目    华生、鑫海
  * Created by zhuzx
  * 2017-05-07 14:30
  */
@@ -19,9 +20,9 @@ import java.util.Date;
 public class ProductCategory {
 
     /** 类目id. */
-    @Id
-    @GeneratedValue
-    private Integer categoryId;
+    @Id //这是一个主键
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
+    private Long categoryId;
 
     /** 类目名字. */
     private String categoryName;
@@ -33,11 +34,6 @@ public class ProductCategory {
 
     private Date updateTime;
 
-    public ProductCategory() {
-    }
 
-    public ProductCategory(String categoryName, Integer categoryType) {
-        this.categoryName = categoryName;
-        this.categoryType = categoryType;
-    }
+
 }

@@ -78,13 +78,20 @@ public void TestUpdate(){
         Pageable rt = new PageRequest(PageNum - 1, size, new Sort(Sort.Direction.ASC,"pandaid"));
 
         Page<Panda> page=pandaRepository.findAll(rt);
-        Iterator<Panda> iter=page.iterator();
-        System.out.println(page.getNumber());
-        System.out.println(page.getSize());
-        while (iter.hasNext()){
-            Panda panda=iter.next();
+        List<Panda> content = page.getContent();
+        for (int i = 0; i <content.size() ; i++) {
+            Panda panda = content.get(i);
             log.info(panda.toString());
         }
+
+
+//        Iterator<Panda> iter=page.iterator();
+//        System.out.println(page.getNumber());
+//        System.out.println(page.getSize());
+//        while (iter.hasNext()){
+//            Panda panda=iter.next();
+//            log.info(panda.toString());
+//        }
 
     }
 

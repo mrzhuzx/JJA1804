@@ -12,7 +12,7 @@ import java.util.List;
  * Created by zhuzx
  * 2017-05-09 17:27
  */
-public interface ProductService {
+public interface ProductInfoService{
 
     ProductInfo findOne(String productId);
 
@@ -33,8 +33,8 @@ public interface ProductService {
  //   void decreaseStock(List<CartDTO> cartDTOList);
 
     //上架
-    ProductInfo onSale(String productId);
+  //  ProductInfo onSale(String productId);
 
     //下架
-    ProductInfo offSale(String productId);
+ //   ProductInfo offSale(String productId);
 }

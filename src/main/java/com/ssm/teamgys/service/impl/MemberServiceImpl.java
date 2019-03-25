@@ -1,9 +1,11 @@
 package com.ssm.teamgys.service.impl;
 
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import com.ssm.teamgys.appcomm.BaseJpaRepository;
 import com.ssm.teamgys.appcomm.BaseServiceImpl;
 import com.ssm.teamgys.domain.Member;
 import com.ssm.teamgys.repositorydomain.MemberRepository;
+import com.ssm.teamgys.repositorydomain.ProductInfoRepository;
 import com.ssm.teamgys.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -26,6 +28,8 @@ import static javafx.scene.input.KeyCode.J;
 @Service
  public class MemberServiceImpl    implements   MemberService {
 
+
+
  @Autowired
  MemberRepository memberRepository;
 
@@ -36,12 +40,12 @@ import static javafx.scene.input.KeyCode.J;
 
  @Override
  public List<Member> findAll(Sort sort) {
-  return null;
+  return memberRepository.findAll(sort);
  }
 
  @Override
  public Page<Member> findAll(Pageable pageable) {
-  return null;
+  return memberRepository.findAll(pageable);
  }
 
  @Override
@@ -71,7 +75,7 @@ import static javafx.scene.input.KeyCode.J;
 
  @Override
  public void deleteAll() {
-
+   memberRepository.deleteAll();
  }
 
  @Override

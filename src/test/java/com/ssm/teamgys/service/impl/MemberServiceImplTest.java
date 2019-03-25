@@ -37,6 +37,7 @@ public class MemberServiceImplTest   {
         m.setMStatus("在职");
         m.setMItemId(1);
         memberService.save(m);
+
     }
 
     @Test

@@ -44,8 +44,12 @@ public class ProductInfoServiceImpl   implements ProductInfoService {
 
         productInfoRepository.deleteById(productId);
 
+    }
 
+    @Override
+    public void findone(String productId) {
 
+        productInfoRepository.getOne(productId);
     }
 
 

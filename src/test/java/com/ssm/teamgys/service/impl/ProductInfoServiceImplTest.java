@@ -33,16 +33,15 @@ import static org.junit.Assert.*;
 @SpringBootTest
 @Slf4j // log.info()
 public class ProductInfoServiceImplTest {
-
+    //导入数据仓库
     @Autowired
     ProductInfoService productInfoService;
 
+
     @Test
-    public void findOne() {
-
-        ProductInfo one = productInfoService.findOne("20190325-045551-00514596");
-
-
+    public   void   findeOne(){
+        //查一条?
+        ProductInfo one = productInfoService.findOne("20190326-092123-00237676");
 
     }
 
@@ -51,11 +50,9 @@ public class ProductInfoServiceImplTest {
 
     }
 
-
-
     @Test
     public void delet() {
-
+   //删一条
         productInfoService.delete("20190325-034613-00135906");
     }
 
@@ -63,6 +60,7 @@ public class ProductInfoServiceImplTest {
     @Test
     public void findsearch() {
 
+        //查所有
         List<ProductInfo> all = productInfoService.findsearch();
 
         for (ProductInfo listall : all
@@ -72,15 +70,14 @@ public class ProductInfoServiceImplTest {
 
     }@Test
     public void updateone() {
-
-        productInfoService.updateone("20190325-042428-00289302",0);
+//更新一条
+        productInfoService.updateone("20190326-092124-00241280",0);
 
     }
-    //查询带分页
+
     @Test
     public void findAll() {
-
-
+        //查询带分页
         Sort sort=new Sort(Sort.Direction.ASC,"productId");//属性名dogid XXX
 
         Integer pageNum=2; //  2   3页
@@ -101,7 +98,7 @@ public class ProductInfoServiceImplTest {
 
     @Test
     public void save() {
-
+//存一条
         Random  r = new Random();
         ProductInfo pro = new ProductInfo();
         // Db  table 不存在
@@ -124,6 +121,7 @@ public class ProductInfoServiceImplTest {
     @Test
 
     public void saveall() {
+        //存好几条
         ProductInfo pro = new ProductInfo();
 
         Random  r = new Random();

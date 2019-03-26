@@ -9,8 +9,8 @@ import java.util.List;
 
 /**
  * 商品
- * Created by zhuzx
- * 2017-05-09 17:27
+ * Created by  zhs
+ * 2019-03-26  15:05:43
  */
 public interface ProductInfoService{
 
@@ -25,6 +25,7 @@ public interface ProductInfoService{
     List<ProductInfo> findUpAll();
 
     void delete(String  productId);
+    void  findone(String  productId);
 
     List<ProductInfo> findsearch();
     void   updateone(String   productId  ,Integer productStatus);

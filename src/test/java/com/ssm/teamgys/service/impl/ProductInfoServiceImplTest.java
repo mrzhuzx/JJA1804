@@ -1,7 +1,7 @@
 package com.ssm.teamgys.service.impl;
 
 import com.ssm.teamgys.appcomm.MYUUID;
-import com.ssm.teamgys.appcomm.enums.ProductStatusEnum;
+
 import com.ssm.teamgys.domain.ProductInfo;
 import com.ssm.teamgys.service.ProductInfoService;
 import lombok.extern.slf4j.Slf4j;

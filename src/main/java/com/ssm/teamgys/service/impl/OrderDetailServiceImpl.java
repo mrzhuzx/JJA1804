@@ -26,8 +26,8 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     OrderDetailRepository OrderDetailRepository;  //产品数据层
 
     @Override
-    public OrderDetail findOne(String productId) {
-        return OrderDetailRepository.getOne(productId);
+    public OrderDetail findOne(String detailId) {
+        return OrderDetailRepository.getOne(detailId);
     }
 
     /**
@@ -48,6 +48,16 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     @Override
     public OrderDetail save(OrderDetail orderdetail) {
         return OrderDetailRepository.save(orderdetail);
+    }
+
+    @Override
+    public void delete(String detailId) {
+             OrderDetailRepository.deleteById(detailId);
+    }
+
+    @Override
+    public void update(OrderDetail orderdetail) {
+        OrderDetailRepository.save(orderdetail);
     }
 
 

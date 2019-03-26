@@ -33,9 +33,17 @@ public class MemberRepositoryTest {
         m.setMSkill("JAVA");
         m.setMStatus("在职");
         m.setMItemId(1);
-
         memberRepository.save(m);
-
+        Member mt = new Member();
+        mt.setMName("王朝");
+        mt.setMNumber("N0008");
+        mt.setMGrade("img/face/lyf.jpg");
+        mt.setMGrade("五级");
+        mt.setMJob("开发者");
+        mt.setMSkill("JAVA");
+        mt.setMStatus("在职");
+        mt.setMItemId(2);
+        memberRepository.save(mt);
 
     }
 

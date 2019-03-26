@@ -4,9 +4,9 @@ spring:
     active: product
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://teacherzhu.uicp.net:34626/jja1804?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-    username: jja1804
-    password: jja1804
+      url: jdbc:mysql://39.108.142.167:3306/JJA1804?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: iot
+    password: iot
   jpa:
     hibernate:
       ddl-auto: update

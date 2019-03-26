@@ -18,6 +18,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.print.attribute.standard.JobOriginatingUserName;
 import java.util.List;
 import java.util.Optional;
 
@@ -78,7 +79,7 @@ public class SmbmUserServiceImpl implements SmbmUserService {
 
     @Override
     public <S extends SmbmUser> List<S> saveAll(Iterable<S> iterable) {
-        return null;
+        return smbmUserRepository.saveAll(iterable);
     }
 
     @Override
@@ -144,5 +145,10 @@ public class SmbmUserServiceImpl implements SmbmUserService {
     @Override
     public <S extends SmbmUser> boolean exists(Example<S> example) {
         return false;
+    }
+
+    @Override
+    public int update(Long userId, String userName) {
+        return smbmUserRepository.update(userId, userName);
     }
 }

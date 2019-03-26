@@ -1,6 +1,7 @@
 package com.ssm.teamgys.service.impl;
 
 import com.ssm.teamgys.domain.SmbmsBill;
+import com.ssm.teamgys.repositorydomain.SmbmsBillRepository;
 import com.ssm.teamgys.service.SmbmsBillService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -14,20 +15,20 @@ import java.util.Optional;
 @Service
 public class SmbmsBillServiceImpl implements SmbmsBillService {
     @Autowired
-    SmbmsBillService smbmsBillService;
+    SmbmsBillRepository smbmsBillRepository;
     @Override
     public List<SmbmsBill> findAll() {
-        return smbmsBillService.findAll();
+        return smbmsBillRepository.findAll();
     }
 
     @Override
     public List<SmbmsBill> findAll(Sort sort) {
-        return smbmsBillService.findAll(sort);
+        return smbmsBillRepository.findAll(sort);
     }
 
     @Override
     public Page<SmbmsBill> findAll(Pageable pageable) {
-        return smbmsBillService.findAll(pageable);
+        return smbmsBillRepository.findAll(pageable);
     }
 
     @Override
@@ -62,12 +63,12 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
 
     @Override
     public <S extends SmbmsBill> S save(S s) {
-        return smbmsBillService.save(s);
+        return smbmsBillRepository.save(s);
     }
 
     @Override
     public <S extends SmbmsBill> List<S> saveAll(Iterable<S> iterable) {
-        return null;
+        return smbmsBillRepository.saveAll(iterable);
     }
 
     @Override

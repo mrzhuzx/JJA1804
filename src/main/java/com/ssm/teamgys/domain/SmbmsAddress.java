@@ -1,12 +1,15 @@
 package com.ssm.teamgys.domain;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+
+import javax.persistence.*;
 
 /**
  * 鑫杰、佳毅
  */
+@Data
+@Entity
+@Table
 public class SmbmsAddress {
   @Id //这是一个主键
   @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键

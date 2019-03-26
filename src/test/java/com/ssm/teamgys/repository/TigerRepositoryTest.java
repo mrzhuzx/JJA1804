@@ -7,9 +7,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -26,6 +31,22 @@ import static org.junit.Assert.*;
 public class TigerRepositoryTest {
     @Autowired
     TigerRepository tigerRepository;
+    @Test
+    public void testPage(){
+        Sort sort = new Sort(Sort.Direction.ASC,"tigerId");
+        Integer pageNum = 3;
+        Integer size =5;
+        Pageable pageable = new PageRequest(pageNum - 1, size, new Sort(Sort.Direction.ASC, "tigerId"));
+        Page<Tiger> page = tigerRepository.findAll(pageable);
+        Iterator<Tiger> iter = page.iterator();
+        System.out.println(page.getNumber());
+        System.out.println(page.getSize());
+        while (iter.hasNext()){
+            Tiger tiger=iter.next();
+            System.out.println(tiger.toString());
+        }
+
+    }
     @Test
     public void testUpdate(){
         int rows = tigerRepository.update(2, "开赛车");

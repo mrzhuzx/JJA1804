@@ -14,6 +14,8 @@ import java.util.List;
  */
 public interface ProductInfoService{
 
+
+
     ProductInfo findOne(String productId);
 
     /**
@@ -22,9 +24,15 @@ public interface ProductInfoService{
      */
     List<ProductInfo> findUpAll();
 
+    void delete(String  productId);
+
+    List<ProductInfo> findsearch();
+    void   updateone(String   productId  ,Integer productStatus);
+
     Page<ProductInfo> findAll(Pageable pageable);
 
     ProductInfo save(ProductInfo productInfo);
+    ProductInfo saveall(ProductInfo productInfo);
 
     //加库存
   //  void increaseStock(List<CartDTO> cartDTOList);

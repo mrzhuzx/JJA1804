@@ -147,8 +147,9 @@ public class SmbmUserServiceImpl implements SmbmUserService {
         return false;
     }
 
+
     @Override
-    public int update(Long userId, String userName) {
-        return smbmUserRepository.update(userId, userName);
+    public int update(String userCode, String userName, String userPassword, String userPhone, Long roleId) {
+        return 0;
     }
 }

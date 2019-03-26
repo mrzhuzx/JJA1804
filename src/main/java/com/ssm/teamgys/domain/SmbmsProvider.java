@@ -1,6 +1,9 @@
 package com.ssm.teamgys.domain;
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 
@@ -11,6 +14,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table
+@EntityListeners(AuditingEntityListener.class)
 public class SmbmsProvider {
   @Id //这是一个主键
   @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
@@ -28,7 +32,9 @@ public class SmbmsProvider {
    * 传真
    */
   private String proFax;//传真
+  @CreatedDate
   private java.sql.Timestamp creationDate;//创建时间
+  @LastModifiedDate
   private java.sql.Timestamp modifyDate;//修改时间
 
 

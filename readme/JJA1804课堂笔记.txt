@@ -264,10 +264,25 @@ findByActiveFalse
 
 …where x.active = false
 
+@Modifying注解和事务
+1.        执行更新操作用：@Query 与 @Modifying 这两个 annotation一起声明。
+
+@Modifying
+
+@Query("UPDATE Customer c SET c.customerName=?1")
+
+int updateCustomerName(String cn);
+
+1)        方法的返回值应该是 int，表示更新语句所影响的行数
+
+2)        在调用的地方必须加事务，没有事务不能正常执行
 
 
 
 12  开发者和开发团队
+
+当进行测试后 不想在数据库中留下测试数据 可以添加注解
+@Transcational  删除
 
 
 13添加后台bootstrap页面

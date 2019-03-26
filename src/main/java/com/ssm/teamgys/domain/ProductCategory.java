@@ -22,7 +22,7 @@ public class ProductCategory {
     /** 类目id. */
     @Id //这是一个主键
     @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
-    private Long categoryId;
+    private String categoryId;
 
     /** 类目名字. */
     private String categoryName;

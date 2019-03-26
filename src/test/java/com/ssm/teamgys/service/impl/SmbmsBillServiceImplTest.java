@@ -6,21 +6,16 @@ import com.ssm.teamgys.domain.SmbmsBill;
 
 
 import com.ssm.teamgys.service.SmbmsBillService;
+import com.ssm.teamgys.repositorydomain.SmbmsBillRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 
 @RunWith(SpringRunner.class)
@@ -30,6 +25,7 @@ public class SmbmsBillServiceImplTest {
 
     @Autowired
     SmbmsBillServiceImpl smbmsBillService;
+
 
     @Test
     public void findAll() {
@@ -81,7 +77,7 @@ public class SmbmsBillServiceImplTest {
     public void saveAll() {
 
         List<SmbmsBill> listBills = new ArrayList<>();
-        Random r=new Random();
+        Random  r=new Random();
         for (int i = 0; i < 20; i++) {
             SmbmsBill bill = new SmbmsBill();
             bill.setBillCode(MYUUID.getUUID());//流水号

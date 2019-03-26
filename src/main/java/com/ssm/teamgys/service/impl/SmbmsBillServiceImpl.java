@@ -3,6 +3,7 @@ package com.ssm.teamgys.service.impl;
 import com.ssm.teamgys.domain.SmbmsBill;
 import com.ssm.teamgys.repositorydomain.SmbmsBillRepository;
 import com.ssm.teamgys.service.SmbmsBillService;
+import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -47,7 +48,7 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
 
     @Override
     public void deleteById(String strId) {
-
+        smbmsBillRepository.deleteById(Long.valueOf(strId));
     }
 
     @Override
@@ -92,7 +93,7 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
 
     @Override
     public <S extends SmbmsBill> S saveAndFlush(S s) {
-        return null;
+        return smbmsBillRepository.saveAndFlush(s);
     }
 
     @Override
@@ -107,7 +108,7 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
 
     @Override
     public SmbmsBill getOne(String strId) {
-        return null;
+        return smbmsBillRepository.getOne(Long.valueOf(strId.trim()));
     }
 
     @Override
@@ -138,5 +139,11 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
     @Override
     public <S extends SmbmsBill> boolean exists(Example<S> example) {
         return false;
+    }
+
+
+    @Override
+    public int update(Long billId, String productName) {
+        return smbmsBillRepository.update(billId,productName);
     }
 }

@@ -34,9 +34,7 @@ import static javafx.scene.input.KeyCode.J;
  MemberRepository memberRepository;
 
  @Override
- public List<Member> findAll() {
-  return memberRepository.findAll();
- }
+ public List<Member> findAll() { return memberRepository.findAll(); }
 
  @Override
  public List<Member> findAll(Sort sort) {

@@ -7,10 +7,8 @@ package com.ssm.teamgys.service.impl;
  */
 
 
- 
 import com.ssm.teamgys.domain.SmbmsUser;
 import com.ssm.teamgys.repositorydomain.SmbmsUserRepository;
-
 import com.ssm.teamgys.service.SmbmsUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -54,12 +52,11 @@ public class SmbmsUserServiceImpl implements SmbmsUserService {
     }
 
     @Override
-    public void deleteById(String strId) {
-        smbmsUserRepository.deleteById(Long.valueOf(strId));
+    public void deleteById(String strId) {smbmsUserRepository.deleteById(Long.valueOf(strId));
     }
 
     @Override
-    public void delete(SmbmsUser smbmUser) {
+    public void delete(SmbmsUser SmbmsUser) {
 
     }
 
@@ -148,13 +145,9 @@ public class SmbmsUserServiceImpl implements SmbmsUserService {
         return false;
     }
 
-//    @Override
-//    public int update(Long userId, String userName) {
-//        return smbmUserRepository.update(userId, userName);
-//    }
-
     @Override
-    public int update(String userCode, String userName, String userPassword, String userPhone, Long roleId) {
-        return smbmsUserRepository.update(userCode,userName,userPassword,userPhone,roleId);
+    public int update(String userCode, String userName, String userPassword, String userPhone, Long userId) {
+        return smbmsUserRepository.update(userCode,userName,userPassword,userPhone,userId);
     }
+
 }

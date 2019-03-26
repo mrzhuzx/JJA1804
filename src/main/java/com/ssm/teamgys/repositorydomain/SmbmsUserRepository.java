@@ -12,19 +12,18 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface SmbmsUserRepository extends JpaRepository<SmbmsUser, Long> {
+
+
 
     @Transactional
     @Modifying(clearAutomatically = true)
     @Query("update SmbmsUser set  userCode=?1,userName=?2,userPassword=?3,userPhone=?4 where userId=?5 ")
     int update(String userCode, String userName, String userPassword, String userPhone, Long userId);
 
-//    @Transactional
-////
-////    @Modifying(clearAutomatically = true)
-////    @Query("update SmbmUser set ")
-////    int update(Long userId,Integer )
+
 
 }

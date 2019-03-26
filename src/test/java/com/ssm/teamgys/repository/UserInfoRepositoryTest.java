@@ -1,6 +1,8 @@
 package com.ssm.teamgys.repository;
 
-import com.ssm.teamgys.entity.Userinfo;
+
+import com.ssm.teamgys.domain.UserInfo;
+import com.ssm.teamgys.repositorydomain.UserInfoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,14 +26,14 @@ import static org.junit.Assert.*;
 public class UserInfoRepositoryTest {
 
     @Autowired
-    UserInfoRepository  userInfoRepository;
+    UserInfoRepository userInfoRepository;
     @Test
 
     public   void  search(){
 
-        List<Userinfo> all = userInfoRepository.findAll();
+        List<UserInfo> all = userInfoRepository.findAll();
 
-        for (Userinfo   listall:all
+        for (UserInfo   listall:all
              ) {
             System.out.println(listall.toString());
         }

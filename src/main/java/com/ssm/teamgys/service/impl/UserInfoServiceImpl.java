@@ -26,8 +26,9 @@ import java.util.Optional;
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
 
-@Autowired
-UserInfoRepository userInfoRepository;
+    @Autowired
+    UserInfoRepository userInfoRepository;
+
     @Override
     public List<UserInfo> findAll() {
         return userInfoRepository.findAll();
@@ -147,5 +148,10 @@ UserInfoRepository userInfoRepository;
     @Override
     public <S extends UserInfo> boolean exists(Example<S> example) {
         return false;
+    }
+
+    @Override
+    public int update(Long userId, String userPassword, String userAddress, String userPhone, String userName) {
+        return userInfoRepository.update(userId, userPassword, userAddress, userPhone, userName);
     }
 }

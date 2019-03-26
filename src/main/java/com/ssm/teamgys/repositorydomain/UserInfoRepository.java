@@ -4,6 +4,7 @@ import com.ssm.teamgys.domain.UserInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 
@@ -14,7 +15,7 @@ import javax.transaction.Transactional;
  * {time}
  * version:1.2.3
  */
-
+@Repository
 public interface UserInfoRepository extends JpaRepository<UserInfo,Long> {
 
     @Transactional

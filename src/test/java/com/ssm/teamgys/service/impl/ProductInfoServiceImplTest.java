@@ -3,12 +3,8 @@ package com.ssm.teamgys.service.impl;
 import com.ssm.teamgys.appcomm.MYUUID;
 import com.ssm.teamgys.appcomm.enums.ProductStatusEnum;
 import com.ssm.teamgys.domain.ProductInfo;
-import com.ssm.teamgys.entity.Dog;
-import com.ssm.teamgys.entity.Userinfo;
-import com.ssm.teamgys.repositorydomain.ProductInfoRepository;
 import com.ssm.teamgys.service.ProductInfoService;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.sql.Update;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +17,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.*;
 
 /**
  * desc:

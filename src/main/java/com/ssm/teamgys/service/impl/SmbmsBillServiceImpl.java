@@ -92,7 +92,7 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
 
     @Override
     public <S extends SmbmsBill> S saveAndFlush(S s) {
-        return null;
+        return smbmsBillRepository.saveAndFlush(s);
     }
 
     @Override
@@ -107,7 +107,7 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
 
     @Override
     public SmbmsBill getOne(String strId) {
-        return null;
+        return smbmsBillRepository.getOne(Long.valueOf(strId.trim()));
     }
 
     @Override

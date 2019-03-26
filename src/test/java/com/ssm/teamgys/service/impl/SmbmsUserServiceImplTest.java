@@ -46,10 +46,10 @@ public class SmbmsUserServiceImplTest {
     /**
      * 修改
      */
-//    @Test
-//    public void testUpdate(){
-//        int rows = smbmUserService.update("NO.1111111");
-//    }
+    @Test
+    public void testUpdate(){
+        int rows = smbmsUserService.update("NO.11122222","男神AAAA","123124","123456",2L);
+    }
 
     /**
      * 删除
@@ -83,7 +83,7 @@ public class SmbmsUserServiceImplTest {
             s.setUserName("男神松");
             s.setUserPassword("123123");
             s.setUserPhone("12580");
-           // listUser.add(s);
+            listUser.add(s);
 
         }
         smbmsUserService.saveAll(listUser);

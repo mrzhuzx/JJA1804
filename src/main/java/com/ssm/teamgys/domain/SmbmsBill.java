@@ -2,13 +2,17 @@ package com.ssm.teamgys.domain;
 
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Data
 @Entity //告诉JPA这是一个实体类（和数据表映射的类） //使用JPA注解配置映射关系
-@Table(name = "Smbms_Bill") //@Table来指定和哪个数据表对应;如果省略默认表名就是user；
+@Table(name = "Smbms_Bill") //@Table来指定和哪个数据表对应
+@EntityListeners(AuditingEntityListener.class)
 /**
  *    鑫杰、佳毅  账单
  */
@@ -47,10 +51,10 @@ public class SmbmsBill {
      */
     private Integer isPayment; //
 
-
+    @CreatedDate
     private Date creationDate;
 
-
+    @LastModifiedDate
     private Date modifyDate;
     /**
      * 供应商Id

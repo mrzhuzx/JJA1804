@@ -6,8 +6,8 @@ package com.ssm.teamgys.service; /*
  */
 
 import com.ssm.teamgys.appcomm.BaseService;
-import com.ssm.teamgys.domain.SmbmUser;
+import com.ssm.teamgys.domain.SmbmsUser;
 
-public interface SmbmUserService extends BaseService<SmbmUser> {
+public interface SmbmsUserService extends BaseService<SmbmsUser> {
     int update(String userCode, String userName, String userPassword, String userPhone, Long roleId);
 }

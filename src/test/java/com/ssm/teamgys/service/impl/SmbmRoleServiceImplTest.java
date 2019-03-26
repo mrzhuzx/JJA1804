@@ -1,7 +1,6 @@
 package com.ssm.teamgys.service.impl;
 
 import com.ssm.teamgys.domain.SmbmRole;
-import com.ssm.teamgys.repositorydomain.SmbmRoleRepository;
 import com.ssm.teamgys.service.SmbmRoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -94,12 +93,12 @@ public class SmbmRoleServiceImplTest {
 
     @Test
     public void testUpdate(){
-       // int rows=smbmRoleService.update(1L,"李红艳","店员",0);
+       int rows=smbmRoleService.update(2L,"李红艳","店员",0);
 
     }
     @Test
     public void testDel(){
-        smbmRoleService.deleteById("3");
+        smbmRoleService.deleteById("4");
 
     }
 }

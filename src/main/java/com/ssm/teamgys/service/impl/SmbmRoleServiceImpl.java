@@ -144,4 +144,9 @@ public class SmbmRoleServiceImpl implements SmbmRoleService {
     public <S extends SmbmRole> boolean exists(Example<S> example) {
         return false;
     }
+
+    @Override
+    public int update(Long roleId, String roleName, String roleDesc, Integer roleStatus) {
+        return smbmRoleRepository.update(roleId,roleName,roleDesc,roleStatus);
+    }
 }

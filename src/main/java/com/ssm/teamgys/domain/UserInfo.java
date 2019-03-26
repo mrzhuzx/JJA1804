@@ -3,6 +3,7 @@ package com.ssm.teamgys.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * desc:  表
@@ -25,8 +26,8 @@ public class UserInfo {
     private String userPassword;
     private String userPhone;
     private String userAddress;
-    private java.sql.Timestamp creationDate;
-    private java.sql.Timestamp modifyDate;
+    private Date creationDate;
+    private Date modifyDate;
 
 
 }

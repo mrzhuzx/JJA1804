@@ -4,6 +4,7 @@ package com.ssm.teamgys.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  *  智鹏/吉松
@@ -32,8 +33,8 @@ public class SmbmRole {
    */
   private Integer roleStatus;
 
-  private java.sql.Timestamp creationDate;
-  private java.sql.Timestamp modifyDate;
+  private Date creationDate;
+  private Date modifyDate;
 
 
 }

@@ -77,12 +77,12 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public <S extends UserInfo> S save(S s) {
-        return null;
+        return userInfoRepository.save(s);
     }
 
     @Override
     public <S extends UserInfo> List<S> saveAll(Iterable<S> iterable) {
-        return null;
+        return userInfoRepository.saveAll(iterable) ;
     }
 
     @Override

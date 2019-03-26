@@ -72,12 +72,12 @@ public class SmbmRoleServiceImpl implements SmbmRoleService {
 
     @Override
     public <S extends SmbmRole> S save(S s) {
-        return null;
+        return smbmRoleRepository.save(s);
     }
 
     @Override
     public <S extends SmbmRole> List<S> saveAll(Iterable<S> iterable) {
-        return null;
+        return smbmRoleRepository.saveAll(iterable);
     }
 
     @Override

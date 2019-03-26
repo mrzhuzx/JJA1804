@@ -125,6 +125,145 @@ SmbmsUser     用户表
 11 数据层接口， 业务层接口和实现, 编写测试类文件
 
 
+  业务层接口和实现 BaseService JPA业务接口父类设计中
+
+BaseService(练习Jpa数据库的接口中的方法实现)   String  ==  Long
+
+extends JpaRepository<实体类, 主键类型>
+
+                主键类型： 有两种   自动增长列、UUID
+
+Repository中方法定义规范
+1.        查询方法以find|read|get开头。
+2.        涉及条件时，条件的属性用条件关键字连接。其中条件属性首字母大
+
+使用And条件连接时，应这样写： 
+findByLastNameAndFirstName(String lastName,StringfirstName); 
+
+1)        条件的属性名称、个数要与参数的位置、个数一一对应。
+
+2)        支持的关键字
+
+关键字
+
+方法名
+
+条件
+
+And
+
+findByLastnameAndFirstname
+
+…where x.lastname=? and x.firstname=?
+
+Or
+
+findByLastnameOrFirstname
+
+… where x.lastname=? or x.firstname=?
+
+Between
+
+findByStartDateBetween
+
+…where x.startDate between ? and ?
+
+LessThan
+
+findByAgeLessThan
+
+…where x.age < ?
+
+GreaterThan
+
+findByAgeGreaterThan
+
+…where x.age > ?
+
+After
+
+findByStartDateAfter
+
+…where x.startDate > ?
+
+Before
+
+findByStartDateBafore
+
+…where x.startDate < ?
+
+IsNull
+
+findByAgelsNull
+
+…where x.age is null
+
+IsNotNull,NotNull
+
+findByAge(is)NotNull
+
+…where x.age not null
+
+Like
+
+findByFirstnameLike
+
+…where x.firstname like ?
+
+NotLike
+
+findByFirstnameStartingWith
+
+…where x.firstname not like ?
+
+StartingWith
+
+findByFirstnameStartingWith
+
+…where x.firstname like ?
+
+EndingWith
+
+findByFirstnameEndingWith
+
+…where x.firstname like ?
+
+Containing
+
+findByFirstnameContaining
+
+…wherex.firstname like ?
+
+OrderBy
+
+findByAgeOrderByLastnameDesc
+
+…where .age=? orser by x.lastname desc
+
+Not
+
+findByLastnameNot
+
+…where x.lastname<>?
+
+In(NotIn)
+
+findByAge(Not)In
+
+…where x.age (not) in ?
+
+True
+
+findByActive True()
+
+…where x.active = true
+
+FALSE
+
+findByActiveFalse
+
+…where x.active = false
+
 
 
 
@@ -132,6 +271,8 @@ SmbmsUser     用户表
 
 
 13添加后台bootstrap页面
+
+
 
 14 绑定项目功能 ，返回JSON
 

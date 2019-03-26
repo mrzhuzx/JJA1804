@@ -142,4 +142,8 @@ public class SmbmsProviderServiceImpl implements SmbmsProviderService {
     public <S extends SmbmsProvider> boolean exists(Example<S> example) {
         return false;
     }
+
+    public Integer updateById(Long proId,String proName){
+        return smbmsProviderRepository.updateById(proId,proName);
+    }
 }

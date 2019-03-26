@@ -82,5 +82,14 @@ public class SmbmsProviderServiceTest {
             System.out.println(smbmsProvider.toString());
         }
     }
+    @Test
+    public void updateById(){
+        Integer integer = smbmsProviderService.updateById(1L,"多多");
+        System.out.println("修改成功！" + integer);
+    }
+    @Test
+    public void deleteById(){
+        smbmsProviderService.deleteById("1");
+    }
 
 }

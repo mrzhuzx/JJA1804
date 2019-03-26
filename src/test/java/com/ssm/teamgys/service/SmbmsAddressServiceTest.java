@@ -77,6 +77,17 @@ public class SmbmsAddressServiceTest {
 
 
     @Test
+    public void updateById(){
+        Integer integer = smbmsAddressService.updateById(1l,"多多");
+        System.out.println("修改成功！" + integer);
+    }
+
+    @Test
+    public void deleteById(){
+        smbmsAddressService.deleteById("1");
+    }
+
+    @Test
     public void findAll(){
 
         List<SmbmsAddress> list = smbmsAddressService.findAll();

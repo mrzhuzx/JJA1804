@@ -12,4 +12,5 @@ import org.springframework.stereotype.Service;
  */
 
 public interface SmbmsProviderService extends BaseService<SmbmsProvider> {
+     Integer updateById(Long proId,String proName);
 }

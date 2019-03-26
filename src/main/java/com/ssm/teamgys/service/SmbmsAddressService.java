@@ -22,5 +22,5 @@ import java.util.Optional;
 
 public interface SmbmsAddressService extends BaseService<SmbmsAddress> {
 
-
+    Integer updateById(Long addId,String addContact);
 }

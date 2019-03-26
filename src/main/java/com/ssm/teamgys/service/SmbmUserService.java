@@ -9,6 +9,5 @@ import com.ssm.teamgys.appcomm.BaseService;
 import com.ssm.teamgys.domain.SmbmUser;
 
 public interface SmbmUserService extends BaseService<SmbmUser> {
-    int update(String userCode,String userName,String userPassword,String userPhone,Long roleId);
-
+    int update(String userCode, String userName, String userPassword, String userPhone, Long roleId);
 }

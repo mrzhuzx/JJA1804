@@ -15,6 +15,7 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface SmbmUserRepository extends JpaRepository<SmbmUser,Long> {
+   int update(String userCode, String userName, String userPassword, String userPhone, Long roleId);
 
 //    @Transactional
 ////

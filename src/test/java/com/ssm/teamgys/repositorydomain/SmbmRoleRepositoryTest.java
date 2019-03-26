@@ -6,6 +6,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
@@ -25,14 +28,36 @@ public class SmbmRoleRepositoryTest {
     @Autowired
     SmbmRoleRepository smbmRoleRepository;
 
+    @Test
+    public void testPage(){
+        Sort sort=new Sort(Sort.Direction.ASC,"roleId");
+        Integer pageNum=1;
+        Integer size=5;
+
+        PageRequest pageble=new PageRequest(pageNum-1,size,new Sort(Sort.Direction.ASC,"roleId"));
+
+        Page<SmbmRole> page=smbmRoleRepository.findAll(pageble);
+        List<SmbmRole> smbmRoleList=page.getContent();
+        for (int i = 0; i <smbmRoleList.size() ; i++) {
+
+            SmbmRole smbmRole=smbmRoleList.get(i);
+            log.info(smbmRole.toString());
+
+        }
+
+
+
+    }
+
 
     @Test
-    public void testAddtest(){
+    public void testAdd(){
         List<SmbmRole> list=new ArrayList();
 
         for (int i = 0; i <10 ; i++) {
 
             SmbmRole role = new SmbmRole();
+
             role.setRoleCode("NO.1200002"+i);
             role.setRoleName("宇智波止水"+i+"号");
             role.setRoleDesc("客户"+i);
@@ -73,7 +98,7 @@ public class SmbmRoleRepositoryTest {
     }
     @Test
     public void testDel(){
-        smbmRoleRepository.deleteById(1L);
+        smbmRoleRepository.deleteById(Long.valueOf(1));
 
     }
 }

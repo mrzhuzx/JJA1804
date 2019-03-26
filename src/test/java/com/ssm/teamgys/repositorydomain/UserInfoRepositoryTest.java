@@ -2,12 +2,15 @@ package com.ssm.teamgys.repositorydomain;
 
 import com.ssm.teamgys.domain.UserInfo;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.User;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
@@ -30,6 +33,21 @@ public class UserInfoRepositoryTest {
     @Test
     public void testPage(){
 
+        Sort sort=new Sort(Sort.Direction.ASC,"userId");
+        Integer pageNum=1;
+        Integer size=5;
+
+        PageRequest pageble=new PageRequest(pageNum-1,size,new Sort(Sort.Direction.ASC,"userId"));
+
+        Page<UserInfo> page=userInfoRepository.findAll(pageble);
+        List<UserInfo> userInfoList=page.getContent();
+        for (int i = 0; i <userInfoList.size() ; i++) {
+
+           UserInfo userInfo= userInfoList.get(i);
+           log.info(userInfo.toString());
+            
+        }
+
 
     }
 
@@ -40,6 +58,7 @@ public class UserInfoRepositoryTest {
 
         for (int i = 0; i <15 ; i++) {
             UserInfo info = new UserInfo();
+            info.setUserAddress("湖里小区"+i+"栋");
             info.setUserCode("NO.1100002"+i);
             info.setUserName("马云"+i+"号");
             info.setUserPassword("123123"+i);
@@ -77,12 +96,12 @@ public class UserInfoRepositoryTest {
 
         @Test
         public void testUpdate(){
-         int rows=userInfoRepository.update(1L,"123","厦门市集美区","110120","马云");
+         int rows=userInfoRepository.update(33L,"123","厦门市集美区","110120","马云");
         }
 
         @Test
     public void testDel(){
-        userInfoRepository.deleteById(Long.valueOf(1));
+        userInfoRepository.deleteById(Long.valueOf(32));
 
         }
 

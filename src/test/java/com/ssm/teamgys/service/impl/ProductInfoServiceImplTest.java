@@ -2,6 +2,7 @@ package com.ssm.teamgys.service.impl;
 
 import com.ssm.teamgys.appcomm.MYUUID;
 
+import com.ssm.teamgys.appcomm.enums.ProductStatusEnum;
 import com.ssm.teamgys.domain.ProductInfo;
 import com.ssm.teamgys.service.ProductInfoService;
 import lombok.extern.slf4j.Slf4j;
@@ -110,6 +111,7 @@ public class ProductInfoServiceImplTest {
                 "在美国犬业俱乐部中拉布拉多是目前登记数量最多的品种，对小孩尤其的友善，对犬主人略粘人。");
         pro.setProductIcon("https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D21%2C0%2C980%2C647%3Bc0%3Dbaike116%2C5%2C5%2C116%2C38/sign=91c9a50cdd39b600598155f7d4620406/b999a9014c086e06999299a40a087bf40ad1cb23.jpg");
          pro.setProductStatus(ProductStatusEnum.DOWN.getCode()); // 1    0  类中有默认值时会添加
+
         pro.setCategoryType(1);
         pro.setCreateTime(new Date());
            //2 时间 修改

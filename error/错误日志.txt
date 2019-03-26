@@ -10,9 +10,10 @@
 原因： 执行测试，不执行
 处理： 重启电脑
 ------------------------------------------
-出错：
-原因：
-处理：
+出错： java.lang.IllegalStateException: Failed to load ApplicationContext
+原因：    Caused by: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'smbmsBillRepository 配置了两次
+处理：  删除一个实现类、配置注解的@Repository (value="xxxxx")
+
 ------------------------------------------
 出错：
 原因：

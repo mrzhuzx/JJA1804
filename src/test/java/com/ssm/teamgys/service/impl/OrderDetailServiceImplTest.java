@@ -10,9 +10,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -21,7 +23,7 @@ import static org.junit.Assert.*;
  * author:tanghuaming
  * time:2019\3\25 0025
  */
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @Slf4j // log.info()
 
@@ -31,28 +33,51 @@ import static org.junit.Assert.*;
     @Test
     public void findOne() {
 
-        orderDetailService.findOne("10110114124");
+       OrderDetail detail = orderDetailService.findOne("10110114124");
+
+
+
+    }
+    @Test
+    public void delete() {
+        orderDetailService.delete("10110114125");
 
     }
 
     @Test
     public void findUpAll() {
+        List<OrderDetail> all = orderDetailService.findUpAll();
+        for (OrderDetail i:all) {
+            System.out.println(i);
+        }
+
     }
 
-    @Test
-    public void findAll() {
-    }
+
 
     @Test
     public void save() {
         OrderDetail od = new OrderDetail();
         // Db  table 不存在
-        od.setDetailId("10110114124");
+        od.setDetailId("10110114125");
         od.setProductId("4124");
         od.setProductName("三鹿奶粉");
         od.setProductPrice(100.00);
         od.setProductQuantity(5);
         od.setProductIcon("图片地址");
+
+
+        //2 时间 修改
+        orderDetailService.save(od);
+    }
+    @Test
+    public void update() {
+        OrderDetail od = new OrderDetail();
+        // Db  table 不存在
+        od.setDetailId("10110114125");
+
+        od.setProductName("三鹿奶粉有毒");
+
 
 
         //2 时间 修改

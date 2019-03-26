@@ -91,6 +91,7 @@ public class UserInfoServiceImplTest {
 
     }
 
+
     @Test
     public void testSearch(){
         List<UserInfo> userInfoList = userInfoService.findAll();

@@ -17,11 +17,12 @@ import java.util.List;
  * version: 1.2.3
  */
 @Service
-public class ProductInfoServiceImpl    implements ProductInfoService {
+public class ProductInfoServiceImpl   implements ProductInfoService {
 
     //注入数据层
     @Autowired
     ProductInfoRepository productInfoRepository;  //产品数据层
+
 
     @Override
     public ProductInfo findOne(String productId) {
@@ -39,12 +40,41 @@ public class ProductInfoServiceImpl    implements ProductInfoService {
     }
 
     @Override
+    public void delete(String productId) {
+
+        productInfoRepository.deleteById(productId);
+
+
+
+    }
+
+
+    @Override
+    public List<ProductInfo> findsearch() {
+        return productInfoRepository.findAll();
+    }
+
+
+
+    @Override
+    public void updateone(String productId,Integer productStatus) {
+
+        productInfoRepository.update(productId,productStatus);
+    }
+
+
+    @Override
     public Page<ProductInfo> findAll(Pageable pageable) {
         return productInfoRepository.findAll(pageable);
     }
 
     @Override
     public ProductInfo save(ProductInfo productInfo) {
+        return productInfoRepository.save(productInfo);
+    }
+
+    @Override
+    public ProductInfo saveall(ProductInfo productInfo) {
         return productInfoRepository.save(productInfo);
     }
 

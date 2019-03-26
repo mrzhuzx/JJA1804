@@ -4,6 +4,7 @@ package com.ssm.teamgys.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Entity //告诉JPA这是一个实体类（和数据表映射的类） //使用JPA注解配置映射关系
@@ -47,10 +48,10 @@ public class SmbmsBill {
     private Integer isPayment; //
 
 
-    private java.sql.Timestamp creationDate;
+    private Date creationDate;
 
 
-    private java.sql.Timestamp modifyDate;
+    private Date modifyDate;
     /**
      * 供应商Id
      */

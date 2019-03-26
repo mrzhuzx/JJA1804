@@ -1,6 +1,6 @@
 package com.ssm.teamgys.repositorydomain;
 
-import com.ssm.teamgys.domain.ProductInfo;
+import com.ssm.teamgys.domain.SmbmsAddress;
 import org.hibernate.sql.Update;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -10,20 +10,16 @@ import org.springframework.stereotype.Repository;
 import javax.transaction.Transactional;
 
 /**
+ * time：2019/3/25--15:59
+ * Author:lanxj
  * desc:
- * author : zhs
- * time :2019-03-25  15:37:07
- * version: 1.2.3
+ * version:1.3.22
  */
-@Repository  //数据仓库DAO
-public interface ProductInfoRepository extends JpaRepository<ProductInfo,String> {
+@Repository
+public interface SmbmsAddressRepository extends JpaRepository<SmbmsAddress,Long> {
 
-@Transactional
-
+    @Transactional
     @Modifying(clearAutomatically = true)
-    @Query(" update ProductInfo set productStatus=?2 where productId=?1")
-     int  update(String productId,Integer productStatus);
-
-
-
+    @Query("update SmbmsAddress set addContact=?2 where addId=?1")
+    Integer updateById(Long addId,String addContact);
 }

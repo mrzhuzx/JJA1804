@@ -37,7 +37,7 @@ public class OrderMaster {
     private String buyerOpenid;
 
     /** 订单总金额. */
-    private BigDecimal orderAmount;
+    private Double orderAmount;
 
     /** 订单状态, 默认为0新下单. */
     private Integer orderStatus = OrderStatusEnum.NEW.getCode();

@@ -3,6 +3,7 @@ package com.ssm.teamgys.service.impl;
 import com.ssm.teamgys.domain.SmbmsBill;
 import com.ssm.teamgys.repositorydomain.SmbmsBillRepository;
 import com.ssm.teamgys.service.SmbmsBillService;
+import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -12,6 +13,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
+/**
+ *
+ */
 @Service
 public class SmbmsBillServiceImpl implements SmbmsBillService {
     @Autowired
@@ -43,7 +48,7 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
 
     @Override
     public void deleteById(String strId) {
-
+        smbmsBillRepository.deleteById(Long.valueOf(strId));
     }
 
     @Override
@@ -134,5 +139,11 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
     @Override
     public <S extends SmbmsBill> boolean exists(Example<S> example) {
         return false;
+    }
+
+
+    @Override
+    public int update(Long billId, String productName) {
+        return smbmsBillRepository.update(billId,productName);
     }
 }

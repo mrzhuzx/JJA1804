@@ -30,8 +30,8 @@ import static org.junit.Assert.*;
    OrderDetailService orderDetailService;
     @Test
     public void findOne() {
-        orderDetailService.findOne("10110114124");
 
+        orderDetailService.findOne("10110114124");
 
     }
 

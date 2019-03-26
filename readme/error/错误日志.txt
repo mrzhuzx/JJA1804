@@ -15,9 +15,9 @@
 处理：  删除一个实现类、配置注解的@Repository (value="xxxxx")
 
 ------------------------------------------
-出错：
-原因：
-处理：
+出错：  java.lang.IllegalStateException: Failed to load ApplicationContext
+原因： Failed to load property source from location 'classpath:/application.yml'
+处理：   yml配置出错
 ------------------------------------------
 出错：
 原因：

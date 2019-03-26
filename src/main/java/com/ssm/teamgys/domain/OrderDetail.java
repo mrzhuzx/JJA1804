@@ -1,10 +1,10 @@
 package com.ssm.teamgys.domain;
 
+
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.math.BigDecimal;
 
 /**
  * Created by 华铭、泽锋

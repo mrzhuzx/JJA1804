@@ -2,6 +2,7 @@ package com.ssm.teamgys.service;
 
 
 import com.ssm.teamgys.domain.OrderDetail;
+import com.ssm.teamgys.repositorydomain.OrderDetailRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -24,6 +25,13 @@ public interface OrderDetailService {
     Page<OrderDetail> findAll(Pageable pageable);
 
     OrderDetail save(OrderDetail orderdetail);
+
+
+
+    void delete(String detailId);
+
+    void update(OrderDetail orderdetail);
+
 
 
 }

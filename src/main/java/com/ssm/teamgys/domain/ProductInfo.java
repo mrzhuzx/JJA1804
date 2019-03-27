@@ -4,8 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ssm.teamgys.appcomm.enums.ProductStatusEnum;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -18,6 +24,7 @@ import java.util.Date;
 @Entity
 @Data
 @DynamicUpdate
+@EntityListeners(AuditingEntityListener.class)
 public class ProductInfo {
 
     @Id //uuid
@@ -44,8 +51,12 @@ public class ProductInfo {
     /** 类目编号. */
     private Integer categoryType;
 
+    @CreatedDate
+    @Column(name = "create_time")
     private Date createTime;
 
+    @LastModifiedDate
+    @Column(name = "update_time")
     private Date updateTime;
 
 /*    @JsonIgnore
@@ -53,3 +64,8 @@ public class ProductInfo {
         return EnumUtil.getByCode(productStatus, ProductStatusEnum.class);
     }*/
 }
+
+
+
+
+

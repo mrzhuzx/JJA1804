@@ -89,13 +89,10 @@ public class ProductCategoryServiceImplTest {
     public void save() {
         ProductCategory pro = new ProductCategory();
         //  pro.setCategoryId(MYUUID.getYYYYMMDDhhmmss());
-        pro.setCategoryName("222");
-        pro.setCategoryType(1);
+        pro.setCategoryName("牧羊犬");
+        pro.setCategoryType(1001);
         pro.setCreateTime(new Date());
-
         productCategoryService.save(pro);
-
-
         System.out.println(pro);
 
     }

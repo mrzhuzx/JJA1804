@@ -330,7 +330,12 @@ server.servlet.context-path=/springmvc
         
  * 创建web目录
  
- 
+ * 记载Springboot访问静态资源的Jar文件
+   <!-- 记载Springboot访问静态资源的Jar文件 -->
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+         </dependency>
         
 
 

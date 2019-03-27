@@ -38,7 +38,7 @@ public class GuanggaoServiceImplTest {
     public void findAllById() {
         Sort sort=new Sort(Sort.Direction.ASC,"ggId");
         Integer pageNum=2; //  2   3页
-        Integer size=2;
+        Integer size=5;
         Pageable pageable =new PageRequest(pageNum-1,size,new Sort(Sort.Direction.ASC,"ggId"));
         Page<Guanggao> page = guanggaoService.findAll(pageable);
         List<Guanggao> content =page.getContent();
@@ -49,6 +49,7 @@ public class GuanggaoServiceImplTest {
 
     @Test
     public void deleteById() {
+        guanggaoService.deleteById("1");
     }
 
     @Test

@@ -11,9 +11,11 @@ import lombok.Getter;
  */
 @Getter
 public enum SmbmsBillEnum {
+
     ISPAY_WAIT(1,"等待支付"),
     ISPAY_SUCCESS(2,"支付成功"),
     ISPAY_ERROR(3,"支付失败")
+
     ;
 
   private   Integer code;
@@ -22,4 +24,9 @@ public enum SmbmsBillEnum {
     SmbmsBillEnum(Integer code, String desc) {
         this.code = code;
         this.desc = desc;
-    }}
+    }
+
+
+
+}
+

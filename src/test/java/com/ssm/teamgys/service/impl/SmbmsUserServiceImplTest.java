@@ -5,9 +5,8 @@ package com.ssm.teamgys.service.impl; /*
  *version:1.2.3
  */
 
-
-import com.ssm.teamgys.domain.SmbmUser;
-import com.ssm.teamgys.service.SmbmUserService;
+import com.ssm.teamgys.domain.SmbmsUser;
+import com.ssm.teamgys.service.SmbmsUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,39 +24,39 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
-public class SmbmUserServiceImplTest {
+public class SmbmsUserServiceImplTest {
 
     @Autowired
-    SmbmUserService smbmUserService;
+    SmbmsUserService smbmsUserService;
 
     /**
      * 增加
      */
     @Test
     public void testSave(){
-        SmbmUser s=new  SmbmUser();
+        SmbmsUser s=new  SmbmsUser();
         s.setUserCode("NO.00000001");
         s.setUserName("阿萨德");
         s.setUserPassword("123123");
         s.setUserPhone("12580");
 
-        smbmUserService.save(s);
+            smbmsUserService.save(s);
 
     }
     /**
      * 修改
      */
-//    @Test
-//    public void testUpdate(){
-//        int rows = smbmUserService.update("NO.1111111");
-//    }
+    @Test
+    public void testUpdate(){
+        int rows = smbmsUserService.update("NO.11122222","男神AAAA","123124","123456",2L);
+    }
 
     /**
      * 删除
      */
     @Test
     public void testDel(){
-        smbmUserService.deleteById("1");
+        smbmsUserService.deleteById("1");
 
     }
     /**
@@ -66,8 +65,8 @@ public class SmbmUserServiceImplTest {
     @Test
     public  void findAll(){
 
-        List<SmbmUser> su = smbmUserService.findAll();
-        for (SmbmUser smbmUser : su){
+        List<SmbmsUser> su = smbmsUserService.findAll();
+        for (SmbmsUser smbmUser : su){
             System.out.println(smbmUser.toString());
         }
     }
@@ -77,17 +76,17 @@ public class SmbmUserServiceImplTest {
     @Test
     public void saveAll(){
 
-        List<SmbmUser> listUser = new ArrayList<>();
+        List<SmbmsUser> listUser = new ArrayList<>();
         for (int i = 0; i <15; i++) {
-            SmbmUser s=new  SmbmUser();
+            SmbmsUser s=new  SmbmsUser();
             s.setUserCode("NO.00000001");
             s.setUserName("男神松");
             s.setUserPassword("123123");
             s.setUserPhone("12580");
-           // listUser.add(s);
+            listUser.add(s);
 
         }
-        smbmUserService.saveAll(listUser);
+        smbmsUserService.saveAll(listUser);
 
     }
 
@@ -99,10 +98,10 @@ public class SmbmUserServiceImplTest {
         Integer PageNum=1;
         Integer size=4;
         Pageable rt =new PageRequest(PageNum-1,size,new Sort(Sort.Direction.ASC,"userId"));
-        Page<SmbmUser> page = smbmUserService.findAll(rt);
-        List<SmbmUser> content = page.getContent();
+        Page<SmbmsUser> page = smbmsUserService.findAll(rt);
+        List<SmbmsUser> content = page.getContent();
         for (int i = 0; i <content.size() ; i++) {
-            SmbmUser smbmUser = content.get(i);
+            SmbmsUser smbmUser = content.get(i);
             log.info(smbmUser.toString());
         }
     }

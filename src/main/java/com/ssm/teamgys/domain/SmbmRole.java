@@ -3,14 +3,14 @@ package com.ssm.teamgys.domain;
 
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  *  智鹏/吉松
  */
-
+@Entity
+@Table
 @Data
 public class SmbmRole {
   @Id //这是一个主键
@@ -33,8 +33,8 @@ public class SmbmRole {
    */
   private Integer roleStatus;
 
-  private java.sql.Timestamp creationDate;
-  private java.sql.Timestamp modifyDate;
+  private Date creationDate;
+  private Date modifyDate;
 
 
 }

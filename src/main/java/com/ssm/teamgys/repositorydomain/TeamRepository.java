@@ -14,8 +14,16 @@ import javax.transaction.Transactional;
  * version:
  */
 public interface TeamRepository extends JpaRepository<Team,Long> {
+
+    /**
+     * HQL  对象查询语句  JPA(hibernate [HQL,QBC,SQL])
+     *    hibernate : one-to-one  onetomany  manytomone  manytomany
+     * @param teamId
+     * @param teamName
+     * @return
+     */
     @Transactional
     @Modifying(clearAutomatically = true)
-    @Query(" update team set teamName=?2 where teamId=?1")
+    @Query(" update Team set teamName=?2 where teamId=?1")
     int  update(Long teamId ,String teamName);
 }

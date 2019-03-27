@@ -313,7 +313,25 @@ server.servlet.context-path=/springmvc
        // binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd "), true));
     }
 	
+* 添加上spring路径支持
 
+* 添加对jsp页面支持
+        <!--jsp页面使用jstl标签-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <!--用于编译jsp-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+ * 创建web目录
+ 
+ 
+        
 
 
 14 绑定项目功能 ，返回JSON

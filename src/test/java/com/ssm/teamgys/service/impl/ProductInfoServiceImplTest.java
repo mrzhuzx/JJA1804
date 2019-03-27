@@ -35,7 +35,7 @@ import static org.junit.Assert.*;
 public class ProductInfoServiceImplTest {
     //导入数据仓库
     @Autowired
-    ProductInfoService productInfoService;
+    ProductInfoServiceImpl productInfoService;
 
 
     @Test
@@ -114,7 +114,7 @@ public class ProductInfoServiceImplTest {
         pro.setProductIcon("https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D21%2C0%2C980%2C647%3Bc0%3Dbaike116%2C5%2C5%2C116%2C38/sign=91c9a50cdd39b600598155f7d4620406/b999a9014c086e06999299a40a087bf40ad1cb23.jpg");
          pro.setProductStatus(ProductStatusEnum.UP.getCode()); // 1    0  类中有默认值时会添加
         pro.setCategoryType(1);
-        pro.setCreateTime(new Date());
+//        pro.setCreateTime(new Date());
            //2 时间 修改
          productInfoService.save(pro);
     }

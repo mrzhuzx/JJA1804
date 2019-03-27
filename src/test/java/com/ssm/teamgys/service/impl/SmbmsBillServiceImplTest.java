@@ -87,6 +87,7 @@ public class SmbmsBillServiceImplTest {
             bill.setProductUnit("条");//产品单位
             bill.setProductCount(r.nextInt(10)+1);//产品数量
             bill.setTotalPrice(r.nextInt(1000)+500.00);// 产品价格
+//            bill.setIsPayment(SmbmsBillEnum.ISPAY_WAIT.getCode());
             bill.setIsPayment(r.nextInt(3)+1); //产品支付   0   1   2
 
             bill.setCreationDate(new Date());

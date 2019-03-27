@@ -1,6 +1,7 @@
-package com.ssm.teamgys.service;
+package com.ssm.teamgys.service.impl;
 
 import com.ssm.teamgys.domain.SmbmsAddress;
+import com.ssm.teamgys.service.SmbmsAddressService;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +12,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
-import sun.rmi.runtime.NewThreadAction;
 
 
 import java.util.ArrayList;

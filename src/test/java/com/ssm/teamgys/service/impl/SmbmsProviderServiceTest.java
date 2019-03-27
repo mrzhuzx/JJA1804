@@ -1,7 +1,8 @@
-package com.ssm.teamgys.service;
+package com.ssm.teamgys.service.impl;
 
 import com.ssm.teamgys.appcomm.MYUUID;
 import com.ssm.teamgys.domain.SmbmsProvider;
+import com.ssm.teamgys.service.SmbmsProviderService;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
 import org.junit.runner.RunWith;

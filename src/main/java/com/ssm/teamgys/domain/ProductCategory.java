@@ -2,11 +2,11 @@ package com.ssm.teamgys.domain;
 
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -17,11 +17,12 @@ import java.util.Date;
 @Entity
 @DynamicUpdate
 @Data
+@EntityListeners(AuditingEntityListener.class)
 public class ProductCategory {
 
     /** 类目id. */
     @Id //这是一个主键
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
     private String categoryId;
 
     /** 类目名字. */
@@ -29,9 +30,11 @@ public class ProductCategory {
 
     /** 类目编号. */
     private Integer categoryType;
-
+    /**创建时间.*/
+    @CreatedDate
     private Date createTime;
-
+    /** 修改时间 */
+    @LastModifiedDate
     private Date updateTime;
 
 

@@ -19,6 +19,24 @@
     </properties>
 
     <dependencies>
+        <!-- 热加载-->
+
+        <dependency>
+
+            <groupId>org.springframework.boot</groupId>
+
+            <artifactId>spring-boot-devtools</artifactId>
+
+            <optional>true</optional>
+
+            <!--<scope>true</scope>-->
+
+        </dependency>
+    <!-- 记载Springboot访问静态资源的Jar文件 -->
+  <!--      <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>-->
         <!--jsp页面使用jstl标签-->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -92,6 +110,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork><!-- 如果没有该配置，热部署的devtools不生效 -->
+                </configuration>
             </plugin>
         </plugins>
     </build>

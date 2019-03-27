@@ -6,6 +6,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * 鑫杰、佳毅
@@ -23,9 +24,9 @@ public class SmbmsAddress {
   private String addPostCode;//邮递
   private String addTelPhone;//电话
   @CreatedDate
-  private java.sql.Timestamp creationDate;//创建时间
+  private Date creationDate;//创建时间
   @LastModifiedDate
-  private java.sql.Timestamp modifyDate;//修改时间
+  private Date modifyDate;//修改时间
 
 
 

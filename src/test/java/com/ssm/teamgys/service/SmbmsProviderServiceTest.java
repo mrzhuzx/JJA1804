@@ -47,7 +47,7 @@ public class SmbmsProviderServiceTest {
     @Test
     public void testAddAll(){
         ArrayList<SmbmsProvider> list = new ArrayList<>();
-        for (int i = 0; i <10 ; i++) {
+        for (int i = 0; i <20 ; i++) {
 
             SmbmsProvider smbmsProvider=new SmbmsProvider();
             smbmsProvider.setProCode(MYUUID.getUUID());

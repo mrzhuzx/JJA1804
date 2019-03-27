@@ -47,7 +47,7 @@ public class SmbmsAddressServiceTest {
     @Test
     public void saveAll(){
         List<SmbmsAddress> list=new ArrayList<SmbmsAddress>();
-        for (int i = 0; i <10; i++) {
+        for (int i = 0; i <20; i++) {
             SmbmsAddress smbmsAddress=new SmbmsAddress();
             smbmsAddress.setAddContact("加三三"+i);
             smbmsAddress.setAddDesc("厦门市思明区软件园二期观日路28号");

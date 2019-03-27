@@ -12,7 +12,35 @@
     <link rel="stylesheet" type="text/css" href="css/skin_/table.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery.grid.css"/>
 
+    <STYLE type="text/css">
 
+        /* Table Head */
+        table thead th {
+            background-color:#0F8DC7;
+            color: #fff;
+            border-bottom-width: 0;
+        }
+
+        /* Column Style */
+        table td {
+            color: #000;
+        }
+        /* Heading and Column Style */
+        table tr, table th {
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(156, 186, 95);
+        }
+
+        /* Padding and font style */
+        table td, table th {
+            padding: 5px 10px;
+            font-size: 12px;
+            font-family: Verdana;
+            font-weight: bold;
+        }
+
+    </STYLE>
     <title>产品分类</title>
 </head>
 
@@ -60,7 +88,7 @@
                 </div>
 
                 <div class="grid">
-                    <table style="margin-left: 0px;">
+                    <table style="margin-left: 0px;width: 100%;" >
                         <thead>
                         <tr>
                             <th name="id">
@@ -68,66 +96,62 @@
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
-                            <th name="name">
-                                <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">类目名字</span><a href="javascript:;"
-                                                                               class="ui-icon2 ui-icon2-sort"></a><span
-                                        class="ui-table-drag"></span></div>
-                            </th>
+
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
                                         class="ui-table-thTitle">categoryName</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
-                                <div class="ui-table-th" style="width:200px"><span
+                                <div class="ui-table-th" style="width:120px"><span
                                         class="ui-table-thTitle">categoryType</span><span class="ui-table-drag"></span></div>
                             </th>
+
                             <th class="minWidth">
-                                <div class="ui-table-th" style="width: 250px;"><span
+                                <div class="ui-table-th" style="width: 120px;"><span
                                         class="ui-table-thTitle">createTime</span><span class="ui-table-drag"></span></div>
                             </th>
-                            <th>
-                                <div class="ui-table-th" style="width:250px"><span
-                                        class="ui-table-thTitle">出生日期</span><span class="ui-table-drag"></span></div>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">updateTime</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:70px"><span
-                                        class="ui-table-thTitle">是否审核</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">操作</span><span class="ui-table-drag"></span></div>
                             </th>
-                            <th class="ui-table-blank" width="10" style="width: 10px;">&nbsp;</th>
+
                         </tr>
+
+
                         </thead>
                     </table>
-                    <thead>
+
+
                 </div>
 
                 <div class="pagination">
 
-                    <table style="margin-left: 0px;">
+                    <table style="width: 100%;border:12px" align="center">
                     <tbody class="__data">
                     <c:forEach   var="pc"  items="${productCategoryList}">
                     <tr>
                         <td name="id">
-                            <div class="ui-table-td" style="width:83px">${pc.categoryId}</div>
+                            <div class="ui-table-td" style="width:70px">${pc.categoryId}</div>
                         </td>
                         <td name="name">
-                            <div class="ui-table-td" style="width:133px">${pc.categoryName}</div>
+                            <div class="ui-table-td" style="width:120px">${pc.categoryName}</div>
                         </td>
                         <td>
-                            <div class="ui-table-td" style="width:133px">${pc.categoryType}</div>
+                            <div class="ui-table-td" style="width:120px">${pc.categoryType}</div>
                         </td>
                         <td>
-                            <div class="ui-table-td" style="width:133px">${pc.createTime}</div>
+                            <div class="ui-table-td" style="width:120px">${pc.createTime}</div>
                         </td>
                         <td minwidth="minWidth">
-                            <div class="ui-table-td" style="width: 184px;">${pc.updateTime}</div>
+                            <div class="ui-table-td" style="width: 120px;">${pc.updateTime}</div>
                         </td>
-                        <td>
-                            <div class="ui-table-td" style="width:103px">1982-10-18</div>
-                        </td>
-                        <td>
-                            <div class="ui-table-td" style="width:83px">已审核</div>
-                        </td>
+
+                        <td class="ui-table-operation" style="width: 100px;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
+
                         <td class="ui-table-blank" style="width: 10px;">
                             <div class="ui-table-td"></div>
                         </td>

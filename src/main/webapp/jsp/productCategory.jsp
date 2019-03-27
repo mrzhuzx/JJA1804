@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="grid">
-                    <table style="margin-left: 0px;width: 100%;" >
+                    <table style="margin-left: 0px;width:100%;" >
                         <thead>
                         <tr>
                             <th name="id">
@@ -131,33 +131,33 @@
                 <div class="pagination">
 
                     <table style="width: 100%;border:12px" align="center">
-                    <tbody class="__data">
-                    <c:forEach   var="pc"  items="${productCategoryList}">
-                    <tr>
-                        <td name="id">
-                            <div class="ui-table-td" style="width:70px">${pc.categoryId}</div>
-                        </td>
-                        <td name="name">
-                            <div class="ui-table-td" style="width:120px">${pc.categoryName}</div>
-                        </td>
-                        <td>
-                            <div class="ui-table-td" style="width:120px">${pc.categoryType}</div>
-                        </td>
-                        <td>
-                            <div class="ui-table-td" style="width:120px">${pc.createTime}</div>
-                        </td>
-                        <td minwidth="minWidth">
-                            <div class="ui-table-td" style="width: 120px;">${pc.updateTime}</div>
-                        </td>
+                        <tbody class="__data">
+                        <c:forEach   var="pc"  items="${productCategoryList}">
+                            <tr>
+                                <td name="id">
+                                    <div class="ui-table-td" style="width:70px">${pc.categoryId}</div>
+                                </td>
+                                <td name="name">
+                                    <div class="ui-table-td" style="width:120px">${pc.categoryName}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${pc.categoryType}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${pc.createTime}</div>
+                                </td>
+                                <td minwidth="minWidth">
+                                    <div class="ui-table-td" style="width: 120px;">${pc.updateTime}</div>
+                                </td>
 
-                        <td class="ui-table-operation" style="width: 100px;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 100px;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
 
-                        <td class="ui-table-blank" style="width: 10px;">
-                            <div class="ui-table-td"></div>
-                        </td>
-                    </tr>
-                    </c:forEach>
-                    </tbody>
+                                <td class="ui-table-blank" style="width: 10px;">
+                                    <div class="ui-table-td"></div>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
                     </table>
                 </div>
             </div>

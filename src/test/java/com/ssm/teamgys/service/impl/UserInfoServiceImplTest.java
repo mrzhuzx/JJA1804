@@ -107,7 +107,7 @@ public class UserInfoServiceImplTest {
    @Test
 
     public void testDel(){
-        userInfoService.deleteById("1");
+        userInfoService.deleteById("2");
 
     }
 

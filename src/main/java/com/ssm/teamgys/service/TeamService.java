@@ -10,4 +10,5 @@ import com.ssm.teamgys.domain.Team;
  * version:
  */
 public interface TeamService extends BaseService<Team> {
+    int  update(Long teamId ,String teamName);
 }

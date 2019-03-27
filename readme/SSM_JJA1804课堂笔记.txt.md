@@ -1,13 +1,13 @@
- 1 创建springBoot项目 添加上支持
+### 1 创建springBoot项目 添加上支持
 
- 2 pom.xml(配置  msyql  jpa  redis web devtools bootstarter)
+### 2 pom.xml(配置  msyql  jpa  redis web devtools bootstarter)
 
- 3  添加上插件（bomlok  git   maven ）
+ ###3  添加上插件（bomlok  git   maven ）
 
- 4 git远程仓库配置（创建远程仓库，创建团队，加入项目中，开启提交权限）
+### 4 git远程仓库配置（创建远程仓库，创建团队，加入项目中，开启提交权限）
 
 
- 5 远程数据库配置 （反向生成实体， 正向生成表结构，）  ddl-auto: update  #修改  create 创建   JSON
+### 5 远程数据库配置 （反向生成实体， 正向生成表结构，）  ddl-auto: update  #修改  create 创建   JSON
 
 application.properties
 spring.datasource.url=jdbc:mysql://teacherzhu.uicp.net:34626/jja1804?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
@@ -39,7 +39,7 @@ spring.jpa.properties.hibernate.hbm2ddl.auto=update
     hibernate.dialect: com.jane.utils.MySQL5DialectUTF8
 
 
-   6  实体类配置
+  ### 6  实体类配置
        @Entity
        @Table(name = "dog")
        @Data // get/set/toString
@@ -55,7 +55,7 @@ spring.jpa.properties.hibernate.hbm2ddl.auto=update
          @Column
          private Integer  dogAge;
 
-7  repository   数据仓库DAO
+###7  repository   数据仓库DAO
 
 import javax.transaction.Transactional;
 @Repository
@@ -67,7 +67,7 @@ public interface DogRepository  extends JpaRepository<Dog,Integer> {
     int  update(Integer dogId,String dogHobby);
 
 
-8 测试类
+###8 测试类
 
  @RunWith(SpringRunner.class)
  @SpringBootTest
@@ -75,7 +75,7 @@ public interface DogRepository  extends JpaRepository<Dog,Integer> {
  @slf2j
 
 
-9 分页
+###9 分页
        @Test
         public void testPage(){
          //import org.springframework.data.domain.Sort;
@@ -98,7 +98,7 @@ public interface DogRepository  extends JpaRepository<Dog,Integer> {
 
         }
 
-10 项目数据库设计 （完善中...）
+###10 项目数据库设计 （完善中...）
        domain包下有两个项目：
            在线网店（，水果，宠物）
 
@@ -122,7 +122,7 @@ SmbmsRole     角色表
 SmbmsUser     用户表
 
 
-11 数据层接口， 业务层接口和实现, 编写测试类文件
+###11 数据层接口， 业务层接口和实现, 编写测试类文件
 
 
   业务层接口和实现 BaseService JPA业务接口父类设计中
@@ -279,14 +279,59 @@ int updateCustomerName(String cn);
 
 
 
-12  开发者和开发团队
+###12 junit4  当进行测试后 不想在数据库中留下测试数据 可以添加注解
+          @Transcational  删除
+          @Transcational 修改
 
-当进行测试后 不想在数据库中留下测试数据 可以添加注解
-@Transcational  删除
 
 
-13添加后台bootstrap页面
 
+###13 添加上springmvc配置
+
+*添加后台bootstrap页面
+* application.properties 配置文件中添加
+server.servlet.context-path=/springmvc
+        server.port=8088
+        spring.mvc.view.prefix=/
+        spring.mvc.view.suffix=.jsp
+        server.tomcat.uri-encoding=UTF-8
+        spring.thymeleaf.cache=false
+        #热部署生效
+        spring.devtools.restart.enabled: true
+        #设置重启的目录
+        spring.devtools.restart.additional-paths: src/main/java
+        #classpath目录下的WEB-INF文件夹内容修改不重启
+        spring.devtools.restart.exclude: WEB-INF/**
+      
+*在控制层中注入时间
+
+   //At the time of initialization,convert the type "String" to type "date"
+    /**spirngmvc对时间类型支持*/
+    @InitBinder
+    public void initBinder(ServletRequestDataBinder binder){
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"), true));
+       // binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd "), true));
+    }
+	
+* 添加上spring路径支持
+
+* 添加对jsp页面支持
+        <!--jsp页面使用jstl标签-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <!--用于编译jsp-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+ * 创建web目录
+ 
+ 
+        
 
 
 14 绑定项目功能 ，返回JSON

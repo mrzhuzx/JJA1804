@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.xml.crypto.Data;
 import java.util.List;
 import java.util.Optional;
 
@@ -144,7 +145,7 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
 
 
     @Override
-    public int update(Long billId, String productName) {
-        return smbmsBillRepository.update(billId,productName);
+    public int update(Long billId , String billCode, String productId, String productName, String productDesc, Integer productCount, String productUnit, Double totalPrice, Integer isPayment, Long providerId, String proImg, Long addressId) {
+        return smbmsBillRepository.update(billId,billCode,productId,productName,productDesc, productCount,productUnit,totalPrice,isPayment,providerId,proImg,addressId);
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +91,6 @@ public class UserInfoServiceImplTest {
 
     }
 
-
     @Test
     public void testSearch(){
         List<UserInfo> userInfoList = userInfoService.findAll();
@@ -108,7 +107,7 @@ public class UserInfoServiceImplTest {
    @Test
 
     public void testDel(){
-        userInfoService.deleteById("1");
+        userInfoService.deleteById("2");
 
     }
 

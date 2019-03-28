@@ -41,6 +41,7 @@
         }
 
     </STYLE>
+
     <title>产品分类</title>
 </head>
 
@@ -92,67 +93,72 @@
                         <thead>
                         <tr>
                             <th name="id">
-                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">categoryId</span><a
+                                <div class="ui-table-th" style="width:50px"><span class="ui-table-thTitle">userId</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
-
-                            <th>
-                                <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryName</span><span class="ui-table-drag"></span></div>
+                            <th name="name">
+                                <div class="ui-table-th" style="width:100px"><span
+                                        class="ui-table-thTitle">userCode</span><a href="javascript:;"
+                                                                               class="ui-icon2 ui-icon2-sort"></a><span
+                                        class="ui-table-drag"></span></div>
                             </th>
                             <th>
-                                <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryType</span><span class="ui-table-drag"></span></div>
+                                <div class="ui-table-th" style="width:100px"><span
+                                        class="ui-table-thTitle">userName</span><span class="ui-table-drag"></span></div>
                             </th>
-
+                            <th>
+                                <div class="ui-table-th" style="width:110px"><span
+                                        class="ui-table-thTitle">userPassword</span><span class="ui-table-drag"></span></div>
+                            </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">createTime</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">userPhone</span><span class="ui-table-drag"></span></div>
                             </th>
-                            <th class="minWidth">
-                                <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">updateTime</span><span class="ui-table-drag"></span></div>
+                            <th>
+                                <div class="ui-table-th" style="width:150px"><span
+                                        class="ui-table-thTitle">userAddress</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:70px"><span
-                                        class="ui-table-thTitle">操作</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle"></span><span class="ui-table-drag"></span></div>
                             </th>
-
+                            <th class="ui-table-blank" width="10" style="width: 10px;">&nbsp;</th>
                         </tr>
-
-
                         </thead>
                     </table>
-
-
+                    <thead>
                 </div>
 
                 <div class="pagination">
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="pc"  items="${productCategoryList}">
+                        <c:forEach   var="ui"  items="${userInfoList}">
                             <tr>
                                 <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${pc.categoryId}</div>
+                                    <div class="ui-table-td" style="width:83px">${ui.userId}</div>
                                 </td>
                                 <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryName}</div>
+                                    <div class="ui-table-td" style="width:133px">${ui.userCode}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryType}</div>
+                                    <div class="ui-table-td" style="width:133px">${ui.userName}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.createTime}</div>
+                                    <div class="ui-table-td" style="width:133px">${ui.userPassword}</div>
                                 </td>
                                 <td minwidth="minWidth">
-                                    <div class="ui-table-td" style="width: 120px;">${pc.updateTime}</div>
+                                    <div class="ui-table-td" style="width: 184px;">${ui.userPhone}</div>
                                 </td>
-
+                                <td>
+                                    <div class="ui-table-td" style="width:103px">${ui.userAddress}</div>
+                                </td>
+                                <td>
                                 <td class="ui-table-operation" style="width: 100px;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
 
-                                <td class="ui-table-blank" style="width: 10px;">
+                                </td>
+                                <td class="ui-table-blank" style="width: 30px;">
                                     <div class="ui-table-td"></div>
                                 </td>
                             </tr>

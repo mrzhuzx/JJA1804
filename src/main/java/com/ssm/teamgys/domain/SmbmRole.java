@@ -2,6 +2,9 @@ package com.ssm.teamgys.domain;
 
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -9,6 +12,7 @@ import java.util.Date;
 /**
  *  智鹏/吉松
  */
+@EntityListeners(AuditingEntityListener.class)
 @Entity
 @Table
 @Data
@@ -32,8 +36,9 @@ public class SmbmRole {
    * 角色状态
    */
   private Integer roleStatus;
-
+  @CreatedDate
   private Date creationDate;
+  @LastModifiedDate
   private Date modifyDate;
 
 

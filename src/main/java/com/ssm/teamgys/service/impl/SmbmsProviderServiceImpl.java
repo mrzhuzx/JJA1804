@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -145,5 +146,10 @@ public class SmbmsProviderServiceImpl implements SmbmsProviderService {
 
     public Integer updateById(Long proId,String proName){
         return smbmsProviderRepository.updateById(proId,proName);
+    }
+
+    @Override
+    public Integer updateProById(Long proId, String proCode, String proName, String proDesc, String proContact, String proPhone, String proAddress, String proFax, Date modifyDate) {
+        return smbmsProviderRepository.updateProById(proId,proCode,proName,proDesc,proContact,proPhone,proAddress,proFax,modifyDate);
     }
 }

@@ -16,8 +16,8 @@
 
         /* Table Head */
         table thead th {
-            background-color:#0F8DC7;
-            color: #fff;
+            background-color:#66F4DF;
+            color: #C5E1E4;
             border-bottom-width: 0;
         }
 
@@ -41,7 +41,7 @@
         }
 
     </STYLE>
-    <title>产品分类</title>
+    <title>用户列表</title>
 </head>
 
 <body>
@@ -88,31 +88,43 @@
                 </div>
 
                 <div class="grid">
-                    <table style="margin-left: 0px;width:100%;" >
+                    <table style="margin-left: 0px;width: 100%;" >
                         <thead>
                         <tr>
                             <th name="id">
-                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">categoryId</span><a
+                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">userId</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
 
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryName</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">userCode</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryType</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">userName</span><span class="ui-table-drag"></span></div>
                             </th>
 
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">createTime</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">userPassword</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">updateTime</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">userPhone</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">roleId</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">creationDate</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">modifyDate</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:70px"><span
@@ -132,22 +144,31 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="pc"  items="${productCategoryList}">
+                        <c:forEach   var="su"  items="${smbmsUserList}">
                             <tr>
                                 <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${pc.categoryId}</div>
+                                    <div class="ui-table-td" style="width:70px">${su.userId}</div>
                                 </td>
                                 <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryName}</div>
+                                    <div class="ui-table-td" style="width:120px">${su.userCode}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryType}</div>
+                                    <div class="ui-table-td" style="width:120px">${su.userName}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.createTime}</div>
+                                    <div class="ui-table-td" style="width:120px">${su.userPassword}</div>
                                 </td>
                                 <td minwidth="minWidth">
-                                    <div class="ui-table-td" style="width: 120px;">${pc.updateTime}</div>
+                                    <div class="ui-table-td" style="width: 120px;">${su.userPhone}</div>
+                                </td>
+                                <td minwidth="minWidth">
+                                    <div class="ui-table-td" style="width: 120px;">${su.roleId}</div>
+                                </td>
+                                <td minwidth="minWidth">
+                                    <div class="ui-table-td" style="width: 120px;">${su.creationDate}</div>
+                                </td>
+                                <td minwidth="minWidth">
+                                    <div class="ui-table-td" style="width: 120px;">${su.modifyDate}</div>
                                 </td>
 
                                 <td class="ui-table-operation" style="width: 100px;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>

@@ -29,7 +29,7 @@ public interface SmbmsAddressRepository extends JpaRepository<SmbmsAddress,Long>
     @Transactional
     @Modifying(clearAutomatically = true)
     @Query("update SmbmsAddress set addContact=?2,addDesc=?3,addPostCode=?4,addTelPhone=?5,modifyDate=?6 where addId=?1")
-    Integer updateAddById(Long addId, String addContact, String addDesc, String addPostCode, String addTelPhone, Date modifyDate);
+    Integer updateAddById(Long addId,String addContact,String addDesc,String addPostCode,String addTelPhone,Date modifyDate);
 //    private Long addId;
 //    private String addContact; //联系人
 //    private String addDesc;//地址描述

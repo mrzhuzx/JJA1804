@@ -12,18 +12,6 @@
     <link rel="stylesheet" type="text/css" href="css/skin_/table.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery.grid.css"/>
 
-    <script type="text/javascript">
-        function p_del() {
-            var msg = "您真的确定要删除吗？\n\n请确认！";
-            if (confirm(msg)==true){
-
-               return true;
-            }else{
-                return false;
-            }
-        }
-    </script>
-
     <STYLE type="text/css">
 
         /* Table Head */
@@ -104,27 +92,35 @@
                         <thead>
                         <tr>
                             <th name="id">
-                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">categoryId</span><a
+                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">detailId</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
 
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryName</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">orderId</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryType</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">productId</span><span class="ui-table-drag"></span></div>
                             </th>
 
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">createTime</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">productName</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">updateTime</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">productPrice</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">productQuantity</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">productIcon</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:70px"><span
@@ -144,27 +140,31 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="pc"  items="${productCategoryList}">
+                        <c:forEach   var="pc"  items="${orderDetailList}">
                             <tr>
                                 <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${pc.categoryId}</div>
+                                    <div class="ui-table-td" style="width:70px">${pc.detailId}</div>
                                 </td>
                                 <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryName}</div>
+                                    <div class="ui-table-td" style="width:120px">${pc.orderId}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryType}</div>
+                                    <div class="ui-table-td" style="width:120px">${pc.productId}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.createTime}</div>
+                                    <div class="ui-table-td" style="width:120px">${pc.productName}</div>
                                 </td>
                                 <td minwidth="minWidth">
-                                    <div class="ui-table-td" style="width: 120px;">${pc.updateTime}</div>
+                                    <div class="ui-table-td" style="width: 120px;">${pc.productPrice}</div>
+                                </td>
+                                <td minwidth="minWidth">
+                                    <div class="ui-table-td" style="width: 120px;">${pc.productQuantity}</div>
+                                </td>
+                                <td minwidth="minWidth">
+                                    <div class="ui-table-td" style="width: 120px;">${pc.productIcon}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="protype/delete.do?categoryId=${pc.categoryId}"  onclick="javascript:return p_del()">删除</a><a href="protype/update.do?categoryId=${pc.categoryId}">编辑</a></td>
-
-
+                                <td class="ui-table-operation" style="width: 100px;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

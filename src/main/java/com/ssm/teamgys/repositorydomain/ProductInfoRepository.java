@@ -19,11 +19,9 @@ import javax.transaction.Transactional;
 public interface ProductInfoRepository extends JpaRepository<ProductInfo,String> {
 
 @Transactional
-
     @Modifying(clearAutomatically = true)
     @Query(" update ProductInfo set productStatus=?2 where productId=?1")
      int  update(String productId,Integer productStatus);
-
 
 
 }

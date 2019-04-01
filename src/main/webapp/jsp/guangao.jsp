@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2019/3/27 0027
+  Time: 下午 4:58
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -11,18 +18,6 @@
     <link rel="stylesheet" type="text/css" href="css/WdatePicker.css"/>
     <link rel="stylesheet" type="text/css" href="css/skin_/table.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery.grid.css"/>
-
-    <script type="text/javascript">
-        function p_del() {
-            var msg = "您真的确定要删除吗？\n\n请确认！";
-            if (confirm(msg)==true){
-
-               return true;
-            }else{
-                return false;
-            }
-        }
-    </script>
 
     <STYLE type="text/css">
 
@@ -41,6 +36,7 @@
         table tr, table th {
             border-width: 1px;
             border-style: solid;
+
             border-color: rgb(156, 186, 95);
         }
 
@@ -48,6 +44,7 @@
         table td, table th {
             padding: 5px 10px;
             font-size: 12px;
+            text-align: center;
             font-family: Verdana;
             font-weight: bold;
         }
@@ -80,7 +77,7 @@
                     <span class="optarea">
                         <a href="javascript:;" class="add">
                             <i class="icon"></i>
-                            <span class="text">添加</span>
+                            <span class="text"><a href="">添加</a></span>
                         </a>
                         <a href="javascript:;" class="delete">
                             <i class="icon"></i>
@@ -100,34 +97,34 @@
                 </div>
 
                 <div class="grid">
-                    <table style="margin-left: 0px;width:100%;" >
+                    <table style="margin-left: 0px;width: 100%;" >
                         <thead>
                         <tr>
-                            <th name="id">
-                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">categoryId</span><a
+                            <th width="10%" name="id">
+                                <div class="ui-table-th" style="width: 10%"><span class="ui-table-thTitle">广告</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
 
-                            <th>
-                                <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryName</span><span class="ui-table-drag"></span></div>
+                            <th width="10%">
+                                <div class="ui-table-th" style="width: 10%;"><span
+                                        class="ui-table-thTitle">主题</span><span class="ui-table-drag"></span></div>
                             </th>
-                            <th>
-                                <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryType</span><span class="ui-table-drag"></span></div>
+                            <th width="20%">
+                                <div class="ui-table-th" style="width:20%"><span
+                                        class="ui-table-thTitle">图片</span><span class="ui-table-drag"></span></div>
                             </th>
 
-                            <th class="minWidth">
-                                <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">createTime</span><span class="ui-table-drag"></span></div>
+                            <th class="minWidth"width="30%">
+                                <div class="ui-table-th" style="width:30%;"><span
+                                        class="ui-table-thTitle">链接</span><span class="ui-table-drag"></span></div>
                             </th>
-                            <th class="minWidth">
-                                <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">updateTime</span><span class="ui-table-drag"></span></div>
+                            <th class="minWidth" width="15%">
+                                <div class="ui-table-th" style="width: 10%;"><span
+                                        class="ui-table-thTitle">时间</span><span class="ui-table-drag"></span></div>
                             </th>
-                            <th>
-                                <div class="ui-table-th" style="width:70px"><span
+                            <th width="15%">
+                                <div class="ui-table-th" style="width:20%"><span
                                         class="ui-table-thTitle">操作</span><span class="ui-table-drag"></span></div>
                             </th>
 
@@ -144,27 +141,25 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="pc"  items="${productCategoryList}">
+                        <c:forEach   var="g"  items="${guanggaoList}">
                             <tr>
-                                <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${pc.categoryId}</div>
+                                <td width="10%" name="id">
+                                    <div class="ui-table-td" style="width:100%">${g.ggId}</div>
                                 </td>
-                                <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryName}</div>
+                                <td  width="10%"name="name">
+                                    <div class="ui-table-td" style="width:100%">${g.ggTitle}</div>
+                                </td >
+                                <td width="20%">
+                                    <div class="ui-table-td" style="width:100%">${g.ggImg}</div>
                                 </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryType}</div>
+                                <td width="30%">
+                                    <div class="ui-table-td" style="width: 100%;">${g.ggUrl}</div>
                                 </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.createTime}</div>
-                                </td>
-                                <td minwidth="minWidth">
-                                    <div class="ui-table-td" style="width: 120px;">${pc.updateTime}</div>
+                                <td   width="20%" minwidth="minWidth">
+                                    <div class="ui-table-td" style="width: 100%;">${g.ggTime}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="protype/delete.do?categoryId=${pc.categoryId}"  onclick="javascript:return p_del()">删除</a><a href="protype/update.do?categoryId=${pc.categoryId}">编辑</a></td>
-
-
+                                <td class="ui-table-operation" style="width: 10%;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>
@@ -182,4 +177,5 @@
 
 
 </html>
+
 

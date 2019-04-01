@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,4 +24,5 @@ import java.util.Optional;
 public interface SmbmsAddressService extends BaseService<SmbmsAddress> {
 
     Integer updateById(Long addId,String addContact);
+    Integer updateAddById(Long addId, String addContact, String addDesc, String addPostCode, String addTelPhone, Date modifyDate);
 }

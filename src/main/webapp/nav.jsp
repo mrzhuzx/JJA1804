@@ -42,7 +42,6 @@
                     <ul class="subnav">
 
                         <li class="subnav-li" href="product/pro.do" data-id="31"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">产品信息</span></a></li>
-                        <li class="subnav-li" href="jsp/updateproduct.jsp" data-id="32"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">编辑产品信息</span></a></li>
                         <li class="subnav-li" href="jsp/savepro.jsp" data-id="33"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">添加产品</span></a></li>
                         <li class="subnav-li" data-id="34"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">自定义设置1</span></a></li>
                     </ul>
@@ -104,7 +103,7 @@
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">项目团队开发者</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="index.html" data-id="8"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">新闻视频管理</span></a></li>
+                        <li class="subnav-li" href="team/list.do" data-id="8"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">项目团队管理</span></a></li>
                         <li class="subnav-li" href="form.html" data-id="9"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">新闻频道管理</span></a></li>
                         <li class="subnav-li" href="table.html" data-id="10"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">地方新闻管理</span></a></li>
                         <li class="subnav-li" data-id="11"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">自定义设置1</span></a></li>

@@ -50,34 +50,12 @@
     <div id="bd">
         <div id="main">
 
-
             <div class="table">
                 <div class="opt ue-clear">
-                	<span class="sortarea">
-                    	<span class="sort">
-                        	<label>排序：</label>
-                            <span class="name">
-                            	<i class="icon"></i>
-                                <span class="text">名称</span>
-                            </span>
-                        </span>
-
-                        <i class="list"></i>
-                        <i class="card"></i>
-                    </span>
                     <span class="optarea">
-                        <a href="javascript:;" class="add">
+                        <a href="jsp/usersave.jsp" class="add">
                             <i class="icon"></i>
                             <span class="text">添加</span>
-                        </a>
-                        <a href="javascript:;" class="statistics">
-                            <i class="icon"></i>
-                            <span class="text">统计</span>
-                        </a>
-
-                        <a href="javascript:;" class="config">
-                            <i class="icon"></i>
-                            <span class="text">配置</span>
                         </a>
                     </span>
                 </div>
@@ -87,39 +65,39 @@
                         <thead>
                         <tr>
                             <th name="id">
-                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">userId</span><a
+                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">用户ID</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
 
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">userCode</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">会员编码</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">userName</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">用户名</span><span class="ui-table-drag"></span></div>
                             </th>
 
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">userPassword</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">用户密码</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">userPhone</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">手机号码</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">roleId</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">角色</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">creationDate</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">创建日期</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">modifyDate</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">修改日期</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:70px"><span
@@ -166,11 +144,15 @@
                                     <div class="ui-table-td" style="width: 120px;">${su.modifyDate}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="">删除
-                                </a><a href="javascript:;">编辑</a></td>
+                                <td class="ui-table-blank" style="width: 70px;">
+                                    <div class="ui-table"><a href="smuser/delete.do?userId=${su.userId}" class="delete">
 
-                                <td class="ui-table-blank" style="width: 10px;">
-                                    <div class="ui-table-td"></div>
+                                        <span class="text">删除</span>
+                                    </a>
+                                        <a href="smuser/queryOne.do?userId=${su.userId}" class="statistics">
+
+                                            <span class="text">修改</span>
+                                        </a></div>
                                 </td>
                             </tr>
                         </c:forEach>

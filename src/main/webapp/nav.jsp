@@ -96,8 +96,6 @@
                     <ul class="subnav">
                         <li class="subnav-li" href="smuser/list.do" data-id="90"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">后台用户管理</span></a></li>
                         <li class="subnav-li" href="smbmrole/list.do" data-id="91"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">用户角色管理</span></a></li>
-                        <li class="subnav-li" href="table.html" data-id="92"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">地方新闻管理</span></a></li>
-                        <li class="subnav-li" data-id="93"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">自定义设置1</span></a></li>
                     </ul>
                 </li>
 

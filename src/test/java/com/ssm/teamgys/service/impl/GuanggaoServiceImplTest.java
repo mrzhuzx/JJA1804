@@ -1,6 +1,8 @@
 package com.ssm.teamgys.service.impl;
 
 import com.ssm.teamgys.domain.Guanggao;
+import com.ssm.teamgys.service.GuanggaoService;
+import com.ssm.teamgys.service.SmbmRoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,12 +35,17 @@ public class GuanggaoServiceImplTest {
     @Test
     public void findAll() {
     }
+    @Test
+    public void update() {
+    int rows = guanggaoService.update("明星","鲤鱼","htmp",2);
+    }
 
     @Test
     public void findAllById() {
         Sort sort=new Sort(Sort.Direction.ASC,"ggId");
         Integer pageNum=2; //  2   3页
         Integer size=5;
+
         Pageable pageable =new PageRequest(pageNum-1,size,new Sort(Sort.Direction.ASC,"ggId"));
         Page<Guanggao> page = guanggaoService.findAll(pageable);
         List<Guanggao> content =page.getContent();
@@ -59,7 +66,7 @@ public class GuanggaoServiceImplTest {
         g.setGgTitle("明星");
         g.setGgImg("刘亦菲");
         g.setGgUrl("https://pic.sogou.com/d?query=%C1%F5%D2%E0%B7%C6&st=255&mode=255&did=41#did40");
-        g.setGgTime(new Date());
+        g.setCreateTime(new Date());
         guanggaoService.save(g);
         log.info("[添加一个广告]" + g.toString());
     }
@@ -72,7 +79,8 @@ public class GuanggaoServiceImplTest {
             g.setGgTitle("明星"+i+"号");
             g.setGgImg("刘亦菲");
             g.setGgUrl("https://pic.sogou.com/d?query=%C1%F5%D2%E0%B7%C6&st=255&mode=255&did=41#did40");
-            g.setGgTime(new Date());
+
+            g.setCreateTime(new Date());
 
             list.add(g);
 

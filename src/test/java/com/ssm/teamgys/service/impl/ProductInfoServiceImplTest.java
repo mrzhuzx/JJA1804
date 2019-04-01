@@ -53,9 +53,14 @@ public class ProductInfoServiceImplTest {
     @Test
     public void delet() {
    //删一条
-        productInfoService.delete("20190325-034613-00135906");
+        productInfoService.delete( "20190325-072711-00111538");
     }
 
+    @Test
+    public void updaall() {
+        //
+
+    }
 
     @Test
     public void findsearch() {
@@ -104,7 +109,7 @@ public class ProductInfoServiceImplTest {
         // Db  table 不存在
 
         pro.setProductId(MYUUID.getYYYYMMDDhhmmss());
-        pro.setProductName("拉不拉多");
+        pro.setProductName("拉不拉多豆豆豆豆");
         pro.setProductPrice(r.nextInt(200)+300.00);
         pro.setProductStock(10);
         pro.setProductDescription("拉布拉多又称寻回犬，是一种大型犬类，是非常适合被选作经常出入公共场合的导盲犬或地铁警犬及搜救犬和其他工作犬的狗品种" +

@@ -66,7 +66,7 @@
                         <i class="card"></i>
                     </span>
                     <span class="optarea">
-                        <a href="javascript:;" class="add">
+                        <a href="jsp/orderDetail-add.jsp" class="add">
                             <i class="icon"></i>
                             <span class="text">添加</span>
                         </a>
@@ -161,16 +161,18 @@
                                     <div class="ui-table-td" style="width: 120px;">${pc.productQuantity}</div>
                                 </td>
                                 <td minwidth="minWidth">
-                                    <div class="ui-table-td" style="width: 120px;">${pc.productIcon}</div>
+                                    <div class="ui-table-td" style="width: 120px;">${pc.productIcon}</div>pc
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 100px;"><a href="order/del.do?detailId=${pc.detailId}">删除</a><a href="order/up.do?detailId=${pc.detailId}">编辑</a></td>
+
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>
                                 </td>
                             </tr>
                         </c:forEach>
+
                         </tbody>
                     </table>
                 </div>

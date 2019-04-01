@@ -9,8 +9,9 @@ import com.ssm.teamgys.domain.SmbmsUser;
 import com.ssm.teamgys.service.SmbmsUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -38,43 +39,52 @@ public class SmbmsUserController {
     /**
      * 添加
      */
-    @RequestMapping("{user}/adduser")
-    public ModelAndView adduser(@PathVariable(value = "user")SmbmsUser su) {
-        ModelAndView m=new ModelAndView("jsp/smbmsUser");
+    @RequestMapping("/save")
+    public ModelAndView adduser(@ModelAttribute SmbmsUser su) {
         SmbmsUser save = smbmsUserService.save(su);
-        if (save!=null){
-            List<SmbmsUser> list = smbmsUserService.findAll();
-            m.addObject("userlist",list);
-            return m;
-        }else {
-            List<SmbmsUser> list =smbmsUserService.findAll();
-            m.addObject("userlist",list);
-            return m;
-        }
-
+        ModelAndView m=new ModelAndView("jsp/smbmsUser");
+        List<SmbmsUser> smbmsUserList=smbmsUserService.findAll();
+        m.addObject("smbmsUserList",smbmsUserList);
+        return m;
     }
     /**
      * 根据ID删除一条数据
      */
-    @RequestMapping("{userid}/deleteById")
-    public ModelAndView deleteById(@PathVariable(value = "userid")Long userid){
+    @RequestMapping("/delete")
+    public ModelAndView userdelete(@RequestParam String userId){
         ModelAndView m =new ModelAndView("jsp/smbmsUser");
-        smbmsUserService.deleteById(String.valueOf(userid));
-        List<SmbmsUser> list = smbmsUserService.findAll();
-        m.addObject("userlist",list);
+        smbmsUserService.deleteById(userId);
+        List<SmbmsUser> userlist = smbmsUserService.findAll();
+        m.addObject("userlist",userlist);
         return m;
     }
     /**
      * 根据ID修改数据
      */
-    @RequestMapping("{user}/updateById")
-    public ModelAndView updateById(@PathVariable(value = "user")SmbmsUser su){
-        ModelAndView m = new ModelAndView("jsp/smbmsUser");
+    @RequestMapping("/update")
+    public ModelAndView userupdate(@RequestParam Long userId,@RequestParam String userCode,@RequestParam String userName,@RequestParam String userPassword,@RequestParam String userPhone,@RequestParam Long roleId){
+       smbmsUserService.update(userCode,userName,userPassword,userPhone,roleId);
 
-        List<SmbmsUser> list = smbmsUserService.findAll();
-        m.addObject("userlist",list);
+        ModelAndView m = new ModelAndView("jsp/smbmsUser");
+        System.out.println("111111"+smbmsUserService.toString());
+
+        List<SmbmsUser> userlist = smbmsUserService.findAll();
+        m.addObject("userlist",userlist);
         return m;
 
+    }
+
+    /**
+     * 查询一个用户
+     * @param userId
+     * @return
+     */
+    @RequestMapping("/queryOne")
+    public ModelAndView queryOne(@RequestParam String userId){
+        ModelAndView m =new ModelAndView("jsp/userupdate");
+        SmbmsUser user=smbmsUserService.getOne(userId);
+        m.addObject("user",user);
+        return m;
 
     }
 

@@ -117,7 +117,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public UserInfo getOne(String strId) {
-        return null;
+        return userInfoRepository.getOne(Long.valueOf(strId));
     }
 
     @Override
@@ -151,7 +151,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public int update(Long userId, String userPassword, String userAddress, String userPhone, String userName) {
-        return userInfoRepository.update(userId, userPassword, userAddress, userPhone, userName);
+    public int update(Long userId, String userPassword, String userAddress, String userPhone, String userName, String userCode) {
+        return userInfoRepository.update(userId, userPassword, userAddress, userPhone, userName ,userCode);
     }
 }

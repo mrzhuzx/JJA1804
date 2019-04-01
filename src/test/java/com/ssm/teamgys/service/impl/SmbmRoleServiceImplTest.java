@@ -93,7 +93,7 @@ public class SmbmRoleServiceImplTest {
 
     @Test
     public void testUpdate(){
-       int rows=smbmRoleService.update(2L,"李红艳","店员",0);
+       int rows=smbmRoleService.update(2L,"李红艳","店员",0,"NO.12000020");
 
     }
     @Test

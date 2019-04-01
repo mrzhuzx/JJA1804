@@ -17,8 +17,8 @@ import javax.transaction.Transactional;
 public interface SmbmRoleRepository extends JpaRepository<SmbmRole,Long> {
     @Transactional
     @Modifying(clearAutomatically = true)
-    @Query(" update SmbmRole set roleName=?2,roleDesc=?3,roleStatus=?4 where roleId=?1")
-    int update( Long roleId,String roleName,String roleDesc,Integer roleStatus );
+    @Query(" update SmbmRole set roleName=?2,roleDesc=?3,roleStatus=?4,roleCode=?5 where roleId=?1")
+    int update( Long roleId,String roleName,String roleDesc,Integer roleStatus, String roleCode);
 
 
 

@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,7 +18,7 @@ import java.util.List;
 
 /**
  * desc:
- * author:lzp
+ * author:卢智鹏
  * {time}
  * version:1.2.3
  */
@@ -33,7 +32,7 @@ public class UserInfoController {
 
     @RequestMapping("/list")
     public ModelAndView list(){
-        ModelAndView u = new ModelAndView("jsp/userinfo");
+        ModelAndView u = new ModelAndView("user/userinfo");
         List<UserInfo> userInfoList=userInfoService.findAll();
         u.addObject("userInfoList",userInfoList);
         return u;
@@ -42,7 +41,7 @@ public class UserInfoController {
 
     @RequestMapping("/userdel")
     public ModelAndView  userinfodelete(@RequestParam Long userId){
-       ModelAndView a=new ModelAndView("jsp/userinfo");
+       ModelAndView a=new ModelAndView("user/userinfo");
        userInfoService.deleteById(String.valueOf(userId));
        List<UserInfo> userInfoList=userInfoService.findAll();
        a.addObject("userInfoList",userInfoList);
@@ -52,7 +51,7 @@ public class UserInfoController {
     @RequestMapping("/save")
     public ModelAndView usersave(@ModelAttribute UserInfo ui) {
 
-        ModelAndView u = new ModelAndView("jsp/userinfo");
+        ModelAndView u = new ModelAndView("user/userinfo");
         UserInfo save = userInfoService.save(ui);
         if (save != null) {
             List<UserInfo> userInfos = userInfoService.findAll();
@@ -69,7 +68,22 @@ public class UserInfoController {
 
     }
 
+    @RequestMapping("/searchone")
+    public ModelAndView userUpdate(@RequestParam String userId){
+        ModelAndView u=new ModelAndView("user/userupdate");
+        UserInfo search=userInfoService.getOne(userId);
+        u.addObject("search",search);
+        return u;
 
+    }
 
+    @RequestMapping("/update")
+    public ModelAndView userupdate(@ModelAttribute UserInfo  user) {
+        userInfoService.update(user.getUserId(),user.getUserPassword(),user.getUserAddress(),user.getUserPhone(),user.getUserName(),user.getUserCode());
+        ModelAndView u=new ModelAndView("user/userinfo");
+        List<UserInfo> userInfoList=userInfoService.findAll();
+        u.addObject("userInfoList",userInfoList);
+        return u;
+        }
 
 }

@@ -151,13 +151,17 @@
                                     <div class="ui-table-td" style="width:70px">${bl.totalPrice}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:20px">${bl.isPayment}</div>
+                                    <div class="ui-table" style="width:70px">
+                                        <c:if test="${bl.isPayment eq '1'}">等待支付</c:if>
+                                        <c:if test="${bl.isPayment eq '2'}">支付成功</c:if>
+                                        <c:if test="${bl.isPayment eq '3'}">支付失败</c:if>
+                                    </div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:70px">${bl.creationDate}</div>
+                                    <div class="ui-table-td" style="width:70px"><fmt:formatDate value="${bl.creationDate}" pattern="yyyy年MM月dd日" /></div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:70px">${bl.modifyDate}</div>
+                                    <div class="ui-table-td" style="width:70px"><fmt:formatDate value="${bl.modifyDate}" pattern="yyyy年MM月dd日" /></div>
                                 </td>
                                 <td>
                                     <div class="ui-table-td" style="width:70px">${bl.providerId}</div>

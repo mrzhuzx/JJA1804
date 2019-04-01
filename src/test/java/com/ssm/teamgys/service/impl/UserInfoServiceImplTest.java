@@ -101,7 +101,7 @@ public class UserInfoServiceImplTest {
 
     @Test
     public void testUpdate(){
-       int rows=userInfoService.update(3L,"12312","厦门集美区","15268","李想");
+       int rows=userInfoService.update(3L,"12312","厦门集美区","15268","李想","NO.11000032");
     }
 
    @Test

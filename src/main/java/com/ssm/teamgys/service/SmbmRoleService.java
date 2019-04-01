@@ -11,5 +11,5 @@ import com.ssm.teamgys.domain.SmbmRole;
  */
 public interface SmbmRoleService extends BaseService<SmbmRole> {
 
-    int update( Long roleId,String roleName,String roleDesc,Integer roleStatus );
+    int update( Long roleId,String roleName,String roleDesc,Integer roleStatus,String roleCode );
 }

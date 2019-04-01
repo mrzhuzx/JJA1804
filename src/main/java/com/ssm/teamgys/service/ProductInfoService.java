@@ -32,6 +32,7 @@ public interface ProductInfoService{
 
     Page<ProductInfo> findAll(Pageable pageable);
 
+
     ProductInfo save(ProductInfo productInfo);
     ProductInfo saveall(ProductInfo productInfo);
 

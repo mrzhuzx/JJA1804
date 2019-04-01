@@ -1,13 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2019/3/28
-  Time: 11:14
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <%@include file="../appcomm/basePath.jsp" %>
 
 <head>
@@ -94,42 +88,48 @@
                 </div>
 
                 <div class="grid">
-                    <table style="margin-left: 0px;width:100%;" >
-                        <thead>
+                    <table style="margin-left: 0px;width:100%;">
+                        <thead align = "center" border="0" cellpadding="0" cellspacing="20">
                         <tr>
                             <th name="id">
-                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">addId</span><a
+                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">productId</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
 
-
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">addContact</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">productName</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th>
+                                <div class="ui-table-th" style="width:120px"><span
+                                        class="ui-table-thTitle">productPrice</span><span class="ui-table-drag"></span></div>
                             </th>
 
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">addDesc</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">productStock</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">addPostCode</span><span class="ui-table-drag"></span></div>
-                            </th>
-                            <th class="minWidth">
-                            <div class="ui-table-th" style="width: 120px;"><span
-                                    class="ui-table-thTitle">addTelPhone</span><span class="ui-table-drag"></span></div>
-                            </th>
-                            <th class="minWidth">
-                            <div class="ui-table-th" style="width: 120px;"><span
-                                    class="ui-table-thTitle">creationDate</span><span class="ui-table-drag"></span></div>
-                            </th>
-                            <th class="minWidth">
-                                <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">modifyDate</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">productDescription</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
+                                <div class="ui-table-th" style="width:70px"><span
+                                        class="ui-table-thTitle">productIcon</span><span class="ui-table-drag"></span></div>
+                            </th><th>
+                                <div class="ui-table-th" style="width:70px"><span
+                                        class="ui-table-thTitle">productStatus</span><span class="ui-table-drag"></span></div>
+                            </th><th>
+                                <div class="ui-table-th" style="width:70px"><span
+                                        class="ui-table-thTitle">categoryType</span><span class="ui-table-drag"></span></div>
+                            </th><th>
+                                <div class="ui-table-th" style="width:70px"><span
+                                        class="ui-table-thTitle">createTime</span><span class="ui-table-drag"></span></div>
+                            </th><th>
+                                <div class="ui-table-th" style="width:70px"><span
+                                        class="ui-table-thTitle">updateTime</span><span class="ui-table-drag"></span></div>
+                            </th><th>
                                 <div class="ui-table-th" style="width:70px"><span
                                         class="ui-table-thTitle">操作</span><span class="ui-table-drag"></span></div>
                             </th>
@@ -145,33 +145,42 @@
 
                 <div class="pagination">
 
-                    <table style="width: 100%;border:12px" align="center">
+                    <table style="width: 100%;border:12px" align="center" >
                         <tbody class="__data">
-                        <c:forEach   var="list"  items="${list}">
+                        <c:forEach   var="pro"  items="${findsearch}">
                             <tr>
-                                <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${list.addId}</div>
+                                <td name="id" align="center" >
+                                    <div class="ui-table-td" style="width:70px">${pro.productId}</div>
                                 </td>
-                                <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${list.addContact}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.addDesc}</div>
+                                <td name="name" align="center">
+                                    <div class="ui-table-td" style="width:120px">${pro.productName}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.addPostCode}</div>
+                                    <div class="ui-table-td" style="width:120px">${pro.productPrice}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.addTelPhone}</div>
+                                    <div class="ui-table-td" style="width:120px">${pro.productStock}</div>
+                                </td>
+                                <td minwidth="minWidth">
+                                    <div class="ui-table-td" style="width: 120px;">${pro.productDescription}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${list.creationDate}" pattern="yyyy年MM月dd日" /></div>
+                                    <div class="ui-table-td" style="width:120px"><img src="${pro.productIcon}" width="100px" height="100px"/>  </div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${list.modifyDate}" pattern="yyyy年MM月dd日" /></div>
+                                    <div class="ui-table-td" style="width:120px">${pro.productStatus}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${pro.categoryType}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${pro.createTime}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${pro.updateTime}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="address/${list.addId}/deleteById.do">删除</a><a href="address/${list.addId}/findById.do">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 60px;"><a href="product/delete.do?productId=${pro.productId}">删除</a><a href="product/up.do">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

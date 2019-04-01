@@ -328,9 +328,9 @@ server.servlet.context-path=/springmvc
             <scope>provided</scope>
         </dependency>
         
- * 创建web目录
+ * 创建web文件目录
  
- * 记载Springboot访问静态资源的Jar文件
+ * 记载Springboot访问静态资源的Jar文件   静态资源先不使用
    <!-- 记载Springboot访问静态资源的Jar文件 -->
          <dependency>
              <groupId>org.springframework.boot</groupId>
@@ -338,8 +338,22 @@ server.servlet.context-path=/springmvc
          </dependency>
         
 
+###14 fmt标签使用，格式工具
 
-14 绑定项目功能 ，返回JSON
+*后台在显示数据项（不需要全部显示在列表中）
+* 数据项如果内容过多可以放到详细页面上
+* 时间要处理
+* 在工具页面上引入标签库
+<%@ taglib  prefix="fmt"  uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+
+1X 绑定项目功能 ，返回JSON
+
+
+
 
 
 

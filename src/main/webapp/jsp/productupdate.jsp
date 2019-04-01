@@ -33,46 +33,53 @@
     <div id="hd">
     </div>
     <div id="bd">
-        <form action="provider/${pr.proId}/updateById.do" method="post">
+        <form action="product/${pr.proId}/updateById.do" method="post">
             <div id="main">
                 <h2 class="subfild">
                     <span>基本信息</span>
                 </h2>
                 <div class="subfild-content base-info">
 
-                    <div class="kv-item ue-clear">
-                        <label>productId</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="proName" value="${pr.proName}" />
-                        </div>
-                    </div>
+
 
                     <div class="kv-item ue-clear">
-                        <label>productName</label>
+                        <label>名字</label>
                         <div class="kv-item-content">
-                            <input type="text" name="proDesc" value="${pr.proDesc}" />
+                            <input type="text" name="proDesc" value="${proone.productName}" />
                         </div>
                     </div>
                     <div class="kv-item ue-clear">
-                        <label>联系人</label>
+                        <label>单价</label>
                         <div class="kv-item-content">
                             <input type="text" name="proContact" value="${pr.proContact}" />
                         </div>
                     </div>
                     <div class="kv-item ue-clear">
-                        <label>电话</label>
+                        <label>库存</label>
                         <div class="kv-item-content">
                             <input type="text" name="proPhone" value="${pr.proPhone}" />
                         </div>
                     </div>
                     <div class="kv-item ue-clear">
-                        <label>地址</label>
+                        <label>描述</label>
                         <div class="kv-item-content">
                             <input type="text" name="proAddress" value="${pr.proAddress}" />
                         </div>
                     </div>
                     <div class="kv-item ue-clear">
-                        <label>传真</label>
+                        <label>小图</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="proName" value="${pr.proName}" />
+                        </div>
+                    </div>
+                    <div class="kv-item ue-clear">
+                        <label>状态</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="proFax" value="${pr.proFax}" />
+                        </div>
+                    </div>
+                    <div class="kv-item ue-clear">
+                        <label>类目编号</label>
                         <div class="kv-item-content">
                             <input type="text" name="proFax" value="${pr.proFax}" />
                         </div>

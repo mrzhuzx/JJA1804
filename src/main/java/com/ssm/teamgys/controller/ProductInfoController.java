@@ -75,7 +75,18 @@ public class ProductInfoController {
     }
 
 
+    @RequestMapping(value = "/{proid}/searchone")
 
+    public ModelAndView  update(  @PathVariable(value = "proid") String  searchone){
+
+
+        ProductInfo one = productInfoService.findOne(searchone);
+
+        ModelAndView  m =   new ModelAndView("jsp/product");
+
+        m.addObject("proone",one);
+        return m;
+    }
 
 
 //    @RequestMapping(value = "/{a}/{b}/show002") //rest/a/b/show002.do

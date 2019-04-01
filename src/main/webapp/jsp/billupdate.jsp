@@ -36,7 +36,7 @@
     </div>
     <div id="bd">
         <div id="main">
-            <form action="bill/update.do?billId=${bl.billId}&isPayment=${bl.isPayment}&proImg=${bl.proImg}" method="post">
+            <form action="bill/update.do?billId=${bl.billId}" method="post">
                 <h2 class="subfild">
                     <span>修改账单</span>
                 </h2>
@@ -105,21 +105,21 @@
                     <div class="kv-item-content">
                     	<span class="choose">
                             <span class="checkboxouter">
-                                <input  type="radio" name="need" />
+                                <input  type="radio" name="isPayment" value="1"/>
                                 <span class="radio"></span>
                             </span>
                             <span class="text">已支付</span>
                         </span>
                         <span class="choose">
                             <span class="checkboxouter">
-                                <input type="radio"  name="need"  />
+                                <input type="radio"  name="isPayment" value="2"/>
                                 <span class="radio"></span>
                             </span>
                             <span class="text" >未支付</span>
                         </span>
                         <span class="choose">
                             <span class="checkboxouter">
-                                <input type="radio" name="need" />
+                                <input type="radio" name="isPayment"  value="3"/>
                                 <span class="radio"></span>
                             </span>
                             <span class="text">支付失败</span>
@@ -137,9 +137,9 @@
                 <div class="kv-item ue-clear">
                     <label><span class="impInfo">*</span>产品图片</label>
                     <div class="kv-item-content file">
-                        <span class="text"></span>
-                        <input type="file" />
-                        <input type="button" class="button normal long2" name="proImg" value="浏览.." />
+                        <span class="text" ></span>
+                        <input type="text" name="proImg" value="${bl.proImg}" />
+                        <input type="button" class="button normal long2"  value="浏览.." />
                     </div>
                 </div>
                 <div class="subfild-content base-info">

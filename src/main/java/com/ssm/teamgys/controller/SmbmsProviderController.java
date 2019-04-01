@@ -91,11 +91,14 @@ public class SmbmsProviderController {
         m.addObject("prolist",list);
         return m;
     }
+
+
     @RequestMapping("{proId}/findById")
     public  ModelAndView findById(@PathVariable(value = "proId")String proId){
         ModelAndView m = new ModelAndView("jsp/editProvider");
         SmbmsProvider provider = smbmsProviderService.getOne(proId);
         m.addObject("pr",provider);
+
         return m;
     }
 

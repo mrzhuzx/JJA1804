@@ -1,13 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2019/3/28
-  Time: 11:14
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <%@include file="../appcomm/basePath.jsp" %>
 
 <head>
@@ -74,11 +68,11 @@
                     <span class="optarea">
                         <a href="javascript:;" class="add">
                             <i class="icon"></i>
-                            <span class="text">添加</span>
+                            <span class="text"><a href="jsp/teamadd.jsp">添加</a> </span>
                         </a>
                         <a href="javascript:;" class="delete">
                             <i class="icon"></i>
-                            <span class="text">删除</span>
+                            <span class="text"><a href="team/delete.do">删除</a> </span>
                         </a>
 
                         <a href="javascript:;" class="statistics">
@@ -94,41 +88,39 @@
                 </div>
 
                 <div class="grid">
-                    <table style="margin-left: 0px;width:100%;" >
+                    <table style="margin-left: 0px;width: 100%;" >
                         <thead>
                         <tr>
                             <th name="id">
-                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">addId</span><a
+                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">team_id</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
 
-
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">addContact</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">team_desc</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th>
+                                <div class="ui-table-th" style="width:120px"><span
+                                        class="ui-table-thTitle">team_icon</span><span class="ui-table-drag"></span></div>
                             </th>
 
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">addDesc</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">team_name</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">addPostCode</span><span class="ui-table-drag"></span></div>
-                            </th>
-                            <th class="minWidth">
-                            <div class="ui-table-th" style="width: 120px;"><span
-                                    class="ui-table-thTitle">addTelPhone</span><span class="ui-table-drag"></span></div>
-                            </th>
-                            <th class="minWidth">
-                            <div class="ui-table-th" style="width: 120px;"><span
-                                    class="ui-table-thTitle">creationDate</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">team_slogen</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">modifyDate</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">team_state</span><span class="ui-table-drag"></span></div>
                             </th>
+
+
+
                             <th>
                                 <div class="ui-table-th" style="width:70px"><span
                                         class="ui-table-thTitle">操作</span><span class="ui-table-drag"></span></div>
@@ -147,37 +139,36 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="list"  items="${list}">
+                        <c:forEach   var="tm"  items="${teamList}">
                             <tr>
                                 <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${list.addId}</div>
+                                    <div class="ui-table-td" style="width:70px">${tm.teamId}</div>
                                 </td>
                                 <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${list.addContact}</div>
+                                    <div class="ui-table-td" style="width:120px">${tm.teamDesc}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.addDesc}</div>
+                                    <div class="ui-table-td" style="width:120px">${tm.teamIcon}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.addPostCode}</div>
+                                    <div class="ui-table-td" style="width:120px">${tm.teamName}</div>
                                 </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.addTelPhone}</div>
+                                <td minwidth="minWidth">
+                                    <div class="ui-table-td" style="width: 120px;">${tm.teamSlogen}</div>
                                 </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${list.creationDate}" pattern="yyyy年MM月dd日" /></div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${list.modifyDate}" pattern="yyyy年MM月dd日" /></div>
+                                <td minwidth="minWidth">
+                                    <div class="ui-table-td" style="width: 120px;">${tm.teamState}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="address/${list.addId}/deleteById.do">删除</a><a href="address/${list.addId}/findById.do">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 100px;"></a><a href="team/delete.do?teamId=${tm.teamId}">删除</a></a><a href="javascript:;">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>
                                 </td>
                             </tr>
                         </c:forEach>
+
+
                         </tbody>
                     </table>
                 </div>
@@ -189,4 +180,3 @@
 
 
 </html>
-

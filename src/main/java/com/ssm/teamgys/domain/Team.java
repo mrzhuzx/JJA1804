@@ -2,6 +2,8 @@ package com.ssm.teamgys.domain;
 
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 
@@ -10,8 +12,10 @@ import javax.persistence.*;
  *   华铭、泽锋
  */
 @Entity
+@DynamicUpdate
 @Table
 @Data
+@EntityListeners(AuditingEntityListener.class)
 public class Team {
 
     @Id

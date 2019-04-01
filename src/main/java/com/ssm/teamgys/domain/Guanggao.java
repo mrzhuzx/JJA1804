@@ -19,11 +19,11 @@ public class Guanggao {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long ggId;
+  private Long ggId;
   private String ggTitle; //主题
   private String ggImg;//图片
   private String ggUrl;//链接
-  private Date ggTime;//时间
+
   @CreatedDate
   private Date createTime;
   /** 修改时间 */

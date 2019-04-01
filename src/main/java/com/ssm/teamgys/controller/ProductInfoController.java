@@ -26,7 +26,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/product")
-public class ProductInfoControlle {
+public class ProductInfoController {
 
     @Autowired
     ProductInfoService productInfoService;
@@ -54,40 +54,51 @@ public class ProductInfoControlle {
 
         return m;
     }
-//    @RequestMapping("update")
-//
-//    public   ModelAndView update(@RequestParam  String  productId,String productName,Double productPrice,Integer productStock,String productDescription,String productIcon,Integer productStatus,Integer categoryType){
-//        ModelAndView m = new ModelAndView("jsp/updateproduct");
-//
-//        productInfoService.updaall( productId, productName, productPrice, productStock, productDescription, productIcon, productStatus, categoryType);
-//
-//        m.addObject("productId",productId);
-//        m.addObject("productName",productName);
-//        m.addObject("productPrice",productPrice);
-//        m.addObject("productStock",productStock);
-//        m.addObject("productDescription",productDescription);
-//        m.addObject("productIcon",productIcon);
-//        m.addObject("productStatus",productStatus);
-//        m.addObject("categoryType",categoryType);
-//
-//
-//        System.out.println(productId);
-//
-//        return  m;
-//    }
+
 
     @RequestMapping("/save")
-    public ModelAndView save(@ModelAttribute ProductInfo pro){
-
+    public ModelAndView save(@ModelAttribute ProductInfo pro  ,@RequestParam  Integer  abc){
+        System.out.println(pro);
         pro.setProductId(MYUUID.getYYYYMMDDhhmmss());
         productInfoService.save(pro);
         System.out.println(pro.toString());
 
-        ModelAndView m = new ModelAndView("jsp/savepro");
+        System.out.println("-----------------------------"+abc);
+        Integer gg = pro.getProductStatus();
+        System.out.println(gg+"+++++++++++++++++++++++");
+        ModelAndView m = new ModelAndView("jsp/product");
 
+        List<ProductInfo> findsearch = productInfoService.findsearch();
+        m.addObject("findsearch", findsearch);
         return m;
 
     }
+
+
+    @RequestMapping(value = "/{proid}/searchone")
+
+    public ModelAndView  update(  @PathVariable(value = "proid") String  searchone){
+
+
+        ProductInfo one = productInfoService.findOne(searchone);
+
+        ModelAndView  m =   new ModelAndView("jsp/product");
+
+        m.addObject("proone",one);
+        return m;
+    }
+
+
+//    @RequestMapping(value = "/{a}/{b}/show002") //rest/a/b/show002.do
+//    public ModelAndView show002(@PathVariable(value = "a") String a,@PathVariable("b") String  userid) {
+//
+//        ModelAndView m = new ModelAndView("rest");
+//
+//        m.addObject("a", a);
+//        m.addObject("userid",userid);
+//        return m;
+//    }
+
 
 
 

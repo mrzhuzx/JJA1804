@@ -1,6 +1,7 @@
 package com.ssm.teamgys.domain;
 
 
+import com.ssm.teamgys.appcomm.enums.SmbmsBillEnum;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -49,7 +50,7 @@ public class SmbmsBill {
     /**
      * 产品支付
      */
-    private Integer isPayment; //
+    private Integer isPayment = SmbmsBillEnum.ISPAY_WAIT.getCode(); //
 
     @CreatedDate
     private Date creationDate;

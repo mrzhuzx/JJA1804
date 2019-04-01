@@ -156,7 +156,7 @@
                                     <div class="ui-table-td" style="width: 100%;">${g.ggUrl}</div>
                                 </td>
                                 <td   width="20%" minwidth="minWidth">
-                                    <div class="ui-table-td" style="width: 100%;">${g.ggTime}</div>
+                                    <div class="ui-table-td" style="width: 100%;">${g.createTime}</div>
                                 </td>
 
                                 <td class="ui-table-operation" style="width: 10%;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>

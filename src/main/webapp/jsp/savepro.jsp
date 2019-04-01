@@ -41,7 +41,7 @@
 <title>基础信息</title>
 </head>
 
-<form method="post"  action="product/save.do">
+<form action="product/save.do" method="post">
     <table border="1">
         <tr>
             <td>productName</td>
@@ -61,13 +61,16 @@
 
         </tr>
         <tr><td>productIcon</td>
-            <td><input type="productIcon" value=" https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553836857173&di=19cdfcd2e3f69cd9e32a3787d48be095&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F-vo3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2F9358d109b3de9c827c5b22e56081800a19d8439a.jpg"></td>
+            <td><input type="productIcon" value="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D21%2C0%2C980%2C647%3Bc0%3Dbaike116%2C5%2C5%2C116%2C38/sign=91c9a50cdd39b600598155f7d4620406/b999a9014c086e06999299a40a087bf40ad1cb23.jpg"></td>
         </tr>
-        <tr><td>productStatus</td>
-            <td><input type="productStatus" value="1 "></td>
+        <tr>
+            <td>productStatus</td>
+            <td><input type="productStatus" value="1"></td>
         </tr>
-        <tr><td>categoryType</td>
-            <td><input type="categoryType" value="1 "></td>
+        <tr>
+            <td>categoryType</td>
+            <td><input type="categoryType" value="1"></td>
+            <td><input type="abc" value="1"></td>
         </tr>
 
     </table>

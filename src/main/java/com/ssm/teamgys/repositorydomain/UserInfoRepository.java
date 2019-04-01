@@ -20,7 +20,7 @@ public interface UserInfoRepository extends JpaRepository<UserInfo,Long> {
 
     @Transactional
     @Modifying(clearAutomatically = true)
-    @Query(" update UserInfo set userPassword=?2 ,userAddress=?3,userPhone=?4,userName=?5 where userId=?1")
-    int update(Long userId,String userPassword ,String userAddress,String userPhone,String userName);
+    @Query(" update UserInfo set userPassword=?2 ,userAddress=?3,userPhone=?4,userName=?5,userCode=?6 where userId=?1")
+    int update(Long userId,String userPassword ,String userAddress,String userPhone,String userName,String userCode);
 
 }

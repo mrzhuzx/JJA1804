@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -146,5 +147,10 @@ public class SmbmsAddressServiceImpl  implements SmbmsAddressService {
 
     public Integer updateById(Long addId,String addContact){
         return smbmsAddressRepository.updateById(addId,addContact);
+    }
+
+    @Override
+    public Integer updateAddById(Long addId, String addContact, String addDesc, String addPostCode, String addTelPhone, Date modifyDate) {
+        return smbmsAddressRepository.updateAddById(addId,addContact,addDesc,addPostCode,addTelPhone,modifyDate);
     }
 }

@@ -3,13 +3,14 @@ package com.ssm.teamgys.service.impl;
 import com.ssm.teamgys.domain.SmbmsBill;
 import com.ssm.teamgys.repositorydomain.SmbmsBillRepository;
 import com.ssm.teamgys.service.SmbmsBillService;
-import org.hibernate.sql.Update;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -144,7 +145,7 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
 
 
     @Override
-    public int update(Long billId, String productName) {
-        return smbmsBillRepository.update(billId,productName);
+    public int update(Long billId , String billCode, String productId, String productName, String productDesc, Integer productCount, String productUnit, Double totalPrice, Integer isPayment, Long providerId, String proImg, Long addressId) {
+        return smbmsBillRepository.update(billId,billCode,productId,productName,productDesc, productCount,productUnit,totalPrice,isPayment,providerId,proImg,addressId);
     }
 }

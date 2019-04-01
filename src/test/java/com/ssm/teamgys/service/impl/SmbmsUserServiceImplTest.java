@@ -36,9 +36,9 @@ public class SmbmsUserServiceImplTest {
     public void testSave(){
         SmbmsUser s=new  SmbmsUser();
         s.setUserCode("NO.00000001");
-        s.setUserName("阿萨德");
+        s.setUserName("阿松");
         s.setUserPassword("123123");
-        s.setUserPhone("12580");
+        s.setUserPhone("139600");
 
             smbmsUserService.save(s);
 

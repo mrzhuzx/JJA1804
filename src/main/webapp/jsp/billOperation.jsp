@@ -52,7 +52,7 @@
             <div class="table">
                 <div class="opt ue-clear">
                     <span class="optarea">
-                        <a href="javascript:;" class="add">
+                        <a href="jsp/bill.jsp" class="add">
                             <i class="icon"></i>
                             <span class="text">添加</span>
                         </a>
@@ -173,7 +173,7 @@
                                         <i class="icon"></i>
                                         <span class="text">删除</span>
                                     </a>
-                                    <a href="javascript:;" class="statistics">
+                                    <a href="bill/queryOne.do?billId=${bl.billId}" class="statistics">
                                             <i class="icon"></i>
                                             <span class="text">编辑</span>
                                         </a></div>

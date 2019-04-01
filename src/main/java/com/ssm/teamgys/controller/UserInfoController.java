@@ -1,11 +1,14 @@
 package com.ssm.teamgys.controller;
 
 import com.ssm.teamgys.domain.UserInfo;
-import com.ssm.teamgys.service.SmbmRoleService;
+
 import com.ssm.teamgys.service.UserInfoService;
+
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,7 +23,7 @@ import java.util.List;
  * {time}
  * version:1.2.3
  */
-
+@Log4j2
 @Controller
 @RequestMapping("/userinfo")
 public class UserInfoController {
@@ -46,7 +49,25 @@ public class UserInfoController {
        return a;
     }
 
+    @RequestMapping("/save")
+    public ModelAndView usersave(@ModelAttribute UserInfo ui) {
 
+        ModelAndView u = new ModelAndView("jsp/userinfo");
+        UserInfo save = userInfoService.save(ui);
+        if (save != null) {
+            List<UserInfo> userInfos = userInfoService.findAll();
+            u.addObject("userInfos", userInfos);
+            return u;
+        } else {
+            log.info("添加失败");
+            List<UserInfo> userInfos = userInfoService.findAll();
+            u.addObject("userInfos", userInfos);
+            return u;
+
+        }
+
+
+    }
 
 
 

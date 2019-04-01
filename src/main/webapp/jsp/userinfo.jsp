@@ -67,7 +67,7 @@
                         <i class="card"></i>
                     </span>
                     <span class="optarea">
-                        <a href="khsave.jsp" class="add">
+                        <a href="jsp/khsave.jsp" class="add">
                             <i class="icon"></i>
                             <span class="text">添加</span>
                         </a>

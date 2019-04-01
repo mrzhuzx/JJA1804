@@ -12,6 +12,18 @@
     <link rel="stylesheet" type="text/css" href="css/skin_/table.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery.grid.css"/>
 
+    <script type="text/javascript">
+        function p_del() {
+            var msg = "您真的确定要删除吗？\n\n请确认！";
+            if (confirm(msg)==true){
+
+               return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+
     <STYLE type="text/css">
 
         /* Table Head */
@@ -150,7 +162,9 @@
                                     <div class="ui-table-td" style="width: 120px;">${pc.updateTime}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 100px;"><a href="protype/delete.do?categoryId=${pc.categoryId}"  onclick="javascript:return p_del()">删除</a><a href="protype/update.do?categoryId=${pc.categoryId}">编辑</a></td>
+
+
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

@@ -65,7 +65,7 @@ public class SmbmsBill {
      */
     private String proImg;
     /**
-     * 送货地址
+     * 送货地址ID
      */
     private Long addressId;
 

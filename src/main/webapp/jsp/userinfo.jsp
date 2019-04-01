@@ -67,7 +67,7 @@
                         <i class="card"></i>
                     </span>
                     <span class="optarea">
-                        <a href="javascript:;" class="add">
+                        <a href="jsp/khsave.jsp" class="add">
                             <i class="icon"></i>
                             <span class="text">添加</span>
                         </a>
@@ -120,10 +120,10 @@
                                         class="ui-table-thTitle">userAddress</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
-                                <div class="ui-table-th" style="width:70px"><span
+                                <div class="ui-table-th" style="width:70px">操作<span
                                         class="ui-table-thTitle"></span><span class="ui-table-drag"></span></div>
                             </th>
-                            <th class="ui-table-blank" width="10" style="width: 10px;">&nbsp;</th>
+
                         </tr>
                         </thead>
                     </table>
@@ -155,7 +155,7 @@
                                     <div class="ui-table-td" style="width:103px">${ui.userAddress}</div>
                                 </td>
                                 <td>
-                                <td class="ui-table-operation" style="width: 100px;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 100px;"><a href="userinfo/userdel.do?userId=${ui.userId}">删除</a><a href="">编辑</a></td>
 
                                 </td>
                                 <td class="ui-table-blank" style="width: 30px;">

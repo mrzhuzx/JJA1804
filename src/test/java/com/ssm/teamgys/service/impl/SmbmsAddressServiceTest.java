@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -82,6 +83,11 @@ public class SmbmsAddressServiceTest {
         System.out.println("修改成功！" + integer);
     }
 
+    @Test
+    public void updateAddById(){
+        Integer integer = smbmsAddressService.updateAddById(13l,"加一一","北京天安门65号aa","31231564","1551616464",new Date());
+        System.out.println("修改成功！" + integer);
+    }
     @Test
     public void deleteById(){
         smbmsAddressService.deleteById("1");

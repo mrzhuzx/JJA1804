@@ -33,7 +33,6 @@ public class TeamgysApplication {
         SpringApplication.run(TeamgysApplication.class, args);
     }
 
-
     /**
      * 设置匹配spirngmvc :*.do后缀请求提交方式
      * @param dispatcherServlet

@@ -12,18 +12,6 @@
     <link rel="stylesheet" type="text/css" href="css/skin_/table.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery.grid.css"/>
 
-    <script type="text/javascript">
-        function p_del() {
-            var msg = "您真的确定要删除吗？\n\n请确认！";
-            if (confirm(msg)==true){
-
-               return true;
-            }else{
-                return false;
-            }
-        }
-    </script>
-
     <STYLE type="text/css">
 
         /* Table Head */
@@ -53,7 +41,7 @@
         }
 
     </STYLE>
-    <title>产品分类</title>
+    <title>角色分类</title>
 </head>
 
 <body>
@@ -78,7 +66,7 @@
                         <i class="card"></i>
                     </span>
                     <span class="optarea">
-                        <a href="javascript:;" class="add">
+                        <a href="jsp/jssave.jsp" class="add">
                             <i class="icon"></i>
                             <span class="text">添加</span>
                         </a>
@@ -104,27 +92,27 @@
                         <thead>
                         <tr>
                             <th name="id">
-                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">categoryId</span><a
+                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">roleId</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
 
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryName</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">roleCode</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryType</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">roleName</span><span class="ui-table-drag"></span></div>
                             </th>
 
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">createTime</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">roleDesc</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">updateTime</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">roleStatus</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:70px"><span
@@ -144,27 +132,25 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="pc"  items="${productCategoryList}">
+                        <c:forEach   var="sm"  items="${smbmRoleList}">
                             <tr>
                                 <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${pc.categoryId}</div>
+                                    <div class="ui-table-td" style="width:70px">${sm.roleId}</div>
                                 </td>
                                 <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryName}</div>
+                                    <div class="ui-table-td" style="width:120px">${sm.roleCode}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryType}</div>
+                                    <div class="ui-table-td" style="width:120px">${sm.roleName}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.createTime}</div>
+                                    <div class="ui-table-td" style="width:120px">${sm.roleDesc}</div>
                                 </td>
                                 <td minwidth="minWidth">
-                                    <div class="ui-table-td" style="width: 120px;">${pc.updateTime}</div>
+                                    <div class="ui-table-td" style="width: 120px;">${sm.roleStatus}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="protype/delete.do?categoryId=${pc.categoryId}"  onclick="javascript:return p_del()">删除</a><a href="protype/update.do?categoryId=${pc.categoryId}">编辑</a></td>
-
-
+                                <td class="ui-table-operation" style="width: 100px;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

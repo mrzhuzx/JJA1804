@@ -9,6 +9,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import javax.naming.Name;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -27,7 +28,8 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 public class ProductInfo {
 
-    @Id //uuid
+    @Id//uuid
+    @Column(name="productId")
     private String productId;
 
     /** 名字. */

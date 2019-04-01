@@ -54,27 +54,7 @@ public class ProductInfoControlle {
 
         return m;
     }
-//    @RequestMapping("update")
-//
-//    public   ModelAndView update(@RequestParam  String  productId,String productName,Double productPrice,Integer productStock,String productDescription,String productIcon,Integer productStatus,Integer categoryType){
-//        ModelAndView m = new ModelAndView("jsp/updateproduct");
-//
-//        productInfoService.updaall( productId, productName, productPrice, productStock, productDescription, productIcon, productStatus, categoryType);
-//
-//        m.addObject("productId",productId);
-//        m.addObject("productName",productName);
-//        m.addObject("productPrice",productPrice);
-//        m.addObject("productStock",productStock);
-//        m.addObject("productDescription",productDescription);
-//        m.addObject("productIcon",productIcon);
-//        m.addObject("productStatus",productStatus);
-//        m.addObject("categoryType",categoryType);
-//
-//
-//        System.out.println(productId);
-//
-//        return  m;
-//    }
+
 
     @RequestMapping("/save")
     public ModelAndView save(@ModelAttribute ProductInfo pro){
@@ -83,7 +63,7 @@ public class ProductInfoControlle {
         productInfoService.save(pro);
         System.out.println(pro.toString());
 
-        ModelAndView m = new ModelAndView("jsp/savepro");
+        ModelAndView m = new ModelAndView("jsp/product");
 
         return m;
 

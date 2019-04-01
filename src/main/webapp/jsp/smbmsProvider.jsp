@@ -1,7 +1,13 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2019/3/28
+  Time: 11:14
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
 <%@include file="../appcomm/basePath.jsp" %>
 
 <head>
@@ -41,7 +47,6 @@
         }
 
     </STYLE>
-
     <title>产品分类</title>
 </head>
 
@@ -67,7 +72,7 @@
                         <i class="card"></i>
                     </span>
                     <span class="optarea">
-                        <a href="jsp/khsave.jsp" class="add">
+                        <a href="javascript:;" class="add">
                             <i class="icon"></i>
                             <span class="text">添加</span>
                         </a>
@@ -93,72 +98,103 @@
                         <thead>
                         <tr>
                             <th name="id">
-                                <div class="ui-table-th" style="width:50px"><span class="ui-table-thTitle">userId</span><a
+                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">proId</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
-                            <th name="name">
-                                <div class="ui-table-th" style="width:100px"><span
-                                        class="ui-table-thTitle">userCode</span><a href="javascript:;"
-                                                                               class="ui-icon2 ui-icon2-sort"></a><span
-                                        class="ui-table-drag"></span></div>
-                            </th>
+
+
                             <th>
-                                <div class="ui-table-th" style="width:100px"><span
-                                        class="ui-table-thTitle">userName</span><span class="ui-table-drag"></span></div>
+                                <div class="ui-table-th" style="width:120px"><span
+                                        class="ui-table-thTitle">proCode</span><span class="ui-table-drag"></span></div>
                             </th>
-                            <th>
-                                <div class="ui-table-th" style="width:110px"><span
-                                        class="ui-table-thTitle">userPassword</span><span class="ui-table-drag"></span></div>
+
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">proName</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">userPhone</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">proDesc</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                            <div class="ui-table-th" style="width: 120px;"><span
+                                    class="ui-table-thTitle">proContact</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                            <div class="ui-table-th" style="width: 120px;"><span
+                                    class="ui-table-thTitle">proPhone</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">proAddress</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">proFax</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">creationDate</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">modifyDate</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
-                                <div class="ui-table-th" style="width:150px"><span
-                                        class="ui-table-thTitle">userAddress</span><span class="ui-table-drag"></span></div>
-                            </th>
-                            <th>
-                                <div class="ui-table-th" style="width:70px">操作<span
-                                        class="ui-table-thTitle"></span><span class="ui-table-drag"></span></div>
+                                <div class="ui-table-th" style="width:70px"><span
+                                        class="ui-table-thTitle">操作</span><span class="ui-table-drag"></span></div>
                             </th>
 
                         </tr>
+
+
                         </thead>
                     </table>
-                    <thead>
+
+
                 </div>
 
                 <div class="pagination">
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="ui"  items="${userInfoList}">
+                        <c:forEach   var="list"  items="${prolist}">
                             <tr>
                                 <td name="id">
-                                    <div class="ui-table-td" style="width:83px">${ui.userId}</div>
+                                    <div class="ui-table-td" style="width:70px">${list.proId}</div>
                                 </td>
                                 <td name="name">
-                                    <div class="ui-table-td" style="width:133px">${ui.userCode}</div>
+                                    <div class="ui-table-td" style="width:120px">${list.proCode}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:133px">${ui.userName}</div>
+                                    <div class="ui-table-td" style="width:120px">${list.proName}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:133px">${ui.userPassword}</div>
-                                </td>
-                                <td minwidth="minWidth">
-                                    <div class="ui-table-td" style="width: 184px;">${ui.userPhone}</div>
+                                    <div class="ui-table-td" style="width:120px">${list.proDesc}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:103px">${ui.userAddress}</div>
+                                    <div class="ui-table-td" style="width:120px">${list.proContact}</div>
                                 </td>
                                 <td>
-                                <td class="ui-table-operation" style="width: 100px;"><a href="userinfo/userdel.do?userId=${ui.userId}">删除</a><a href="">编辑</a></td>
+                                    <div class="ui-table-td" style="width:120px">${list.proPhone}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${list.proAddress}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${list.proFax}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${list.creationDate}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${list.modifyDate}</div>
+                                </td>
 
-                                </td>
-                                <td class="ui-table-blank" style="width: 30px;">
+                                <td class="ui-table-operation" style="width: 100px;"><a href="provider/${list.proId}/deleteById.do">删除</a><a href="provider/${list.proId}/findById.do">编辑</a></td>
+
+                                <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>
                                 </td>
                             </tr>

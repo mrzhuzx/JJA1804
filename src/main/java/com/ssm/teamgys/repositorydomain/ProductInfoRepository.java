@@ -23,9 +23,9 @@ public interface ProductInfoRepository extends JpaRepository<ProductInfo,String>
     @Query(" update ProductInfo set productStatus=?2 where productId=?1")
      int  update(String productId,Integer productStatus);
 
-//    @Transactional
-//    @Modifying(clearAutomatically = true)
-//    @Query(" update ProductInfo set productName=?2 ,productPrice=?3,productStock=?4,productDescription=?5,productIcon=?6,productStatus=?7,categoryType=?8 where productId=?1")
-//    int  updateall(String productId,String productName,Double productPrice,Integer productStock,String productDescription,String productIcon,Integer productStatus,Integer categoryType);
+    @Transactional
+    @Modifying(clearAutomatically = true)
+    @Query(" update ProductInfo set productName=?2 ,productPrice=?3,productStock=?4,productDescription=?5,productIcon=?6,productStatus=?7,categoryType=?8 where productId=?1")
+    int  updateall(String productId,String productName,Double productPrice,Integer productStock,String productDescription,String productIcon,Integer productStatus,Integer categoryType);
 
 }

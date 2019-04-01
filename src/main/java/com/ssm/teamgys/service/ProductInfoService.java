@@ -30,6 +30,8 @@ public interface ProductInfoService{
     List<ProductInfo> findsearch();
     void   updateone(String   productId  ,Integer productStatus);
 
+    int  update(String   productId ,String productName,Double productPrice,Integer productStock,String productDescription,String productIcon,Integer productStatus,Integer categoryType);
+
     Page<ProductInfo> findAll(Pageable pageable);
 
 

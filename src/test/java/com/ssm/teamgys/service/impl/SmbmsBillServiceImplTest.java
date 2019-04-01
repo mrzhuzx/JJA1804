@@ -60,7 +60,7 @@ public class SmbmsBillServiceImplTest {
         bill.setProductCount(8);//产品数量
         bill.setTotalPrice(888.00);// 产品价格
         bill.setIsPayment(1); //产品支付
-         bill.setCreationDate(new Date());
+
         bill.setProviderId(12);//供应商Id
         bill.setProImg("https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D21%2C0%2C980%2C647%3Bc0%3Dbaike116%2C5%2C5%2C116%2C38/sign=91c9a50cdd39b600598155f7d4620406/b999a9014c086e06999299a40a087bf40ad1cb23.jpg");//产品图片
         bill.setAddressId(12l);//送货地址ID
@@ -82,7 +82,7 @@ public class SmbmsBillServiceImplTest {
             bill.setProductCount(r.nextInt(10)+1);//产品数量
             bill.setTotalPrice(r.nextInt(1000)+500.00);// 产品价格
             bill.setIsPayment(r.nextInt(3)+1); //产品支付   0   1   2
-            bill.setCreationDate(new Date());
+
             // modifyDate;
             bill.setProviderId(12);//供应商Id
             bill.setProImg("https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D21%2C0%2C980%2C647%3Bc0%3Dbaike116%2C5%2C5%2C116%2C38/sign=91c9a50cdd39b600598155f7d4620406/b999a9014c086e06999299a40a087bf40ad1cb23.jpg");//产品图片

@@ -70,11 +70,6 @@
                             <i class="icon"></i>
                             <span class="text">添加</span>
                         </a>
-                        <a href="javascript:;" class="delete">
-                            <i class="icon"></i>
-                            <span class="text">删除</span>
-                        </a>
-
                         <a href="javascript:;" class="statistics">
                             <i class="icon"></i>
                             <span class="text">统计</span>
@@ -171,7 +166,8 @@
                                     <div class="ui-table-td" style="width: 120px;">${su.modifyDate}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 100px;"><a href="">删除
+                                </a><a href="javascript:;">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.dialog.css" />
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
-    <title>XXXX</title>
+    <title>供应商项目</title>
 </head>
 
 <body>
@@ -71,7 +71,7 @@
 
     <div id="ft" class="ue-clear">
         <div class="ft1 ue-clear">
-            <i class="ft-icon1"></i> <span>数字管理系统</span>
+            <i class="ft-icon1"></i> <span>供应商管理系统</span>
             <em>Digital Pertal</em>
         </div>
         <div class="ft2 ue-clear">
@@ -139,7 +139,7 @@
 <div class="system-switch">
     <ul>
         <li>
-            <span class="system-name"><i></i>数字管理系统</span>
+            <span class="system-name"><i></i>供应商管理系统</span>
         </li>
         <li>
             <span class="system-name"><i></i>网络信息管理系统</span>

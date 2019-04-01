@@ -1,4 +1,4 @@
-package com.ssm.teamgys;
+package com.ssm.teamgys.appcomm;
 
 import java.util.Arrays;
 import java.util.List;

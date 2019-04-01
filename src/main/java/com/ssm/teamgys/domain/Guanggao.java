@@ -2,6 +2,8 @@ package com.ssm.teamgys.domain;
 
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -22,6 +24,11 @@ public class Guanggao {
   private String ggImg;//图片
   private String ggUrl;//链接
   private Date ggTime;//时间
+  @CreatedDate
+  private Date createTime;
+  /** 修改时间 */
+  @LastModifiedDate
+  private Date updateTime;
 
 
 

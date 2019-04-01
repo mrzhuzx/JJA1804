@@ -20,8 +20,8 @@ import java.util.Optional;
  */
 @Service
 public class GuanggaoServiceImpl implements GuanggaoService {
-@Autowired
-GuanggaoRepository guanggaoRepository;
+    @Autowired
+    GuanggaoRepository guanggaoRepository;
 
     /**
      * 查询全部
@@ -266,5 +266,10 @@ GuanggaoRepository guanggaoRepository;
     @Override
     public <S extends Guanggao> boolean exists(Example<S> example) {
         return false;
+    }
+
+    @Override
+    public int update(String ggTitle, String ggImg, String ggUrl, long ggId) {
+        return guanggaoRepository.update(ggTitle,ggImg,ggUrl,ggId);
     }
 }

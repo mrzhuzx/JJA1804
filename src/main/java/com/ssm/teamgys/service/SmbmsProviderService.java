@@ -4,6 +4,8 @@ import com.ssm.teamgys.appcomm.BaseService;
 import com.ssm.teamgys.domain.SmbmsProvider;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * time：2019/3/25--15:52
  * Author:lanxj
@@ -13,4 +15,5 @@ import org.springframework.stereotype.Service;
 
 public interface SmbmsProviderService extends BaseService<SmbmsProvider> {
      Integer updateById(Long proId,String proName);
+     Integer updateProById(Long proId, String proCode, String proName, String proDesc, String proContact, String proPhone, String proAddress, String proFax, Date modifyDate);
 }

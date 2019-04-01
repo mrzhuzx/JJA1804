@@ -1,7 +1,13 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2019/3/28
+  Time: 11:14
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
 <%@include file="../appcomm/basePath.jsp" %>
 
 <head>
@@ -11,18 +17,6 @@
     <link rel="stylesheet" type="text/css" href="css/WdatePicker.css"/>
     <link rel="stylesheet" type="text/css" href="css/skin_/table.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery.grid.css"/>
-
-    <script type="text/javascript">
-        function p_del() {
-            var msg = "您真的确定要删除吗？\n\n请确认！";
-            if (confirm(msg)==true){
-
-               return true;
-            }else{
-                return false;
-            }
-        }
-    </script>
 
     <STYLE type="text/css">
 
@@ -104,27 +98,36 @@
                         <thead>
                         <tr>
                             <th name="id">
-                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">categoryId</span><a
+                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">addId</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
 
+
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryName</span><span class="ui-table-drag"></span></div>
-                            </th>
-                            <th>
-                                <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">categoryType</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">addContact</span><span class="ui-table-drag"></span></div>
                             </th>
 
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">createTime</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">addDesc</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">updateTime</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">addPostCode</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                            <div class="ui-table-th" style="width: 120px;"><span
+                                    class="ui-table-thTitle">addTelPhone</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                            <div class="ui-table-th" style="width: 120px;"><span
+                                    class="ui-table-thTitle">creationDate</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">modifyDate</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:70px"><span
@@ -144,27 +147,31 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="pc"  items="${productCategoryList}">
+                        <c:forEach   var="list"  items="${list}">
                             <tr>
                                 <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${pc.categoryId}</div>
+                                    <div class="ui-table-td" style="width:70px">${list.addId}</div>
                                 </td>
                                 <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryName}</div>
+                                    <div class="ui-table-td" style="width:120px">${list.addContact}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.categoryType}</div>
+                                    <div class="ui-table-td" style="width:120px">${list.addDesc}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${pc.createTime}</div>
+                                    <div class="ui-table-td" style="width:120px">${list.addPostCode}</div>
                                 </td>
-                                <td minwidth="minWidth">
-                                    <div class="ui-table-td" style="width: 120px;">${pc.updateTime}</div>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${list.addTelPhone}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${list.creationDate}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:120px">${list.modifyDate}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="protype/delete.do?categoryId=${pc.categoryId}"  onclick="javascript:return p_del()">删除</a><a href="protype/update.do?categoryId=${pc.categoryId}">编辑</a></td>
-
-
+                                <td class="ui-table-operation" style="width: 100px;"><a href="address/${list.addId}/deleteById.do">删除</a><a href="address/${list.addId}/findById.do">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

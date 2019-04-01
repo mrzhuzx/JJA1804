@@ -12,6 +12,6 @@ import java.util.List;
 
 
 public interface GuanggaoService extends BaseService<Guanggao> {
-
+    int update(String ggTitle, String ggImg, String ggUrl,long ggId);
 
 }

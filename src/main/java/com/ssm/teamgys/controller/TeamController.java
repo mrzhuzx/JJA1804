@@ -27,13 +27,13 @@ public class TeamController {
      * 删除
      */
     @RequestMapping("/delete")
-    public String  delete(@RequestParam  String  teamId){
-
-
-
+    public ModelAndView teamDelete(@RequestParam  String  teamId){
+        ModelAndView m = new ModelAndView("jsp/team");
         teamService.deleteById(teamId);
+        List<Team> teamList = teamService.findAll();
+        m.addObject("teamList",teamList);
 
-        return"redirect:list.do";
+        return m;
 
 
     }
@@ -45,11 +45,12 @@ public class TeamController {
      * @return
      */
     @RequestMapping("/save")
-    public String  save(Team team){
+    public ModelAndView teamSave(Team team){
         teamService.save(team);
-
-
-        return "redirect:list.do";
+        ModelAndView m = new ModelAndView("jsp/team");
+        List<Team> teamList = teamService.findAll();
+        m.addObject("teamList",teamList);
+        return m;
 
     }
 /**

@@ -3,6 +3,10 @@ package com.ssm.teamgys.controller;
 import com.ssm.teamgys.domain.Team;
 import com.ssm.teamgys.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -77,6 +81,19 @@ public class TeamController {
         Team one = teamService.getOne(String.valueOf(teamId));
         System.out.println(one);
         m.addObject("tm",one);
+        return m;
+    }
+    @RequestMapping("findpage")
+    public ModelAndView findPage(@RequestParam(required = false)Integer pagenum){
+        ModelAndView m = new ModelAndView("jsp/team/team");
+        if(pagenum == null || pagenum<=0){
+            pagenum = 1;
+        }
+        Integer size = 3;
+        Pageable pageable = new PageRequest(pagenum-1,size,new Sort(Sort.Direction.ASC,"teamId"));
+        Page<Team> teamPage = teamService.findAll(pageable);
+        m.addObject("teamList", teamPage.getContent());
+        m.addObject("pagenum",pagenum);
         return m;
     }
 

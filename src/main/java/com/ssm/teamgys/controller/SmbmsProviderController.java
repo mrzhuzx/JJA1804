@@ -25,7 +25,7 @@ import java.util.List;
 @Controller
 @RequestMapping("smbmsProvider")
 @Log4j2
-public class SmbmsProviderController {
+public class  SmbmsProviderController {
 
     @Autowired
     SmbmsProviderService smbmsProviderService;

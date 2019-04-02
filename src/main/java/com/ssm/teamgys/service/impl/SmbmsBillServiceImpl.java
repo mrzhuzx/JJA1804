@@ -44,7 +44,7 @@ public class SmbmsBillServiceImpl implements SmbmsBillService {
 
     @Override
     public long count() {
-        return 0;
+        return smbmsBillRepository.count();
     }
 
     @Override

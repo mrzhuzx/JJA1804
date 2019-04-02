@@ -2,8 +2,10 @@ package com.ssm.teamgys.controller;
 
 
 import com.ssm.teamgys.appcomm.MYUUID;
+import com.ssm.teamgys.domain.ProductCategory;
 import com.ssm.teamgys.domain.ProductInfo;
 
+import com.ssm.teamgys.repositorydomain.ProductCategoryRepository;
 import com.ssm.teamgys.service.ProductInfoService;
 
 import com.sun.org.apache.xpath.internal.operations.Mod;
@@ -26,10 +28,11 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/product")
-public class ProductInfoControlle {
+public class ProductInfoController {
 
     @Autowired
     ProductInfoService productInfoService;
+    ProductCategoryRepository productCategoryRepository;
 
 
     @RequestMapping("/pro")
@@ -54,40 +57,62 @@ public class ProductInfoControlle {
 
         return m;
     }
-//    @RequestMapping("update")
-//
-//    public   ModelAndView update(@RequestParam  String  productId,String productName,Double productPrice,Integer productStock,String productDescription,String productIcon,Integer productStatus,Integer categoryType){
-//        ModelAndView m = new ModelAndView("jsp/updateproduct");
-//
-//        productInfoService.updaall( productId, productName, productPrice, productStock, productDescription, productIcon, productStatus, categoryType);
-//
-//        m.addObject("productId",productId);
-//        m.addObject("productName",productName);
-//        m.addObject("productPrice",productPrice);
-//        m.addObject("productStock",productStock);
-//        m.addObject("productDescription",productDescription);
-//        m.addObject("productIcon",productIcon);
-//        m.addObject("productStatus",productStatus);
-//        m.addObject("categoryType",categoryType);
-//
-//
-//        System.out.println(productId);
-//
-//        return  m;
-//    }
+
 
     @RequestMapping("/save")
-    public ModelAndView save(@ModelAttribute ProductInfo pro){
+    public ModelAndView save(@ModelAttribute ProductInfo pro ){
 
         pro.setProductId(MYUUID.getYYYYMMDDhhmmss());
         productInfoService.save(pro);
         System.out.println(pro.toString());
 
-        ModelAndView m = new ModelAndView("jsp/savepro");
+        ModelAndView m = new ModelAndView("jsp/product");
+
+        List<ProductInfo> findsearch = productInfoService.findsearch();
+        m.addObject("findsearch", findsearch);
+
 
         return m;
 
     }
+
+
+    @RequestMapping(value = "/{proid}/searchone")
+
+    public ModelAndView  searchone(  @PathVariable(value = "proid") String  searchone){
+        ProductInfo one = productInfoService.findOne(searchone);
+        System.out.println(one.toString()+"======================");
+
+        ModelAndView  m =   new ModelAndView("jsp/productupdate");
+        m.addObject("proone",one);
+
+
+        return m;
+    }
+
+    @RequestMapping(value = "/{proid}/updateone")
+
+    public   ModelAndView update(@PathVariable(value ="proid")  String  proid,@ModelAttribute ProductInfo pro){
+
+        ModelAndView  m = new ModelAndView("jsp/product");
+        int update = productInfoService.update(proid, pro.getProductName(), pro.getProductPrice(), pro.getProductStock(), pro.getProductDescription(), pro.getProductIcon(), pro.getProductStatus(), pro.getCategoryType());
+
+
+        List<ProductInfo> findsearch = productInfoService.findsearch();
+        m.addObject("findsearch", findsearch);
+
+
+
+
+
+        return  m;
+
+
+
+
+    }
+
+
 
 
 

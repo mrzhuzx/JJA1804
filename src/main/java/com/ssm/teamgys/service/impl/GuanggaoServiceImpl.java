@@ -268,8 +268,9 @@ public class GuanggaoServiceImpl implements GuanggaoService {
         return false;
     }
 
+
     @Override
-    public int update(String ggTitle, String ggImg, String ggUrl, long ggId) {
-        return guanggaoRepository.update(ggTitle,ggImg,ggUrl,ggId);
+    public int update(long ggId, String ggTitle, String ggImg, String ggUrl) {
+        return guanggaoRepository.update(ggId,ggTitle,ggImg,ggUrl);
     }
 }

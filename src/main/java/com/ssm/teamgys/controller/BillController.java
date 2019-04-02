@@ -1,5 +1,6 @@
 package com.ssm.teamgys.controller;
 
+import com.ssm.teamgys.appcomm.enums.SmbmsBillEnum;
 import com.ssm.teamgys.domain.SmbmsBill;
 import com.ssm.teamgys.service.SmbmsBillService;
 
@@ -30,7 +31,6 @@ public class BillController {
     public ModelAndView list(){
         ModelAndView m=new ModelAndView("jsp/billOperation");
         List<SmbmsBill> billList=smbmsBillService.findAll();
-
         m.addObject("billList",billList);
         return m;
     }
@@ -54,6 +54,7 @@ public class BillController {
 
     @RequestMapping("/update")
     public  ModelAndView billupdate(@RequestParam Long billId ,@RequestParam String billCode,@RequestParam String productId,@RequestParam String productName,@RequestParam String productDesc,@RequestParam Integer productCount,@RequestParam String productUnit,@RequestParam Double totalPrice,@RequestParam Integer isPayment,@RequestParam Long providerId,@RequestParam String proImg,@RequestParam Long addressId){
+        System.out.println(isPayment+"3333333333333####################");
         smbmsBillService.update(billId,billCode,productId,productName,productDesc,productCount,productUnit,totalPrice,isPayment,providerId,proImg,addressId);
         ModelAndView m=new ModelAndView("jsp/billOperation");
         System.out.println("11111111"+smbmsBillService.toString());

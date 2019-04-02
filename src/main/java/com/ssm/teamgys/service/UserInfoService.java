@@ -13,7 +13,7 @@ import com.ssm.teamgys.domain.UserInfo;
 
 public interface UserInfoService extends BaseService<UserInfo>{
 
-    int update(Long userId,String userPassword ,String userAddress,String userPhone,String userName);
+    int update(Long userId,String userPassword ,String userAddress,String userPhone,String userName ,String userCode);
 
 
 

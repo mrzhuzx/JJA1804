@@ -112,7 +112,7 @@ public class SmbmRoleServiceImpl implements SmbmRoleService {
 
     @Override
     public SmbmRole getOne(String strId) {
-        return null;
+        return smbmRoleRepository.getOne(Long.valueOf(strId));
     }
 
     @Override
@@ -145,8 +145,9 @@ public class SmbmRoleServiceImpl implements SmbmRoleService {
         return false;
     }
 
+
     @Override
-    public int update(Long roleId, String roleName, String roleDesc, Integer roleStatus) {
-        return smbmRoleRepository.update(roleId,roleName,roleDesc,roleStatus);
+    public int update(Long roleId, String roleName, String roleDesc, Integer roleStatus, String roleCode) {
+        return smbmRoleRepository.update(roleId,roleName,roleDesc,roleStatus,roleCode);
     }
 }

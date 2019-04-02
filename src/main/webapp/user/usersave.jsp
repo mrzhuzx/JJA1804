@@ -24,11 +24,11 @@
        <td></td>
    </tr>
     <tr>
-        <td> <input type="text" name="userCode" value=NO.1100002></td>
+        <td> <input type="text" name="userCode" value=NO.11000020></td>
         <td> <input type="text" name="userName" value=李天然></td>
         <td> <input type="text" name="userPassword" value=122332></td>
-        <td> <input type="text" name="userPhone" value=12580></td>
-        <td> <input type="text" name="userAddress" value=客户></td>
+        <td> <input type="text" name="userPhone" value=15095957878></td>
+        <td> <input type="text" name="userAddress" value=福建省厦门市集美区湖里小区2栋1号></td>
         <td><button class="button" type="submit">添加</button></td>
     </tr>
 

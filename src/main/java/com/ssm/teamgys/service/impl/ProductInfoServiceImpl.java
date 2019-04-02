@@ -66,6 +66,13 @@ public class ProductInfoServiceImpl   implements ProductInfoService {
         productInfoRepository.update(productId,productStatus);
     }
 
+    @Override
+    public int update(String productId, String productName, Double productPrice, Integer productStock, String productDescription, String productIcon, Integer productStatus, Integer categoryType) {
+
+        int updateall = productInfoRepository.updateall(productId, productName, productPrice, productStock, productDescription, productIcon, productStatus, categoryType);
+    return   updateall;
+    }
+
 
     @Override
     public Page<ProductInfo> findAll(Pageable pageable) {

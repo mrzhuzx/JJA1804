@@ -112,7 +112,7 @@ public class SmbmsUserServiceImpl implements SmbmsUserService {
 
     @Override
     public SmbmsUser getOne(String strId) {
-        return null;
+        return smbmsUserRepository.getOne(Long.valueOf(strId.trim()));
     }
 
     @Override

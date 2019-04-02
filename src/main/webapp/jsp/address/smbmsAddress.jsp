@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<%@include file="../../appcomm/basePath.jsp" %>
+<%@include file="../appcomm/basePath.jsp" %>
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7"/>
@@ -147,31 +147,32 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="addresslist"  items="${addresslist}">
+                        <c:forEach   var="list"  items="${list}">
                             <tr>
                                 <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${addresslist.addId}</div>
+                                    <div class="ui-table-td" style="width:70px">${list.addId}</div>
                                 </td>
                                 <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${addresslist.addContact}</div>
+                                    <div class="ui-table-td" style="width:120px">${list.addContact}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${addresslist.addDesc}</div>
+                                    <div class="ui-table-td" style="width:120px">${list.addDesc}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${addresslist.addPostCode}</div>
+                                    <div class="ui-table-td" style="width:120px">${list.addPostCode}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${addresslist.addTelPhone}</div>
+                                    <div class="ui-table-td" style="width:120px">${list.addTelPhone}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${addresslist.creationDate}" pattern="yyyy年MM月dd日" /></div>
+                                    <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${list.creationDate}" pattern="yyyy年MM月dd日" /></div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${addresslist.modifyDate}" pattern="yyyy年MM月dd日" /></div>
+                                    <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${list.modifyDate}" pattern="yyyy年MM月dd日" /></div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="address/${addresslist.addId}/deleteById.do">删除</a><a href="address/${addresslist.addId}/findById.do">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 100px;"><a href="address/${list.addId}/deleteById.do">删除</a>
+                                    <a href="address/${list.addId}/findById.do">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

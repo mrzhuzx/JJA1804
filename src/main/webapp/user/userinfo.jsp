@@ -120,6 +120,14 @@
                                         class="ui-table-thTitle">userAddress</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th>
+                                <div class="ui-table-th" style="width:150px"><span
+                                        class="ui-table-thTitle">creationDate</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th>
+                                <div class="ui-table-th" style="width:150px"><span
+                                        class="ui-table-thTitle">modifyDate</span><span class="ui-table-drag"></span></div>
+                            </th>
+                            <th>
                                 <div class="ui-table-th" style="width:70px">操作<span
                                         class="ui-table-thTitle"></span><span class="ui-table-drag"></span></div>
                             </th>
@@ -155,7 +163,13 @@
                                     <div class="ui-table-td" style="width:103px">${ui.userAddress}</div>
                                 </td>
                                 <td>
-                                <td class="ui-table-operation" style="width: 100px;"><a href="userinfo/userdel.do?userId=${ui.userId}">删除</a><a href="">编辑</a></td>
+                                    <div class="ui-table-td" style="width:103px">${ui.creationDate}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" style="width:103px">${ui.modifyDate}</div>
+                                </td>
+                                <td>
+                                <td class="ui-table-operation" style="width: 100px;"><a href="userinfo/userdel.do?userId=${ui.userId}">删除</a><a href="userinfo/searchone.do?userId=${ui.userId}">编辑</a></td>
 
                                 </td>
                                 <td class="ui-table-blank" style="width: 30px;">

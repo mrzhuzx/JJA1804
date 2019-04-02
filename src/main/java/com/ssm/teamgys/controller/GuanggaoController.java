@@ -71,8 +71,6 @@ public class GuanggaoController {
      * @param ggTitle
      * @param ggImg
      * @param ggUrl
-
-
      * @return
      */
     @RequestMapping("/update")

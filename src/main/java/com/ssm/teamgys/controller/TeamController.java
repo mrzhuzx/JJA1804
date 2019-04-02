@@ -4,6 +4,7 @@ import com.ssm.teamgys.domain.Team;
 import com.ssm.teamgys.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,7 +29,7 @@ public class TeamController {
      */
     @RequestMapping("/delete")
     public ModelAndView teamDelete(@RequestParam  String  teamId){
-        ModelAndView m = new ModelAndView("jsp/team");
+        ModelAndView m = new ModelAndView("jsp/team/team");
         teamService.deleteById(teamId);
         List<Team> teamList = teamService.findAll();
         m.addObject("teamList",teamList);
@@ -43,9 +44,9 @@ public class TeamController {
      * @return
      */
     @RequestMapping("/save")
-    public ModelAndView teamSave(Team team){
+    public ModelAndView teamSave(@ModelAttribute Team team){
         teamService.save(team);
-        ModelAndView m = new ModelAndView("jsp/team");
+        ModelAndView m = new ModelAndView("jsp/team/team");
         List<Team> teamList = teamService.findAll();
         m.addObject("teamList",teamList);
         return m;
@@ -55,25 +56,27 @@ public class TeamController {
  */
     @RequestMapping("/list")
     public ModelAndView list(){
-        ModelAndView m = new ModelAndView("jsp/team");
+        ModelAndView m = new ModelAndView("jsp/team/team");
         List<Team> teamList = teamService.findAll();
         m.addObject("teamList",teamList);
         return m;
     }
     @RequestMapping("/update")
     public ModelAndView teamUpdate(@RequestParam Long teamId,@RequestParam String teamName,@RequestParam String teamSlogen,@RequestParam String teamIcon,@RequestParam String teamState,@RequestParam String teamDesc){
-        System.out.println("进来了");
+        System.out.println("进来了update");
         teamService.update(teamId,teamName,teamSlogen,teamIcon,teamState,teamDesc);
-        ModelAndView m = new ModelAndView("jsp/team");
+        ModelAndView m = new ModelAndView("jsp/team/team");
         List<Team> teamList = teamService.findAll();
         m.addObject("teamList",teamList);
         return m;
     }
     @RequestMapping ("queryone")
     public ModelAndView queryOne(@RequestParam Long teamId){
-        ModelAndView m = new ModelAndView("jsp/teamUpdate");
+        System.out.println("进来了queryone");
+        ModelAndView m = new ModelAndView("jsp/team/teamupdate");
         Team one = teamService.getOne(String.valueOf(teamId));
-        m.addObject(one);
+        System.out.println(one);
+        m.addObject("tm",one);
         return m;
     }
 

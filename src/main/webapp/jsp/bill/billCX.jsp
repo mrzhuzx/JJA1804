@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<%@include file="../appcomm/basePath.jsp" %>
+<%@include file="../../appcomm/basePath.jsp" %>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -36,9 +36,9 @@
     </div>
     <div id="bd">
         <div id="main">
-            <form action="bill/update.do?billId=${bl.billId}" method="post">
+
                 <h2 class="subfild">
-                    <span>修改账单</span>
+                    <span>查看账单详情</span>
                 </h2>
 
 
@@ -46,7 +46,7 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>流水号</label>
                         <div class="kv-item-content">
-                            <input type="text" name="billCode" value="${bl.billCode}" />
+                           ${bl.billCode}
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>产品编号</label>
                         <div class="kv-item-content">
-                            <input type="text" name="productId" value="${bl.productId}" />
+                           ${bl.productId}
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>产品名字</label>
                         <div class="kv-item-content">
-                            <input type="text" name="productName" value="${bl.productName}" />
+                          ${bl.productName}
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>产品描述</label>
                         <div class="kv-item-content">
-                            <textarea name="productDesc" placeholder="${bl.productDesc}" id="content" style="width:800px;height:240px;"></textarea>
+                           ${bl.productDesc}
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>产品数量</label>
                         <div class="kv-item-content">
-                            <input type="text" name="productCount" value="${bl.productCount}" />
+                           ${bl.productCount}
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>产品单位</label>
                         <div class="kv-item-content">
-                            <input type="text" name="productUnit" value="${bl.productUnit}" />
+                          ${bl.productUnit}
                         </div>
                     </div>
                 </div>
@@ -96,65 +96,47 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo"></span>产品价格</label>
                         <div class="kv-item-content">
-                            <input type="text" name="totalPrice" value="${bl.totalPrice}" />
+                           ${bl.totalPrice}
                         </div>
                     </div>
                 </div>
-                <div class="kv-item ue-clear" >
-                    <label>是否支付</label>
-                    <div class="kv-item-content">
-                    	<span class="choose">
-                            <span class="checkboxouter">
-                                <input  type="radio" name="isPayment" value="1"/>
-                                <span class="radio"></span>
-                            </span>
-                            <span class="text">已支付</span>
-                        </span>
-                        <span class="choose">
-                            <span class="checkboxouter">
-                                <input type="radio"  name="isPayment" value="2"/>
-                                <span class="radio"></span>
-                            </span>
-                            <span class="text" >未支付</span>
-                        </span>
-                        <span class="choose">
-                            <span class="checkboxouter">
-                                <input type="radio" name="isPayment"  value="3"/>
-                                <span class="radio"></span>
-                            </span>
-                            <span class="text">支付失败</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="subfild-content base-info">
-                    <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>供应商Id</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="providerId" value="${bl.providerId}" />
-                        </div>
-                    </div>
-                </div>
-                <div class="kv-item ue-clear">
-                    <label><span class="impInfo">*</span>产品图片</label>
-                    <div class="kv-item-content file">
-                        <span class="text" ></span>
-                        <input type="text" name="proImg" value="${bl.proImg}" />
-                        <input type="button" class="button normal long2"  value="浏览.." />
-                    </div>
-                </div>
-                <div class="subfild-content base-info">
-                    <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>送货地址编号</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="addressId" value="${bl.addressId}" />
-                        </div>
-                    </div>
-                </div>
-                <div class="buttons">
-                    <input class="button" type="submit" value="确定修改" />
-                </div>
-            </form>
 
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo"></span>产品价格</label>
+                        <div class="kv-item-content"><c:if test="${bl.isPayment eq '1'}">等待支付</c:if>
+                    <c:if test="${bl.isPayment eq '2'}">支付成功</c:if>
+                    <c:if test="${bl.isPayment eq '3'}">支付失败</c:if>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo"></span>供应商Id</label>
+                        <div class="kv-item-content">
+                           ${bl.providerId}
+                        </div>
+                    </div>
+                </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                    <label><span class="impInfo"></span>产品图片</label>
+                        <div class="kv-item-content">
+                            ${bl.proImg}
+                        </div>
+                    </div>
+                </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                    <label><span class="impInfo"></span>供应商Id</label>
+                    <div class="kv-item-content">
+                        ${bl.addressId}
+                    </div>
+                    </div>
+                </div>
+        </div>
+        </div>
         </div>
     </div>
 </div>
@@ -167,3 +149,4 @@
     UM.getEditor('content');
 </script>
 </html>
+

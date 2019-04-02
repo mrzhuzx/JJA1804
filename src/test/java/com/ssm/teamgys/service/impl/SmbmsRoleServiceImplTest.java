@@ -1,6 +1,7 @@
-package com.ssm.teamgys.repositorydomain;
+package com.ssm.teamgys.service.impl;
 
-import com.ssm.teamgys.domain.SmbmRole;
+import com.ssm.teamgys.domain.SmbmsRole;
+import com.ssm.teamgys.service.SmbmsRoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,10 +24,9 @@ import java.util.List;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SmbmRoleRepositoryTest {
-
+public class SmbmsRoleServiceImplTest {
     @Autowired
-    SmbmRoleRepository smbmRoleRepository;
+    SmbmsRoleService smbmsRoleService;
 
     @Test
     public void testPage(){
@@ -36,11 +36,11 @@ public class SmbmRoleRepositoryTest {
 
         PageRequest pageble=new PageRequest(pageNum-1,size,new Sort(Sort.Direction.ASC,"roleId"));
 
-        Page<SmbmRole> page=smbmRoleRepository.findAll(pageble);
-        List<SmbmRole> smbmRoleList=page.getContent();
+        Page<SmbmsRole> page= smbmsRoleService.findAll(pageble);
+        List<SmbmsRole> smbmRoleList=page.getContent();
         for (int i = 0; i <smbmRoleList.size() ; i++) {
 
-            SmbmRole smbmRole=smbmRoleList.get(i);
+            SmbmsRole smbmRole=smbmRoleList.get(i);
             log.info(smbmRole.toString());
 
         }
@@ -52,11 +52,11 @@ public class SmbmRoleRepositoryTest {
 
     @Test
     public void testAdd(){
-        List<SmbmRole> list=new ArrayList();
+        List<SmbmsRole> list=new ArrayList();
 
         for (int i = 0; i <10 ; i++) {
 
-            SmbmRole role = new SmbmRole();
+            SmbmsRole role = new SmbmsRole();
 
             role.setRoleCode("NO.1200002"+i);
             role.setRoleName("宇智波止水"+i+"号");
@@ -65,7 +65,7 @@ public class SmbmRoleRepositoryTest {
             list.add(role);
 
         }
-        smbmRoleRepository.saveAll(list);
+        smbmsRoleService.saveAll(list);
         log.info("[添加一组客户]"+list.size());
 
 
@@ -74,31 +74,35 @@ public class SmbmRoleRepositoryTest {
 
     @Test
     public void testSave(){
-        SmbmRole s=new SmbmRole();
+        SmbmsRole s=new SmbmsRole();
         s.setRoleCode("NO.1200001");
         s.setRoleName("马化腾");
         s.setRoleDesc("客户");
         s.setRoleStatus(1);
-        smbmRoleRepository.save(s);
+        smbmsRoleService.save(s);
 
     }
 
     @Test
     public  void testSearch(){
-        List<SmbmRole> smbmRoleList = smbmRoleRepository.findAll();
-        for(SmbmRole sm:smbmRoleList){
+        List<SmbmsRole> smbmRoleList = smbmsRoleService.findAll();
+        for(SmbmsRole sm:smbmRoleList){
             log.info("smbmrolist"+sm.toString());
         }
     }
 
     @Test
     public void testUpdate(){
-        int rows=smbmRoleRepository.update(1L,"李红艳","店员",0,"NO.12000020");
+       int rows= smbmsRoleService.update(2L,"李红艳","店员",0,"NO.12000020");
 
     }
     @Test
     public void testDel(){
-        smbmRoleRepository.deleteById(Long.valueOf(1));
+        smbmsRoleService.deleteById("4");
 
     }
 }
+
+
+
+

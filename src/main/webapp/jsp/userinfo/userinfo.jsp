@@ -1,7 +1,13 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2019/3/28
+  Time: 11:14
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
 <%@include file="../../appcomm/basePath.jsp" %>
 
 <head>
@@ -16,7 +22,7 @@
 
         /* Table Head */
         table thead th {
-            background-color:#0F8DC7;
+            background-color: #0F8DC7;
             color: #fff;
             border-bottom-width: 0;
         }
@@ -25,6 +31,7 @@
         table td {
             color: #000;
         }
+
         /* Heading and Column Style */
         table tr, table th {
             border-width: 1px;
@@ -41,8 +48,7 @@
         }
 
     </STYLE>
-
-    <title>产品分类</title>
+    <title>客户管理</title>
 </head>
 
 <body>
@@ -50,7 +56,29 @@
     <div id="hd"></div>
     <div id="bd">
         <div id="main">
+            <div class="search-box ue-clear">
+                <div class="search-area">
+                    <div class="kv-item ue-clear">
+                        <label>输入关键字：</label>
+                        <div class="kv-item-content ue-clear">
+                            <input type="text"  >
+                        </div>
 
+                        <label>选择类型:</label>
+                        <div class="kv-item-content">
+                            <select>
+                                <option>全部</option>
+                                <option>全部</option>
+                                <option>全部</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="search-button">
+                    <input class="button" type="submit" value="搜索一下" />
+                </div>
+            </div>
 
             <div class="table">
                 <div class="opt ue-clear">
@@ -100,7 +128,7 @@
                             <th name="name">
                                 <div class="ui-table-th" style="width:100px"><span
                                         class="ui-table-thTitle">userCode</span><a href="javascript:;"
-                                                                               class="ui-icon2 ui-icon2-sort"></a><span
+                                                                                   class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
                             <th>
@@ -133,50 +161,72 @@
                             </th>
 
                         </tr>
+
                         </thead>
+                        <tbody class="__data">
+                        <c:forEach var="ui" items="${userInfoList}">
+                            <tr>
+                                <td name="userId">
+                                    <div class="ui-table-td">${ui.userId}</div>
+                                </td>
+
+                                <td>
+                                    <div class="ui-table-td">${ui.userCode}</div>
+                                </td>
+
+                                <td>
+                                    <div class="ui-table-td">${ui.userName}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td">${ui.userPassword}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td">${ui.userPhone}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td">
+                                            ${fn:length(ui.userAddress) > 10 ? fn:substring(ui.userAddress,0,10) : ui.userAddress}${fn:length(ui.userAddress) > 10 ? '...' : ''}
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="ui-table-td"><fmt:formatDate value="${ui.creationDate}"
+                                                                             pattern="yyyy年MM月dd日"/></div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td"><fmt:formatDate value="${ui.modifyDate}"
+                                                                             pattern="yyyy年MM月dd日"/></div>
+                                </td>
+
+                                <td class="ui-table-operation">
+                                    <a href="userinfo/userdel.do?userId=${ui.userId}">删除</a> &nbsp;
+                                    <a href="userinfo/searchone.do?userId=${ui.userId}">编辑</a>&nbsp;
+                                    <a href="userinfo/searchone.do?userId=${ui.userId}">查看详细信息</a></td>
+
+                                <td class="ui-table-blank" style="width: 10px;">
+                                    <div class="ui-table-td"></div>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
                     </table>
-                    <thead>
+
+
                 </div>
 
                 <div class="pagination">
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="ui"  items="${userInfoList}">
-                            <tr>
-                                <td name="id">
-                                    <div class="ui-table-td" style="width:83px">${ui.userId}</div>
-                                </td>
-                                <td name="name">
-                                    <div class="ui-table-td" style="width:133px">${ui.userCode}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:133px">${ui.userName}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:133px">${ui.userPassword}</div>
-                                </td>
-                                <td minwidth="minWidth">
-                                    <div class="ui-table-td" style="width: 184px;">${ui.userPhone}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:103px">${ui.userAddress}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:103px">${ui.creationDate}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:103px">${ui.modifyDate}</div>
-                                </td>
-                                <td>
-                                <td class="ui-table-operation" style="width: 100px;"><a href="userinfo/userdel.do?userId=${ui.userId}">删除</a><a href="userinfo/searchone.do?userId=${ui.userId}">编辑</a></td>
 
-                                </td>
-                                <td class="ui-table-blank" style="width: 30px;">
-                                    <div class="ui-table-td"></div>
-                                </td>
-                            </tr>
-                        </c:forEach>
+                        <div class="pagination">
+                            <a href="userinfo/pagelist.do?pagenum=1">&nbsp;首页&nbsp;</a>
+                            <a href="userinfo/pagelist.do?pagenum=${pagenum-1}" >&nbsp;上一页&nbsp;</a>
+                            <a href="userinfo/pagelist.do?pagenum=${pagenum+1}">&nbsp;下一页&nbsp;</a>
+                            <a href="userinfo/pagelist.do?pagenum=5">&nbsp;尾页&nbsp;</a>
+                        </div>
+
                         </tbody>
                     </table>
                 </div>
@@ -188,4 +238,5 @@
 
 
 </html>
+
 

@@ -112,7 +112,7 @@ public class TeamServiceImpl implements TeamService{
 
     @Override
     public Team getOne(String strId) {
-        return null;
+        return teamRepository.getOne(Long.valueOf(strId.trim()));
     }
 
     @Override
@@ -150,7 +150,7 @@ public class TeamServiceImpl implements TeamService{
 
     @Override
     public int update(Long teamId, String teamName, String teamSlogen, String teamIcon, String teamState, String teamDesc) {
-        return 0;
+        return teamRepository.update(teamId,teamName, teamSlogen, teamIcon, teamState, teamDesc);
     }
 
 }

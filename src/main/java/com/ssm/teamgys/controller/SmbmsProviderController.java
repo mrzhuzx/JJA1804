@@ -5,10 +5,12 @@ import com.ssm.teamgys.domain.SmbmsProvider;
 import com.ssm.teamgys.service.SmbmsProviderService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
@@ -40,6 +42,29 @@ public class SmbmsProviderController {
         m.addObject("prolist",list);
         return m;
     }
+
+    /**
+     * 查询全部Provider带分页
+     * @return
+     */
+    @RequestMapping("findAllProviderByPage")//
+    public ModelAndView findAllProviderByPage(@RequestParam(required = false) Integer pagenum){
+        ModelAndView m = new ModelAndView("jsp/provider/smbmsProvider");
+
+        if(pagenum ==null ||pagenum<=0){
+                pagenum=1;
+        }
+         Integer size=10;
+        Pageable pageable=new PageRequest(pagenum-1,size,new Sort(Sort.Direction.ASC,"proId"));
+        //Example<SmbmsProvider>  example=Example.of();
+        Page<SmbmsProvider> providerPage = smbmsProviderService.findAll(pageable);
+
+       m.addObject("prolist",providerPage.getContent());
+       m.addObject("pagenum",pagenum);
+
+        return m;
+    }
+
 
     /**
      * 添加一条Provider

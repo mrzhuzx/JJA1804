@@ -121,11 +121,11 @@
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:70px"><span
-                                        class="ui-table-thTitle">操作</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thT
+                    <thead>itle">操作</span><span class="ui-table-drag"></span></div>
                             </th>
                         </tr>
                         </thead>
-                    <thead>
                         <tbody class="__data">
                         <c:forEach   var="bl"  items="${billList}">
                             <tr>

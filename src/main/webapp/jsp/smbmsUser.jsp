@@ -144,15 +144,11 @@
                                     <div class="ui-table-td" style="width: 120px;">${su.modifyDate}</div>
                                 </td>
 
-                                <td class="ui-table-blank" style="width: 70px;">
-                                    <div class="ui-table"><a href="smuser/delete.do?userId=${su.userId}" class="delete">
+                                <td class="ui-table-operation" style="width: 100px;"><a href="smuser/delete.do?userId=${su.userId}">删除</a>
+                                    <a href="smuser/queryOne.do?userId=${su.userId}">修改</a></td>
 
-                                        <span class="text">删除</span>
-                                    </a>
-                                        <a href="smuser/queryOne.do?userId=${su.userId}" class="statistics">
-
-                                            <span class="text">修改</span>
-                                        </a></div>
+                                <td class="ui-table-blank" style="width: 10px;">
+                                    <div class="ui-table-td"></div>
                                 </td>
                             </tr>
                         </c:forEach>

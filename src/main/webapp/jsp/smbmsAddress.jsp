@@ -171,7 +171,8 @@
                                     <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${list.modifyDate}" pattern="yyyy年MM月dd日" /></div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="address/${list.addId}/deleteById.do">删除</a><a href="address/${list.addId}/findById.do">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 100px;"><a href="address/${list.addId}/deleteById.do">删除</a>
+                                    <a href="address/${list.addId}/findById.do">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

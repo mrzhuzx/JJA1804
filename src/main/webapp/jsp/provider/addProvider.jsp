@@ -33,7 +33,7 @@
     <div id="hd">
     </div>
     <div id="bd">
-        <form action="provider/addProvider.do" method="post">
+        <form action="smbmsprovider/addProvider.do" method="post">
         <div id="main">
             <h2 class="subfild">
                 <span>基本信息</span>

@@ -2,8 +2,10 @@ package com.ssm.teamgys.controller;
 
 
 import com.ssm.teamgys.appcomm.MYUUID;
+import com.ssm.teamgys.domain.ProductCategory;
 import com.ssm.teamgys.domain.ProductInfo;
 
+import com.ssm.teamgys.repositorydomain.ProductCategoryRepository;
 import com.ssm.teamgys.service.ProductInfoService;
 
 import com.sun.org.apache.xpath.internal.operations.Mod;
@@ -30,6 +32,7 @@ public class ProductInfoController {
 
     @Autowired
     ProductInfoService productInfoService;
+    ProductCategoryRepository productCategoryRepository;
 
 
     @RequestMapping("/pro")
@@ -57,19 +60,18 @@ public class ProductInfoController {
 
 
     @RequestMapping("/save")
-    public ModelAndView save(@ModelAttribute ProductInfo pro  ,@RequestParam  Integer  abc){
-        System.out.println(pro);
+    public ModelAndView save(@ModelAttribute ProductInfo pro ){
+
         pro.setProductId(MYUUID.getYYYYMMDDhhmmss());
         productInfoService.save(pro);
         System.out.println(pro.toString());
 
-        System.out.println("-----------------------------"+abc);
-        Integer gg = pro.getProductStatus();
-        System.out.println(gg+"+++++++++++++++++++++++");
         ModelAndView m = new ModelAndView("jsp/product");
 
         List<ProductInfo> findsearch = productInfoService.findsearch();
         m.addObject("findsearch", findsearch);
+
+
         return m;
 
     }
@@ -77,27 +79,39 @@ public class ProductInfoController {
 
     @RequestMapping(value = "/{proid}/searchone")
 
-    public ModelAndView  update(  @PathVariable(value = "proid") String  searchone){
-
-
+    public ModelAndView  searchone(  @PathVariable(value = "proid") String  searchone){
         ProductInfo one = productInfoService.findOne(searchone);
+        System.out.println(one.toString()+"======================");
 
-        ModelAndView  m =   new ModelAndView("jsp/product");
-
+        ModelAndView  m =   new ModelAndView("jsp/productupdate");
         m.addObject("proone",one);
+
+
         return m;
     }
 
+    @RequestMapping(value = "/{proid}/updateone")
 
-//    @RequestMapping(value = "/{a}/{b}/show002") //rest/a/b/show002.do
-//    public ModelAndView show002(@PathVariable(value = "a") String a,@PathVariable("b") String  userid) {
-//
-//        ModelAndView m = new ModelAndView("rest");
-//
-//        m.addObject("a", a);
-//        m.addObject("userid",userid);
-//        return m;
-//    }
+    public   ModelAndView update(@PathVariable(value ="proid")  String  proid,@ModelAttribute ProductInfo pro){
+
+        ModelAndView  m = new ModelAndView("jsp/product");
+        int update = productInfoService.update(proid, pro.getProductName(), pro.getProductPrice(), pro.getProductStock(), pro.getProductDescription(), pro.getProductIcon(), pro.getProductStatus(), pro.getCategoryType());
+
+
+        List<ProductInfo> findsearch = productInfoService.findsearch();
+        m.addObject("findsearch", findsearch);
+
+
+
+
+
+        return  m;
+
+
+
+
+    }
+
 
 
 

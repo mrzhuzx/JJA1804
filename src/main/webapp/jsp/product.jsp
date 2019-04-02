@@ -180,7 +180,7 @@
                                     <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${pro.updateTime}" pattern="yyyy年MM月dd日" /></div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width:120px;"><a href="product/delete.do?productId=${pro.productId}">删除</a><a href="jsp/${pro.productId}/searchone.do">编辑</a></td>
+                                <td class="ui-table-operation" style="width:120px;"><a href="product/delete.do?productId=${pro.productId}">删除</a><a href="product/${pro.productId}/searchone.do">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

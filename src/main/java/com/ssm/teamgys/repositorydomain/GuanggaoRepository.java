@@ -17,6 +17,6 @@ public interface GuanggaoRepository extends JpaRepository<Guanggao,Long> {
     @Transactional
     @Modifying(clearAutomatically = true)
 
-    @Query("update Guanggao set ggTitle=?1,ggImg=?2,ggUrl=?3 where ggId=?4")
-    int update(String ggTitle, String ggImg, String ggUrl,Long ggId);
+    @Query("update Guanggao set ggId=?1 ,ggTitle=?2,ggImg=?3where ggUrl=?4 ")
+    int update(Long ggId,String ggTitle, String ggImg, String ggUrl);
 }

@@ -75,24 +75,12 @@
                         <i class="card"></i>
                     </span>
                     <span class="optarea">
-                        <a href="javascript:;" class="add">
+                        <a href="jsp/advertt.jsp" class="add">
                             <i class="icon"></i>
+
                             <span class="text"><a href="">添加</a></span>
                         </a>
-                        <a href="javascript:;" class="delete">
-                            <i class="icon"></i>
-                            <span class="text">删除</span>
-                        </a>
 
-                        <a href="javascript:;" class="statistics">
-                            <i class="icon"></i>
-                            <span class="text">统计</span>
-                        </a>
-
-                        <a href="javascript:;" class="config">
-                            <i class="icon"></i>
-                            <span class="text">配置</span>
-                        </a>
                     </span>
                 </div>
 
@@ -121,7 +109,7 @@
                             </th>
                             <th class="minWidth" width="15%">
                                 <div class="ui-table-th" style="width: 10%;"><span
-                                        class="ui-table-thTitle">时间</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">上架时间</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th width="15%">
                                 <div class="ui-table-th" style="width:20%"><span
@@ -141,7 +129,7 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="g"  items="${guanggaoList}">
+                        <c:forEach   var="g"  items="${advertList}">
                             <tr>
                                 <td width="10%" name="id">
                                     <div class="ui-table-td" style="width:100%">${g.ggId}</div>
@@ -150,7 +138,7 @@
                                     <div class="ui-table-td" style="width:100%">${g.ggTitle}</div>
                                 </td >
                                 <td width="20%">
-                                    <div class="ui-table-td" style="width:100%">${g.ggImg}</div>
+                                    <div class="ui-table-td" style="width:100%"><img src="${g.ggImg}" width="200px"height="200px"/></div>
                                 </td>
                                 <td width="30%">
                                     <div class="ui-table-td" style="width: 100%;">${g.ggUrl}</div>

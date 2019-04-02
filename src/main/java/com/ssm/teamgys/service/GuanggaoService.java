@@ -8,6 +8,6 @@ import com.ssm.teamgys.domain.Guanggao;
 
 
 public interface GuanggaoService extends BaseService<Guanggao> {
-    int update(String ggTitle, String ggImg, String ggUrl,long ggId);
+    int update(long ggId,String ggTitle, String ggImg, String ggUrl);
 
 }

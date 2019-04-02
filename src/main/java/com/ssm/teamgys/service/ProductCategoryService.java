@@ -13,4 +13,5 @@ public interface ProductCategoryService extends BaseService<ProductCategory> {
 void update(String categoryId, String categoryName );
     ProductCategory findbyid(String categoryId);
 
+
 }

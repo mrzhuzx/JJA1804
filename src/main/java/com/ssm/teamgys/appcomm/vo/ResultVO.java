@@ -1,4 +1,4 @@
-package com.ssm.teamgys.controller.vo;
+package com.ssm.teamgys.appcomm.vo;
 
 import lombok.Data;
 

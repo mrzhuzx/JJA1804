@@ -1,8 +1,7 @@
-package com.ssm.teamgys.controller;
+package com.ssm.teamgys.appweb;
 
-import com.ssm.teamgys.controller.vo.ProductCategoryVO;
-import com.ssm.teamgys.controller.vo.ProductInfoVO;
-import com.ssm.teamgys.controller.vo.ResultVO;
+
+import com.ssm.teamgys.appcomm.vo.ResultVO;
 import com.ssm.teamgys.domain.ProductInfo;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

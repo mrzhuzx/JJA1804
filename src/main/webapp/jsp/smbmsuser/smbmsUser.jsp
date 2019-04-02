@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<%@include file="../appcomm/basePath.jsp" %>
+<%@include file="../../appcomm/basePath.jsp" %>
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7"/>
@@ -53,7 +53,7 @@
             <div class="table">
                 <div class="opt ue-clear">
                     <span class="optarea">
-                        <a href="jsp/usersave.jsp" class="add">
+                        <a href="jsp/smbmsuser/usersave.jsp" class="add">
                             <i class="icon"></i>
                             <span class="text">添加</span>
                         </a>

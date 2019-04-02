@@ -30,7 +30,7 @@ public class SmbmsUserController {
      */
     @RequestMapping("/list")
     public ModelAndView list(){
-        ModelAndView m=new ModelAndView("jsp/smbmsUser");
+        ModelAndView m=new ModelAndView("jsp/smbmsuser/smbmsUser");
         List<SmbmsUser> smbmsUserList=smbmsUserService.findAll();
         m.addObject("smbmsUserList",smbmsUserList);
         return m;
@@ -42,7 +42,7 @@ public class SmbmsUserController {
     @RequestMapping("/save")
     public ModelAndView adduser(@ModelAttribute SmbmsUser su) {
         SmbmsUser save = smbmsUserService.save(su);
-        ModelAndView m=new ModelAndView("jsp/smbmsUser");
+        ModelAndView m=new ModelAndView("jsp/smbmsuser/smbmsUser");
         List<SmbmsUser> smbmsUserList=smbmsUserService.findAll();
         m.addObject("smbmsUserList",smbmsUserList);
         return m;
@@ -52,7 +52,7 @@ public class SmbmsUserController {
      */
     @RequestMapping("/delete")
     public ModelAndView userdelete(@RequestParam String userId){
-        ModelAndView m =new ModelAndView("jsp/smbmsUser");
+        ModelAndView m =new ModelAndView("jsp/smbmsuser/smbmsUser");
         smbmsUserService.deleteById(userId);
         List<SmbmsUser> userlist = smbmsUserService.findAll();
         m.addObject("userlist",userlist);
@@ -65,7 +65,7 @@ public class SmbmsUserController {
     public ModelAndView userupdate(@RequestParam Long userId,@RequestParam String userCode,@RequestParam String userName,@RequestParam String userPassword,@RequestParam String userPhone,@RequestParam Long roleId){
        smbmsUserService.update(userCode,userName,userPassword,userPhone,roleId);
 
-        ModelAndView m = new ModelAndView("jsp/smbmsUser");
+        ModelAndView m = new ModelAndView("jsp/smbmsuser/smbmsUser");
         System.out.println("111111"+smbmsUserService.toString());
 
         List<SmbmsUser> userlist = smbmsUserService.findAll();
@@ -81,7 +81,7 @@ public class SmbmsUserController {
      */
     @RequestMapping("/queryOne")
     public ModelAndView queryOne(@RequestParam String userId){
-        ModelAndView m =new ModelAndView("jsp/userupdate");
+        ModelAndView m =new ModelAndView("jsp/smbmsuser/userupdate");
         SmbmsUser user=smbmsUserService.getOne(userId);
         m.addObject("user",user);
         return m;

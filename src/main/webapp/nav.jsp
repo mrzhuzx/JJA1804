@@ -59,7 +59,7 @@
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">地址信息</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="smbmsAddress/findAllAddress.do" data-id="50"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">全部地址信息</span></a></li>
+                        <li class="subnav-li" href="smbmsAddress/findAllAddressByPage.do?pagenum=1" data-id="50"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">全部地址信息</span></a></li>
                         <li class="subnav-li" href="jsp/address/addAddress.jsp" data-id="51"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">增加地址</span></a></li>
 
                     </ul>
@@ -83,10 +83,8 @@
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">客户信息</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="userinfo/list.do" data-id="80"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">客户管理</span></a></li>
-                        <li class="subnav-li" href="form.html" data-id="81"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">新闻频道管理</span></a></li>
-                        <li class="subnav-li" href="table.html" data-id="82"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">地方新闻管理</span></a></li>
-                        <li class="subnav-li" data-id="83"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">自定义设置1</span></a></li>
+                        <li class="subnav-li" href="userinfo/pagelist.do" data-id="80"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">客户管理</span></a></li>
+                        <li class="subnav-li" href="jsp/userinfo/usersave.jsp" data-id="81"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">用户增加</span></a></li>
                     </ul>
                 </li>
                 <li class="nav-li">

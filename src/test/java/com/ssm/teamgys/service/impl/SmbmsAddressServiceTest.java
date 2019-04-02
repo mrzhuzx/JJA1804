@@ -36,6 +36,20 @@ public class SmbmsAddressServiceTest {
 
 
     @Test
+    public   void getpageAll(){
+        long count = smbmsAddressService.count();
+
+        Integer intCount= (int)count;
+        log.info("__________________________________________________________"+intCount);
+        log.info("__________________________________________________________"+intCount);
+        log.info("__________________________________________________________"+intCount);
+        Integer pageSize=10;
+        Integer pageAll=intCount%pageSize==0?intCount/pageSize:intCount/pageSize+1;
+        log.info("__________________________________________________________"+pageAll);
+        log.info("__________________________________________________________"+pageAll);
+        log.info("__________________________________________________________"+pageAll);
+    }
+    @Test
     public void save(){
         SmbmsAddress smbmsAddress=new SmbmsAddress();
         smbmsAddress.setAddContact("加二二");
@@ -50,7 +64,7 @@ public class SmbmsAddressServiceTest {
         List<SmbmsAddress> list=new ArrayList<SmbmsAddress>();
         for (int i = 0; i <20; i++) {
             SmbmsAddress smbmsAddress=new SmbmsAddress();
-            smbmsAddress.setAddContact("加三三"+i);
+            smbmsAddress.setAddContact("加三三"+10+i);
             smbmsAddress.setAddDesc("厦门市思明区软件园二期观日路28号");
             smbmsAddress.setAddPostCode("364333");
             smbmsAddress.setAddTelPhone("15559599777");

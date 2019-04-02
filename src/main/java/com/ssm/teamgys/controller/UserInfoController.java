@@ -6,6 +6,10 @@ import com.ssm.teamgys.service.UserInfoService;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -30,6 +34,10 @@ public class UserInfoController {
     @Autowired
     UserInfoService userInfoService;
 
+    /**
+     * 查询全部
+     * @return
+     */
     @RequestMapping("/list")
     public ModelAndView list(){
         ModelAndView u = new ModelAndView("jsp/userinfo/userinfo");
@@ -38,7 +46,37 @@ public class UserInfoController {
         return u;
     }
 
+    /**
+     * 分页查询
+     */
+    @RequestMapping("/pagelist")
+    public ModelAndView page(@RequestParam(required = false) Integer pagenum ){
+        ModelAndView m = new ModelAndView("jsp/userinfo/userinfo");
+        long count = userInfoService.count();
+        Integer ui=(int)count;
+        Integer size=10;
+        Integer pageall=ui%size==0?ui/size:ui/size+1;
+        if(pagenum>=pageall){
+            pagenum= pageall;
+        }
+        if(pagenum ==null ||pagenum<=0){
+            pagenum=1;
+        }
 
+        Pageable pageable=new PageRequest(pagenum-1,size,new Sort(Sort.Direction.ASC,"userId"));
+        Page<UserInfo> pagelist=userInfoService.findAll(pageable);
+        m.addObject("userInfoList",pagelist.getContent());
+        m.addObject("pagenum",pagenum);
+        m.addObject("pageall",pageall);
+        return  m;
+
+    }
+
+    /**
+     * 根据主键ID删除
+     * @param userId
+     * @return
+     */
     @RequestMapping("/userdel")
     public ModelAndView  userinfodelete(@RequestParam Long userId){
        ModelAndView a=new ModelAndView("jsp/userinfo/userinfo");
@@ -47,6 +85,13 @@ public class UserInfoController {
        a.addObject("userInfoList",userInfoList);
        return a;
     }
+
+
+    /**
+     * 增加一条数据
+     * @param ui
+     * @return
+     */
 
     @RequestMapping("/save")
     public ModelAndView usersave(@ModelAttribute UserInfo ui) {
@@ -62,11 +107,15 @@ public class UserInfoController {
             List<UserInfo> userInfoList=userInfoService.findAll();
             u.addObject("userInfoList",userInfoList);
             return u;
-
         }
-
-
     }
+
+
+    /**
+     * 查询一条数据
+     * @param userId
+     * @return
+     */
 
     @RequestMapping("/searchone")
     public ModelAndView userUpdate(@RequestParam String userId){
@@ -76,6 +125,12 @@ public class UserInfoController {
         return u;
 
     }
+
+    /**
+     * 修改查询到的数据
+     * @param user
+     * @return
+     */
 
     @RequestMapping("/update")
     public ModelAndView userupdate(@ModelAttribute UserInfo  user) {

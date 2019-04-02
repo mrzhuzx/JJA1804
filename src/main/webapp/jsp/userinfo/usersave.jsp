@@ -1,41 +1,102 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Administrator
+  User: wjy
   Date: 2019/3/28 0028
-  Time: 下午 5:30
+  Time: 上午 10:10
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <%@include file="../../appcomm/basePath.jsp" %>
-
-<html>
 <head>
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/WdatePicker.css" />
+    <link rel="stylesheet" type="text/css" href="css/skin_/form.css" />
+    <link href="umeditor/themes/default/_css/umeditor.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script type="text/javascript" src="js/jquery.select.js"></script>
+    <script type="text/javascript" src="js/WdatePicker.js"></script>
+    <script type="text/javascript">
+        window.UMEDITOR_HOME_URL = 'umeditor/';  // 请换成绝对路径
+    </script>
+    <script type="text/javascript" src="js/umeditor.config.js"></script>
+    <script type="text/javascript" src="js/editor_api.js"></script>
+    <script type="text/javascript" src="umeditor/lang/zh-cn/zh-cn.js"></script>
+    <title>基础信息</title>
 </head>
+
 <body>
-<form action="userinfo/save.do" method="post">
-<table style="width:50%;border:1px ">
-   <tr>
-       <td>userCode</td>
-       <td>userName</td>
-       <td>userPassword</td>
-       <td>userPhone</td>
-       <td>userAddress</td>
-       <td></td>
-   </tr>
-    <tr>
+<div id="container">
+    <div id="hd">
+    </div>
+    <div id="bd">
+        <div id="main">
+            <form action="userinfo/save.do" method="post">
+                <h2 class="subfild">
+                    <span>添加用户</span>
+                </h2>
 
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>会员编号</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userCode" value="NO.11000020" />
+                        </div>
+                    </div>
+                </div>
 
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>用户名</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userName" value="李天然" />
+                        </div>
+                    </div>
+                </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>账号密码</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userPassword" value="122332" />
+                        </div>
+                    </div>
+                </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>联系方式</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userPhone" value="15095957878" />
+                        </div>
+                    </div>
+                </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>联系地址</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userAddress" value="福建省厦门市集美区湖里小区2栋1号" />
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <input class="button" type="submit" value="添加" />
+                </div>
+            </form>
 
-        <td> <input type="text" name="userCode" value=NO.11000020></td>
-        <td> <input type="text" name="userName" value=李天然></td>
-        <td> <input type="text" name="userPassword" value=122332></td>
-        <td> <input type="text" name="userPhone" value=15095957878></td>
-        <td> <input type="text" name="userAddress" value=福建省厦门市集美区湖里小区2栋1号></td>
-        <td><button class="button" type="submit">添加</button></td>
-    </tr>
+        </div>
+    </div>
+</div>
 
-</table>
-</form>
 </body>
+
+<script type="text/javascript">
+    $('select').select();
+    showRemind('input[type=text],textarea','color5');
+    UM.getEditor('content');
+</script>
 </html>
+

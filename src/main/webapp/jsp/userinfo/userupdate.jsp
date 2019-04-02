@@ -1,38 +1,101 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2019/4/1 0001
-  Time: 上午 11:20
+  User: wjy
+  Date: 2019/3/28 0028
+  Time: 上午 10:10
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <%@include file="../../appcomm/basePath.jsp" %>
-<html>
 <head>
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/WdatePicker.css" />
+    <link rel="stylesheet" type="text/css" href="css/skin_/form.css" />
+    <link href="umeditor/themes/default/_css/umeditor.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script type="text/javascript" src="js/jquery.select.js"></script>
+    <script type="text/javascript" src="js/WdatePicker.js"></script>
+    <script type="text/javascript">
+        window.UMEDITOR_HOME_URL = 'umeditor/';  // 请换成绝对路径
+    </script>
+    <script type="text/javascript" src="js/umeditor.config.js"></script>
+    <script type="text/javascript" src="js/editor_api.js"></script>
+    <script type="text/javascript" src="umeditor/lang/zh-cn/zh-cn.js"></script>
+    <title>基础信息</title>
 </head>
-<body>
-<form action="userinfo/update.do?userId=${search.userId}" method="post">
-    <table style="width:50%;border:1px ">
-        <tr>
-            <td>userCode</td>
-            <td>userName</td>
-            <td>userPassword</td>
-            <td>userPhone</td>
-            <td>userAddress</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td> <input type="text" name="userCode" value="${search.userCode}"></td>
-            <td> <input type="text" name="userName" value="${search.userName}"></td>
-            <td> <input type="text" name="userPassword" value="${search.userPassword}"></td>
-            <td> <input type="text" name="userPhone" value="${search.userPhone}"></td>
-            <td> <input type="text" name="userAddress" value="${search.userAddress}"></td>
-            <td><button class="button" type="submit">修改</button></td>
-        </tr>
 
-    </table>
-</form>
+<body>
+<div id="container">
+    <div id="hd">
+    </div>
+    <div id="bd">
+        <div id="main">
+            <form action="userinfo/update.do?userId=${search.userId}" method="post">
+                <h2 class="subfild">
+                    <span>修改用户</span>
+                </h2>
+
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>会员编号</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userCode" value="${search.userCode}" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>用户名</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userName" value="${search.userName}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>账号密码</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userPassword" value="${search.userPassword}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>联系方式</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userPhone" value="${search.userPhone}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>联系地址</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userAddress" value="${search.userAddress}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <input class="button" type="submit" value="确定修改" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
 
 </body>
+
+<script type="text/javascript">
+    $('select').select();
+    showRemind('input[type=text],textarea','color5');
+    UM.getEditor('content');
+</script>
 </html>

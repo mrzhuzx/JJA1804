@@ -4,6 +4,10 @@ import com.ssm.teamgys.domain.SmbmsRole;
 import com.ssm.teamgys.service.SmbmsRoleService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +30,11 @@ public class SmbmsRoleController {
     @Autowired
     SmbmsRoleService smbmsRoleService;
 
+    /**
+     * 查询
+     * @return
+     */
+
     @RequestMapping("/list")
     public ModelAndView list(){
        ModelAndView s=new ModelAndView("jsp/smbmsrole/role");
@@ -33,6 +42,33 @@ public class SmbmsRoleController {
         s.addObject("smbmsRoleList",smbmsRoleList);
         return s;
     }
+
+
+    /**
+     * 分页查询
+     */
+    @RequestMapping("/rolepage")
+    public ModelAndView rolepage(@RequestParam(required = false) Integer pagenum){
+        ModelAndView s=new ModelAndView("jsp/smbmsrole/role");
+        if(pagenum ==null ||pagenum<=0){
+            pagenum=1;
+        }
+        Integer size=10;
+        Pageable pageable=new PageRequest(pagenum-1,size,new Sort(Sort.Direction.ASC,"roleId"));
+        Page<SmbmsRole> rolepage=smbmsRoleService.findAll(pageable);
+        s.addObject("smbmsRoleList",rolepage.getContent());
+        s.addObject("pagenum",pagenum);
+        return s;
+
+
+    }
+
+
+    /**
+     * 增加角色
+     * @param sm
+     * @return
+     */
 
     @RequestMapping("/save")
     public ModelAndView smbmrolesave(@ModelAttribute SmbmsRole sm){
@@ -52,6 +88,12 @@ public class SmbmsRoleController {
 
     }
 
+    /**
+     * 根据主键ID删除
+     * @param roleId
+     * @return
+     */
+
     @RequestMapping("/delete")
     public ModelAndView smbnroleDelete(@RequestParam Long roleId){
         ModelAndView s=new ModelAndView("jsp/smbmsrole/role");
@@ -61,6 +103,12 @@ public class SmbmsRoleController {
         return s;
     }
 
+    /**
+     * 查询一条数据
+     * @param roleId
+     * @return
+     */
+
     @RequestMapping("/roleone")
     public ModelAndView smbmroleone(@RequestParam String roleId){
         ModelAndView s=new ModelAndView("jsp/smbmsrole/roleupdate");
@@ -69,6 +117,12 @@ public class SmbmsRoleController {
         s.addObject("role", role);
         return s;
     }
+
+    /**
+     * 修改一条数据
+     * @param sm
+     * @return
+     */
 
     @RequestMapping("/update")
     public ModelAndView smbmroleone(@ModelAttribute SmbmsRole sm){

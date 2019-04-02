@@ -38,7 +38,7 @@
         <div id="main">
             <form action="smbmsrole/save.do" method="post">
                 <h2 class="subfild">
-                    <span>添加用户</span>
+                    <span>添加角色</span>
                 </h2>
 
                 <div class="subfild-content base-info">

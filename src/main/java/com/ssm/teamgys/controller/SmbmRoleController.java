@@ -29,7 +29,7 @@ public class SmbmRoleController {
     @RequestMapping("/list")
     public ModelAndView list(){
 
-       ModelAndView s=new ModelAndView("smbmrole/role");
+       ModelAndView s=new ModelAndView("jsp/smbmrole/role");
         List<SmbmRole> smbmRoleList=smbmRoleService.findAll();
         s.addObject("smbmRoleList",smbmRoleList);
         return s;
@@ -37,7 +37,7 @@ public class SmbmRoleController {
 
     @RequestMapping("/save")
     public ModelAndView smbmrolesave(@ModelAttribute SmbmRole sm){
-        ModelAndView s=new ModelAndView("smbmrole/role");
+        ModelAndView s=new ModelAndView("jsp/smbmrole/role");
         SmbmRole save= smbmRoleService.save(sm);
         if (save != null) {
             List<SmbmRole> smbmRoles =smbmRoleService.findAll();
@@ -55,7 +55,7 @@ public class SmbmRoleController {
 
     @RequestMapping("/delete")
     public ModelAndView smbnroleDelete(@RequestParam Long roleId){
-        ModelAndView s=new ModelAndView("smbmrole/role");
+        ModelAndView s=new ModelAndView("jsp/smbmrole/role");
         smbmRoleService.deleteById(String.valueOf(roleId));
         List<SmbmRole> smbmRoleList=smbmRoleService.findAll();
         s.addObject("smbmRoleList",smbmRoleList);
@@ -64,7 +64,7 @@ public class SmbmRoleController {
 
     @RequestMapping("/roleone")
     public ModelAndView smbmroleone(@RequestParam String roleId){
-        ModelAndView s=new ModelAndView("smbmrole/roleupdate");
+        ModelAndView s=new ModelAndView("jsp/smbmrole/roleupdate");
         SmbmRole role=smbmRoleService.getOne(roleId);
         List<SmbmRole> smbmRoles =smbmRoleService.findAll();
         s.addObject("role", role);
@@ -75,7 +75,7 @@ public class SmbmRoleController {
     public ModelAndView smbmroleone(@ModelAttribute SmbmRole sm){
 
         smbmRoleService.update(sm.getRoleId(),sm.getRoleName(),sm.getRoleDesc(),sm.getRoleStatus(),sm.getRoleCode());
-        ModelAndView s=new ModelAndView("smbmrole/role");
+        ModelAndView s=new ModelAndView("jsp/smbmrole/role");
         List<SmbmRole> smbmRoles =smbmRoleService.findAll();
         s.addObject("smbmRoleList", smbmRoles);
         return s;

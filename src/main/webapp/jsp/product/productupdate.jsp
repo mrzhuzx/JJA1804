@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%@include file="../appcomm/basePath.jsp"%>
+<%@include file="../../appcomm/basePath.jsp"%>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,7 +33,7 @@
     <div id="hd">
     </div>
     <div id="bd">
-        <form action="product/save.do" method="post">
+        <form action="product/${proone.productId}/updateone.do" method="post">
             <div id="main">
                 <h2 class="subfild">
                     <span>基本信息</span>
@@ -45,48 +45,43 @@
                     <div class="kv-item ue-clear">
                         <label>名字</label>
                         <div class="kv-item-content">
-
-                            <td><input type="text" name="productName" value="拉布拉多"></td>
+                            <input type="text" name="productName" value="${proone.productName}" />
                         </div>
                     </div>
                     <div class="kv-item ue-clear">
                         <label>单价</label>
                         <div class="kv-item-content">
-                            <td><input type="text" name="productPrice" value="100.0"></td>
+                            <input type="text" name="productPrice" value="${proone.productPrice}" />
                         </div>
                     </div>
                     <div class="kv-item ue-clear">
                         <label>库存</label>
                         <div class="kv-item-content">
-                            <td><input type="text" name="productStock" value="10"></td>
+                            <input type="text" name="productStock" value="${proone.productStock}" />
                         </div>
                     </div>
                     <div class="kv-item ue-clear">
                         <label>描述</label>
                         <div class="kv-item-content">
-                            <td><input type="text" name="productDescription" value="这是一只拉布拉多"></td>
+                            <input type="text" name="productDescription" value="${proone.productDescription}" />
                         </div>
                     </div>
                     <div class="kv-item ue-clear">
                         <label>小图</label>
                         <div class="kv-item-content">
-                            <td><input type="text" name="productIcon" value="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D21%2C0%2C980%2C647%3Bc0%3Dbaike116%2C5%2C5%2C116%2C38/sign=91c9a50cdd39b600598155f7d4620406/b999a9014c086e06999299a40a087bf40ad1cb23.jpg"></td>
+                            <input type="text" name="productIcon" value="${proone.productIcon}" />
                         </div>
                     </div>
                     <div class="kv-item ue-clear">
                         <label>状态</label>
                         <div class="kv-item-content">
-                            <%--<select>--%>
-                                <%--<option name="productStatus">1</option>--%>
-                                <%--<option  name="productStatus"> 2</option>--%>
-                            <%--</select>--%>
-                            <td><input type="text" name="productStatus" value="2"></td>
+                            <input type="text" name="productStatus" value="${proone.productStatus}" />
                         </div>
                     </div>
                     <div class="kv-item ue-clear">
                         <label>类目编号</label>
                         <div class="kv-item-content">
-                            <td><input type="text" name="categoryType" value="1"></td>
+                            <input type="text" name="categoryType" value="${oneType.categoryName}" />
                         </div>
                     </div>
 
@@ -95,7 +90,7 @@
                 </div>
 
                 <div class="buttons">
-                    <input class="button" type="submit" value="确认添加" />
+                    <input class="button" type="submit" value="确认修改" />
                 </div>
             </div>
         </form>
@@ -109,5 +104,3 @@
     UM.getEditor('content');
 </script>
 </html>
-
-

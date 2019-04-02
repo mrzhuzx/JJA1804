@@ -1,4 +1,4 @@
-<%--
+ <%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2019/3/28
@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%@include file="../appcomm/basePath.jsp"%>
+<%@include file="../../appcomm/basePath.jsp"%>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,7 +33,7 @@
     <div id="hd">
     </div>
     <div id="bd">
-        <form action="address/${sa.addId}/updateById.do" method="post">
+        <form action="provider/addProvider.do" method="post">
         <div id="main">
             <h2 class="subfild">
                 <span>基本信息</span>
@@ -41,27 +41,39 @@
             <div class="subfild-content base-info">
 
                 <div class="kv-item ue-clear">
+                    <label>产品名字</label>
+                    <div class="kv-item-content">
+                        <input type="text" name="proName" value="拉布拉多" />
+                    </div>
+                </div>
+                <div class="kv-item ue-clear">
+                    <label>产品描述</label>
+                    <div class="kv-item-content">
+                        <input type="text" name="proDesc" value="拉布拉多又称寻回犬，是一种大型犬类，是非常适合被选作经常出入公共场合的导盲犬或地铁警犬及搜救犬和其他工作犬的狗品种" />
+                    </div>
+                </div>
+                <div class="kv-item ue-clear">
                     <label>联系人</label>
                     <div class="kv-item-content">
-                        <input type="text" name="addContact" value="${sa.addContact}" />
-                    </div>
-                </div>
-                <div class="kv-item ue-clear">
-                    <label>送货地址</label>
-                    <div class="kv-item-content">
-                        <input type="text" name="addDesc" value="${sa.addDesc}" />
-                    </div>
-                </div>
-                <div class="kv-item ue-clear">
-                    <label>邮编</label>
-                    <div class="kv-item-content">
-                        <input type="text" name="addPostCode" value="${sa.addPostCode}" />
+                        <input type="text" name="proContact" value="老毛子" />
                     </div>
                 </div>
                 <div class="kv-item ue-clear">
                     <label>电话</label>
                     <div class="kv-item-content">
-                        <input type="text" name="addTelPhone" value="${sa.addTelPhone}" />
+                        <input type="text" name="proPhone" value="15559599999" />
+                    </div>
+                </div>
+                <div class="kv-item ue-clear">
+                    <label>地址</label>
+                    <div class="kv-item-content">
+                        <input type="text" name="proAddress" value="北京天安门115号" />
+                    </div>
+                </div>
+                <div class="kv-item ue-clear">
+                    <label>传真</label>
+                    <div class="kv-item-content">
+                        <input type="text" name="proFax" value="0951-4828643" />
                     </div>
                 </div>
 
@@ -70,7 +82,7 @@
             </div>
 
             <div class="buttons">
-                <input class="button" type="submit" value="确认修改" />
+                <input class="button" type="submit" value="确认添加" />
             </div>
         </div>
         </form>

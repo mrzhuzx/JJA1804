@@ -97,9 +97,5 @@ public class ProductCategoryServiceImplTest {
 
     }
 
-    @Test
-    public void update() {
-        productCategoryService.update("1", "111");
-    }
 
 }

@@ -36,16 +36,16 @@
     </div>
     <div id="bd">
         <div id="main">
-            <form action="userinfo/update.do?userId=${search.userId}" method="post">
+            <form action="smbmsrole/save.do" method="post">
                 <h2 class="subfild">
-                    <span>修改用户</span>
+                    <span>添加角色</span>
                 </h2>
 
                 <div class="subfild-content base-info">
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>会员编号</label>
                         <div class="kv-item-content">
-                            <input type="text" name="userCode" value="${search.userCode}" />
+                            <input type="text" name="roleCode" value="NO.1200022" />
                         </div>
                     </div>
                 </div>
@@ -54,36 +54,28 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>用户名</label>
                         <div class="kv-item-content">
-                            <input type="text" name="userName" value="${search.userName}" />
+                            <input type="text" name="roleName" value="李天然" />
                         </div>
                     </div>
                 </div>
                 <div class="subfild-content base-info">
                     <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>账号密码</label>
+                        <label><span class="impInfo">*</span>角色</label>
                         <div class="kv-item-content">
-                            <input type="text" name="userPassword" value="${search.userPassword}" />
+                            <input type="text" name="roleDesc" value="店员" />
                         </div>
                     </div>
                 </div>
                 <div class="subfild-content base-info">
                     <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>联系方式</label>
+                        <label><span class="impInfo">*</span>状态</label>
                         <div class="kv-item-content">
-                            <input type="text" name="userPhone" value="${search.userPhone}" />
-                        </div>
-                    </div>
-                </div>
-                <div class="subfild-content base-info">
-                    <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>联系地址</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="userAddress" value="${search.userAddress}" />
+                            <input type="text" name="roleStatus" value="0" />
                         </div>
                     </div>
                 </div>
                 <div class="buttons">
-                    <input class="button" type="submit" value="确定修改" />
+                    <input class="button" type="submit" value="添加" />
                 </div>
             </form>
 

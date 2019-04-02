@@ -1,15 +1,13 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: wjy
-  Date: 2019/3/28 0028
-  Time: 上午 10:10
+  User: Administrator
+  Date: 2019/3/28
+  Time: 14:25
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<%@include file="../../appcomm/basePath.jsp" %>
+<html>
+<%@include file="../../appcomm/basePath.jsp"%>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -35,62 +33,61 @@
     <div id="hd">
     </div>
     <div id="bd">
-        <div id="main">
-            <form action="userinfo/update.do?userId=${search.userId}" method="post">
+        <form action="team/save.do" method="post">
+            <div id="main">
                 <h2 class="subfild">
-                    <span>修改用户</span>
+                    <span>基本信息</span>
                 </h2>
+                <div class="subfild-content base-info">
 
-                <div class="subfild-content base-info">
                     <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>会员编号</label>
+                        <label>teamId</label>
                         <div class="kv-item-content">
-                            <input type="text" name="userCode" value="${search.userCode}" />
+                            <input type="text" name="teamId" value="" />
                         </div>
                     </div>
+                    <div class="kv-item ue-clear">
+                        <label>teamDesc</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="teamDesc" value="" />
+                        </div>
+                    </div>
+                    <div class="kv-item ue-clear">
+                        <label>teamIcon</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="teamIcon" value="" />
+                        </div>
+                    </div>
+                    <div class="kv-item ue-clear">
+                        <label>teamName</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="teamName" value="" />
+                        </div>
+                    </div>
+                    <div class="kv-item ue-clear">
+                        <label>Slogen</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="teamSlogen" value="" />
+                        </div>
+                    </div>
+                    <div class="kv-item ue-clear">
+                        <label>teamState</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="teamState" value="" />
+                        </div>
+                    </div>
+
+
+
                 </div>
 
-                <div class="subfild-content base-info">
-                    <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>用户名</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="userName" value="${search.userName}" />
-                        </div>
-                    </div>
-                </div>
-                <div class="subfild-content base-info">
-                    <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>账号密码</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="userPassword" value="${search.userPassword}" />
-                        </div>
-                    </div>
-                </div>
-                <div class="subfild-content base-info">
-                    <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>联系方式</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="userPhone" value="${search.userPhone}" />
-                        </div>
-                    </div>
-                </div>
-                <div class="subfild-content base-info">
-                    <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>联系地址</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="userAddress" value="${search.userAddress}" />
-                        </div>
-                    </div>
-                </div>
                 <div class="buttons">
-                    <input class="button" type="submit" value="确定修改" />
+                    <input class="button" type="submit" value="确认添加" />
                 </div>
-            </form>
-
-        </div>
+            </div>
+        </form>
     </div>
 </div>
-
 </body>
 
 <script type="text/javascript">

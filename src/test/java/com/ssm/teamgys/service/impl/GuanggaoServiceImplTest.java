@@ -1,8 +1,6 @@
 package com.ssm.teamgys.service.impl;
 
 import com.ssm.teamgys.domain.Guanggao;
-import com.ssm.teamgys.service.GuanggaoService;
-import com.ssm.teamgys.service.SmbmRoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,8 +15,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * desc:

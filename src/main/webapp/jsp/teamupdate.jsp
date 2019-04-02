@@ -33,34 +33,47 @@
     <div id="hd">
     </div>
     <div id="bd">
-        <form action="address/addAddress.do" method="post">
+        <form action="${pageContext.request.contextPath}/team/update.do?teamId=${tm.teamId}" method="post">
         <div id="main">
             <h2 class="subfild">
                 <span>基本信息</span>
             </h2>
             <div class="subfild-content base-info">
+
                 <div class="kv-item ue-clear">
-                    <label>联系人</label>
+                    <label>teamId</label>
                     <div class="kv-item-content">
-                        <input type="text" name="addContact" value="老毛子" />
+                        <input type="text" name="teamId" value="${tm.teamId}" />
                     </div>
                 </div>
                 <div class="kv-item ue-clear">
-                    <label>送货地址</label>
+                    <label>team_desc</label>
                     <div class="kv-item-content">
-                        <input type="text" name="addDesc" value="北京天安门65号" />
+                        <input type="text" name="teamDesc" value="${tm.teamDesc}" />
                     </div>
                 </div>
                 <div class="kv-item ue-clear">
-                    <label>邮编</label>
+                    <label>team_icon</label>
                     <div class="kv-item-content">
-                        <input type="text" name="addPostCode" value="364356" />
+                        <input type="text" name="teamIcon" value="${tm.teamIcon}" />
                     </div>
                 </div>
                 <div class="kv-item ue-clear">
-                    <label>电话</label>
+                    <label>team_name</label>
                     <div class="kv-item-content">
-                        <input type="text" name="addTelPhone" value="15559599999" />
+                        <input type="text" name="teamName" value="${tm.teamName}" />
+                    </div>
+                </div>
+                <div class="kv-item ue-clear">
+                    <label>team_slogen</label>
+                    <div class="kv-item-content">
+                        <input type="text" name="teamSlogen" value="${tm.teamSlogen}" />
+                    </div>
+                </div>
+                <div class="kv-item ue-clear">
+                    <label>team_state</label>
+                    <div class="kv-item-content">
+                        <input type="text" name="teamState" value="${tm.teamState}" />
                     </div>
                 </div>
 
@@ -69,7 +82,7 @@
             </div>
 
             <div class="buttons">
-                <input class="button" type="submit" value="确认添加" />
+                <input class="button" type="submit" value="确认修改" />
             </div>
         </div>
         </form>

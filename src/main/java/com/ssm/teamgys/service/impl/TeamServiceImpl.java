@@ -146,9 +146,11 @@ public class TeamServiceImpl implements TeamService{
     }
 
 
+
+
     @Override
-    public int update(Long teamId, String teamName) {
-        return teamRepository.update(teamId,teamName);
+    public int update(Long teamId, String teamName, String teamSlogen, String teamIcon, String teamState, String teamDesc) {
+        return 0;
     }
 
 }

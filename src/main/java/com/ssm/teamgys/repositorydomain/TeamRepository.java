@@ -4,6 +4,7 @@ import com.ssm.teamgys.domain.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.transaction.Transactional;
 
@@ -24,6 +25,6 @@ public interface TeamRepository extends JpaRepository<Team,Long> {
      */
     @Transactional
     @Modifying(clearAutomatically = true)
-    @Query(" update Team set teamName=?2 where teamId=?1")
-    int  update(Long teamId ,String teamName);
+    @Query(" update Team set teamName=?2,teamSlogen=?3,teamIcon=?4,teamState=?5,teamDesc=?6 where teamId=?1")
+    int update (Long teamId, String teamName, String teamSlogen, String teamIcon,  String teamState, String teamDesc);
 }

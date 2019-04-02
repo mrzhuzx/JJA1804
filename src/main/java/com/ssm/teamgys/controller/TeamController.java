@@ -32,11 +32,9 @@ public class TeamController {
         teamService.deleteById(teamId);
         List<Team> teamList = teamService.findAll();
         m.addObject("teamList",teamList);
-
         return m;
-
-
     }
+
 
 
     /**
@@ -51,7 +49,6 @@ public class TeamController {
         List<Team> teamList = teamService.findAll();
         m.addObject("teamList",teamList);
         return m;
-
     }
 /**
  * 用户查找
@@ -63,6 +60,23 @@ public class TeamController {
         m.addObject("teamList",teamList);
         return m;
     }
+    @RequestMapping("/update")
+    public ModelAndView teamUpdate(@RequestParam Long teamId,@RequestParam String teamName,@RequestParam String teamSlogen,@RequestParam String teamIcon,@RequestParam String teamState,@RequestParam String teamDesc){
+        System.out.println("进来了");
+        teamService.update(teamId,teamName,teamSlogen,teamIcon,teamState,teamDesc);
+        ModelAndView m = new ModelAndView("jsp/team");
+        List<Team> teamList = teamService.findAll();
+        m.addObject("teamList",teamList);
+        return m;
+    }
+    @RequestMapping ("queryone")
+    public ModelAndView queryOne(@RequestParam Long teamId){
+        ModelAndView m = new ModelAndView("jsp/teamUpdate");
+        Team one = teamService.getOne(String.valueOf(teamId));
+        m.addObject(one);
+        return m;
+    }
+
 
 
 

@@ -59,16 +59,16 @@
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">地址信息</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="address/findAllAddress.do" data-id="50"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">全部地址信息</span></a></li>
-                        <li class="subnav-li" href="jsp/addAddress.jsp" data-id="51"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">增加地址</span></a></li>
+                        <li class="subnav-li" href="smbmsAddress/findAllAddress.do" data-id="50"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">全部地址信息</span></a></li>
+                        <li class="subnav-li" href="jsp/address/addAddress.jsp" data-id="51"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">增加地址</span></a></li>
 
                     </ul>
                 </li>
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">Provider信息</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="provider/findAllProvider.do" data-id="60"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">产品管理</span></a></li>
-                        <li class="subnav-li" href="jsp/addProvider.jsp" data-id="61"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">添加产品</span></a></li>
+                        <li class="subnav-li" href="smbmsProvider/findAllProvider.do" data-id="60"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">产品管理</span></a></li>
+                        <li class="subnav-li" href="jsp/provider/addProvider.jsp" data-id="61"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">添加产品</span></a></li>
 
                     </ul>
                 </li>

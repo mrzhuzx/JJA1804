@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<%@include file="../appcomm/basePath.jsp" %>
+<%@include file="../../appcomm/basePath.jsp" %>
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7"/>
@@ -159,40 +159,40 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="list"  items="${prolist}">
+                        <c:forEach   var="prolist"  items="${prolist}">
                             <tr>
                                 <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${list.proId}</div>
+                                    <div class="ui-table-td" style="width:70px">${prolist.proId}</div>
                                 </td>
                                 <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${list.proCode}</div>
+                                    <div class="ui-table-td" style="width:120px">${prolist.proCode}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proName}</div>
+                                    <div class="ui-table-td" style="width:120px">${prolist.proName}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proDesc}</div>
+                                    <div class="ui-table-td" style="width:120px">${prolist.proDesc}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proContact}</div>
+                                    <div class="ui-table-td" style="width:120px">${prolist.proContact}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proPhone}</div>
+                                    <div class="ui-table-td" style="width:120px">${prolist.proPhone}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proAddress}</div>
+                                    <div class="ui-table-td" style="width:120px">${prolist.proAddress}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proFax}</div>
+                                    <div class="ui-table-td" style="width:120px">${prolist.proFax}</div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.creationDate}</div>
+                                    <div class="ui-table-td" style="width:120px"> <fmt:formatDate value="${prolist.creationDate}" pattern="yyyy年MM月dd日"/></div>
                                 </td>
                                 <td>
-                                    <div class="ui-table-td" style="width:120px">${list.modifyDate}</div>
+                                    <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${prolist.modifyDate}" pattern="yyyy年MM月dd日"/></div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="provider/${list.proId}/deleteById.do">删除</a><a href="provider/${list.proId}/findById.do">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 100px;"><a href="provider/${prolist.proId}/deleteById.do">删除</a><a href="provider/${prolist.proId}/findById.do">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

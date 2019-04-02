@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * time：2019/3/27--15:55
@@ -23,7 +22,7 @@ import java.util.Optional;
  * version:1.3.22
  */
 @Controller
-@RequestMapping(value = "address")
+@RequestMapping(value = "smbmsAddress")
 @Log4j2
 public class SmbmsAddressController {
     @Autowired
@@ -37,9 +36,9 @@ public class SmbmsAddressController {
     @RequestMapping(value = "findAllAddress",method = RequestMethod.GET)
     public String findAllAddress(Model model) {
         List<SmbmsAddress> list = smbmsAddressService.findAll();
-        model.addAttribute("list",list);
+        model.addAttribute("addresslist",list);
         log.info("1111111:"+list.toString());
-        return "jsp/smbmsAddress";
+        return "jsp/address/smbmsAddress";
     }
 
     /**
@@ -54,13 +53,13 @@ public class SmbmsAddressController {
         Integer row = smbmsAddressService.updateAddById(sm.getAddId(), sm.getAddContact(), sm.getAddDesc(), sm.getAddPostCode(), sm.getAddTelPhone(), new Date());
         if (row != 0) {
             List<SmbmsAddress> list = smbmsAddressService.findAll();
-            model.addAttribute("list",list);
-            return "jsp/smbmsAddress";
+            model.addAttribute("addresslist",list);
+            return "jsp/address/smbmsAddress";
         } else {
             log.info("修改失败！！");
             List<SmbmsAddress> list = smbmsAddressService.findAll();
-            model.addAttribute("list",list);
-            return "jsp/smbmsAddress";
+            model.addAttribute("addresslist",list);
+            return "jsp/address/smbmsAddress";
         }
 
 
@@ -70,7 +69,7 @@ public class SmbmsAddressController {
         SmbmsAddress smbmsAddress = smbmsAddressService.getOne(addId);
 
         model.addAttribute("sa",smbmsAddress);
-        return "jsp/editAddress";
+        return "jsp/address/editAddress";
     }
 
     /**
@@ -82,8 +81,8 @@ public class SmbmsAddressController {
     public String deleteById(@PathVariable(value = "addId") String addId,Model model) {
         smbmsAddressService.deleteById(addId);
         List<SmbmsAddress> list = smbmsAddressService.findAll();
-        model.addAttribute("list",list);
-        return "jsp/smbmsAddress";
+        model.addAttribute("addresslist",list);
+        return "jsp/address/smbmsAddress";
     }
 
     /**
@@ -97,13 +96,13 @@ public class SmbmsAddressController {
         SmbmsAddress save = smbmsAddressService.save(sa);
         if (save != null) {
             List<SmbmsAddress> list = smbmsAddressService.findAll();
-            model.addAttribute("list",list);
-            return "jsp/smbmsAddress";
+            model.addAttribute("addresslist",list);
+            return "jsp/address/smbmsAddress";
         } else {
             log.info("添加失败！！");
             List<SmbmsAddress> list = smbmsAddressService.findAll();
-            model.addAttribute("list",list);
-            return "jsp/smbmsAddress";
+            model.addAttribute("addresslist",list);
+            return "jsp/address/smbmsAddress";
         }
     }
     //At the time of initialization,convert the type "String" to type "date"

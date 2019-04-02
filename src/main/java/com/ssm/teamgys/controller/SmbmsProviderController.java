@@ -3,7 +3,6 @@ package com.ssm.teamgys.controller;
 import com.ssm.teamgys.appcomm.MYUUID;
 import com.ssm.teamgys.domain.SmbmsProvider;
 import com.ssm.teamgys.service.SmbmsProviderService;
-import lombok.Value;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +21,7 @@ import java.util.List;
  * version:1.3.22
  */
 @Controller
-@RequestMapping("provider")
+@RequestMapping("smbmsProvider")
 @Log4j2
 public class SmbmsProviderController {
 
@@ -36,7 +35,7 @@ public class SmbmsProviderController {
      */
     @RequestMapping("findAllProvider")//
     public ModelAndView findAllProvider(){
-        ModelAndView m = new ModelAndView("jsp/smbmsProvider");
+        ModelAndView m = new ModelAndView("jsp/provider/smbmsProvider");
         List<SmbmsProvider> list = smbmsProviderService.findAll();
         m.addObject("prolist",list);
         return m;
@@ -50,7 +49,7 @@ public class SmbmsProviderController {
     public  ModelAndView addProvider(@ModelAttribute SmbmsProvider sp){
         String proCode=MYUUID.getUUID();
         sp.setProCode(proCode);
-        ModelAndView m = new ModelAndView("jsp/smbmsProvider");
+        ModelAndView m = new ModelAndView("jsp/provider/smbmsProvider");
         SmbmsProvider save = smbmsProviderService.save(sp);
         if (save!=null) {
             List<SmbmsProvider> list = smbmsProviderService.findAll();
@@ -71,7 +70,7 @@ public class SmbmsProviderController {
      */
     @RequestMapping("{proid}/deleteById")
     public ModelAndView deleteById(@PathVariable(value = "proid")Long proid){
-        ModelAndView m = new ModelAndView("jsp/smbmsProvider");
+        ModelAndView m = new ModelAndView("jsp/provider/smbmsProvider");
         smbmsProviderService.deleteById(String.valueOf(proid));
         List<SmbmsProvider> list = smbmsProviderService.findAll();
         m.addObject("prolist",list);
@@ -84,7 +83,7 @@ public class SmbmsProviderController {
      */
     @RequestMapping("{proId}/updateById")
     public ModelAndView updateById(@PathVariable(value = "proId")Long proId,@ModelAttribute SmbmsProvider sp){
-        ModelAndView m= new ModelAndView("jsp/smbmsProvider");
+        ModelAndView m= new ModelAndView("jsp/provider/smbmsProvider");
         String proCode=MYUUID.getUUID();
         smbmsProviderService.updateProById(proId,proCode,sp.getProName(),sp.getProDesc(),sp.getProContact(),sp.getProPhone(),sp.getProAddress(),sp.getProFax(),new Date());
         List<SmbmsProvider> list = smbmsProviderService.findAll();
@@ -95,7 +94,7 @@ public class SmbmsProviderController {
 
     @RequestMapping("{proId}/findById")
     public  ModelAndView findById(@PathVariable(value = "proId")String proId){
-        ModelAndView m = new ModelAndView("jsp/editProvider");
+        ModelAndView m = new ModelAndView("jsp/provider/editProvider");
         SmbmsProvider provider = smbmsProviderService.getOne(proId);
         m.addObject("pr",provider);
 

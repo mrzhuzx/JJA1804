@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%@include file="../appcomm/basePath.jsp"%>
+<%@include file="../../appcomm/basePath.jsp"%>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -43,7 +43,7 @@
                 <div class="kv-item ue-clear">
                     <label>teamId</label>
                     <div class="kv-item-content">
-                        <input type="text" name="teamId" value="${tm.teamId}" />
+                        <input type="text" name="teamId" value="${tm.teamId}"/>
                     </div>
                 </div>
                 <div class="kv-item ue-clear">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="kv-item ue-clear">
-                    <label>team_slogen</label>
+                    <label>slogen</label>
                     <div class="kv-item-content">
                         <input type="text" name="teamSlogen" value="${tm.teamSlogen}" />
                     </div>

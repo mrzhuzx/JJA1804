@@ -67,7 +67,7 @@
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">Provider信息</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="smbmsProvider/findAllProvider.do" data-id="60"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">产品管理</span></a></li>
+                        <li class="subnav-li" href="smbmsProvider/findAllProviderByPage.do" data-id="60"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">产品管理</span></a></li>
                         <li class="subnav-li" href="jsp/provider/addProvider.jsp" data-id="61"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">添加产品</span></a></li>
 
                     </ul>

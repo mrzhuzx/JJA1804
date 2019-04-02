@@ -47,7 +47,7 @@ public class SmbmsAddressServiceImpl  implements SmbmsAddressService {
 
     @Override
     public long count() {
-        return 0;
+        return smbmsAddressRepository.count();
     }
 
     @Override

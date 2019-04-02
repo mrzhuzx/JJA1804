@@ -21,6 +21,9 @@
             }else{
                 return false;
             }
+            function go() {
+                href="index.html";
+            }
         }
     </script>
 
@@ -80,7 +83,7 @@
                     <span class="optarea">
                         <a href="javascript:;" class="add">
                             <i class="icon"></i>
-                            <span class="text">添加</span>
+                            <span class="text" onclick="javascript:go()">添加</span>
                         </a>
                         <a href="javascript:;" class="delete">
                             <i class="icon"></i>

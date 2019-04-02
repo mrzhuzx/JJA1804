@@ -25,7 +25,7 @@
 
     <script type="text/javascript">
         function p_del() {
-            var msg = "您真的确定要添加吗？\n\n请确认！";
+            var msg = "您真的确定要增加吗？\n\n请确认！";
             if (confirm(msg)==true){
 
                 return true;
@@ -45,42 +45,36 @@
             </h2>
         </div>
 
-            <div class="subfild-content base-info">
+        <div class="subfild-content base-info">
 
-                <div class="kv-item ue-clear">
-                    <label><span class="impInfo">*</span>categoryId:</label>
-                    <div class="kv-item-content" style="margin-left: 20px">
-                        <input type="text" name="categoryId" readonly="true" value="${productCategory.categoryId}"/>
-                    </div>
+
+
+            <div class="kv-item ue-clear time">
+                <label><span class="impInfo">*</span>categoryName:</label>
+                <div class="kv-item-content" style="margin-left: 20px">
+                    <input type="text"  name="categoryName" value="${productCategory.categoryName}"/>
+                </div>
+            </div>
+
+
+            <div class="kv-item ue-clear">
+                <label><span class="impInfo">*</span>categoryType:</label>
+                <div class="kv-item-content" style="margin-left: 20px">
+                    <input type="text" name="categoryType" value="${productCategory.categoryType}"/>
                 </div>
 
-
-                <div class="kv-item ue-clear time">
-                    <label><span class="impInfo">*</span>categoryName:</label>
-                    <div class="kv-item-content" style="margin-left: 20px">
-                        <input type="text" name="categoryName"  value="${productCategory.categoryName}"/>
-                    </div>
-                </div>
-
-
-                    <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>categoryType:</label>
-                        <div class="kv-item-content"  style="margin-left: 20px">
-                            <input type="text" name="categoryType" value="${productCategory.categoryType}"/>
-                        </div>
-
-                    </div>
+            </div>
 
 
 
 
             <div class="buttons">
-                <input class="button"   onclick="javascript:return p_del()" type="submit" value=" 添加" />
+                <input class="button"   onclick="javascript:return p_del()" type="submit" value="增加" />
             </div>
 
 
 
-            </div>
+        </div>
         </div>
     </table>
 </form>

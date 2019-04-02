@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -145,12 +146,12 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
         return false;
     }
 
+
     @Override
-    public void update( String categoryId ,String categoryName) {
+    public int update(String categoryId, String categoryName, Integer categoryType) {
 
-        productCategoryRepository.update(categoryId, categoryName);
-
-
+        productCategoryRepository.update(categoryId,  categoryName, categoryType);
+        return  1;
     }
 
     @Override
@@ -159,4 +160,8 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
      return productCategoryRepository.getOne(categoryId);
 
     }
+
+
+
+
 }

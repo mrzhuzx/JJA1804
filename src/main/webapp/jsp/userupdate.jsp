@@ -1,13 +1,15 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2019/3/28
-  Time: 14:25
+  User: wjy
+  Date: 2019/3/28 0028
+  Time: 上午 10:10
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<%@include file="../appcomm/basePath.jsp"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%@include file="../appcomm/basePath.jsp" %>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,69 +35,64 @@
     <div id="hd">
     </div>
     <div id="bd">
-        <form action="product/${proone.productId}/updateone.do" method="post">
-            <div id="main">
+        <div id="main">
+            <form action="smuser/update.do?userId=${user.userId}" method="post">
                 <h2 class="subfild">
-                    <span>基本信息</span>
+                    <span>修改用户</span>
                 </h2>
+
                 <div class="subfild-content base-info">
-
-
-
                     <div class="kv-item ue-clear">
-                        <label>名字</label>
+                        <label><span class="impInfo">*</span>会员编码</label>
                         <div class="kv-item-content">
-                            <input type="text" name="productName" value="${proone.productName}" />
+                            <input type="text" name="userCode" value="${user.userCode}" />
                         </div>
                     </div>
-                    <div class="kv-item ue-clear">
-                        <label>单价</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="productPrice" value="${proone.productPrice}" />
-                        </div>
-                    </div>
-                    <div class="kv-item ue-clear">
-                        <label>库存</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="productStock" value="${proone.productStock}" />
-                        </div>
-                    </div>
-                    <div class="kv-item ue-clear">
-                        <label>描述</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="productDescription" value="${proone.productDescription}" />
-                        </div>
-                    </div>
-                    <div class="kv-item ue-clear">
-                        <label>小图</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="productIcon" value="${proone.productIcon}" />
-                        </div>
-                    </div>
-                    <div class="kv-item ue-clear">
-                        <label>状态</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="productStatus" value="${proone.productStatus}" />
-                        </div>
-                    </div>
-                    <div class="kv-item ue-clear">
-                        <label>类目编号</label>
-                        <div class="kv-item-content">
-                            <input type="text" name="categoryType" value="${oneType.categoryName}" />
-                        </div>
-                    </div>
-
-
-
                 </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>用户名</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userName" value="${user.userName}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>用户密码</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userPassword" value="${user.userPassword}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>手机号码</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="userPhone" value="${user.userPhone}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="subfild-content base-info">
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>角色</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="roleId" value="${user.roleId}" />
+                        </div>
+                    </div>
+                </div>
+
+
 
                 <div class="buttons">
-                    <input class="button" type="submit" value="确认修改" />
+                    <input class="button" type="submit" value="确定修改" />
                 </div>
-            </div>
-        </form>
+            </form>
+
+        </div>
     </div>
 </div>
+
 </body>
 
 <script type="text/javascript">

@@ -1,4 +1,4 @@
-package com.ssm.teamgys.controller.vo;
+package com.ssm.teamgys.appcomm.vo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
@@ -19,6 +19,6 @@ public class ProductCategoryVO {
     @JsonProperty("categoryName")
     private String categoryName;
 
-    @JsonProperty("productInfoVOList")
-    private List<ProductInfoVO> productInfoVOList;
+   // @JsonProperty("productInfoVOList")
+  //  private List<com.ssm.teamgys.controller.vo.ProductInfoVO> productInfoVOList;
 }

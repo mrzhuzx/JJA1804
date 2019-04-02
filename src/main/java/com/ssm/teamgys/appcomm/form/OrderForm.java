@@ -1,4 +1,4 @@
-package com.imooc.form;
+package com.ssm.teamgys.appcomm.form;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;

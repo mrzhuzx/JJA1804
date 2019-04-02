@@ -37,6 +37,7 @@ public class GuanggaoController {
     }
 
     /**
+     * 有
      * 根据ID删除一条数据
      * @param ggId
      * @return
@@ -59,9 +60,13 @@ public class GuanggaoController {
     @RequestMapping("/seve")
     public ModelAndView advertSave(@ModelAttribute Guanggao guanggao){
         guanggaoService.save(guanggao);
+
     ModelAndView m=new ModelAndView("jsp/advert") ;
+
     List<Guanggao>advertList=guanggaoService.findAll();
+
     m.addObject("advertList",advertList);
+
         return m;
 }
 
@@ -71,8 +76,6 @@ public class GuanggaoController {
      * @param ggTitle
      * @param ggImg
      * @param ggUrl
-
-
      * @return
      */
     @RequestMapping("/update")

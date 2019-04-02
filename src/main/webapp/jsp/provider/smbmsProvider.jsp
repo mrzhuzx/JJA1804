@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<%@include file="../appcomm/basePath.jsp" %>
+<%@include file="../../appcomm/basePath.jsp" %>
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7"/>
@@ -22,7 +22,7 @@
 
         /* Table Head */
         table thead th {
-            background-color:#0F8DC7;
+            background-color: #0F8DC7;
             color: #fff;
             border-bottom-width: 0;
         }
@@ -31,6 +31,7 @@
         table td {
             color: #000;
         }
+
         /* Heading and Column Style */
         table tr, table th {
             border-width: 1px;
@@ -55,7 +56,29 @@
     <div id="hd"></div>
     <div id="bd">
         <div id="main">
+            <div class="search-box ue-clear">
+                <div class="search-area">
+                    <div class="kv-item ue-clear">
+                        <label>输入关键字：</label>
+                        <div class="kv-item-content ue-clear">
+                           <input type="text"  >
+                        </div>
 
+                        <label>选择类型:</label>
+                        <div class="kv-item-content">
+                            <select>
+                                <option>全部</option>
+                                <option>全部</option>
+                                <option>全部</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="search-button">
+                    <input class="button" type="submit" value="搜索一下" />
+                </div>
+            </div>
 
             <div class="table">
                 <div class="opt ue-clear">
@@ -94,19 +117,14 @@
                 </div>
 
                 <div class="grid">
-                    <table style="margin-left: 0px;width:100%;" >
+                    <table style="margin-left: 0px;width:100%;">
                         <thead>
                         <tr>
                             <th name="id">
-                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">proId</span><a
+                                <div class="ui-table-th" style="width:40px"><span
+                                        class="ui-table-thTitle">proId</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
-                            </th>
-
-
-                            <th>
-                                <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">proCode</span><span class="ui-table-drag"></span></div>
                             </th>
 
                             <th class="minWidth">
@@ -118,38 +136,93 @@
                                         class="ui-table-thTitle">proDesc</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
-                            <div class="ui-table-th" style="width: 120px;"><span
-                                    class="ui-table-thTitle">proContact</span><span class="ui-table-drag"></span></div>
-                            </th>
-                            <th class="minWidth">
-                            <div class="ui-table-th" style="width: 120px;"><span
-                                    class="ui-table-thTitle">proPhone</span><span class="ui-table-drag"></span></div>
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">proContact</span><span class="ui-table-drag"></span>
+                                </div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">proAddress</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">proPhone</span><span class="ui-table-drag"></span>
+                                </div>
                             </th>
                             <th class="minWidth">
-                                <div class="ui-table-th" style="width: 120px;"><span
+                                <div class="ui-table-th" style="width: 200px;"><span
+                                        class="ui-table-thTitle">proAddress</span><span class="ui-table-drag"></span>
+                                </div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 100px;"><span
                                         class="ui-table-thTitle">proFax</span><span class="ui-table-drag"></span></div>
                             </th>
                             <th class="minWidth">
-                                <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">creationDate</span><span class="ui-table-drag"></span></div>
+                                <div class="ui-table-th" style="width: 100px;"><span
+                                        class="ui-table-thTitle">creationDate</span><span class="ui-table-drag"></span>
+                                </div>
                             </th>
                             <th class="minWidth">
-                                <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">modifyDate</span><span class="ui-table-drag"></span></div>
+                                <div class="ui-table-th" style="width: 100px;"><span
+                                        class="ui-table-thTitle">modifyDate</span><span class="ui-table-drag"></span>
+                                </div>
                             </th>
                             <th>
-                                <div class="ui-table-th" style="width:70px"><span
+                                <div class="ui-table-th" style="width:180px"><span
                                         class="ui-table-thTitle">操作</span><span class="ui-table-drag"></span></div>
                             </th>
 
                         </tr>
 
-
                         </thead>
+                        <tbody class="__data">
+                        <c:forEach var="prolist" items="${prolist}">
+                            <tr>
+                                <td name="id">
+                                    <div class="ui-table-td">${prolist.proId}</div>
+                                </td>
+
+                                <td>
+                                    <div class="ui-table-td">${prolist.proName}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td">
+                                            ${fn:length(prolist.proDesc) > 10 ? fn:substring(prolist.proDesc,0,10) : prolist.proDesc}${fn:length(prolist.proDesc) > 10 ? '...' : ''}
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td">${prolist.proContact}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td">${prolist.proPhone}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td">
+
+                                            ${fn:length(prolist.proAddress) > 10 ? fn:substring(prolist.proAddress,0,10) : prolist.proAddress}${fn:length(prolist.proAddress) > 10 ? '...' : ''}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td">${prolist.proFax}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td"><fmt:formatDate value="${prolist.creationDate}"
+                                                                             pattern="yyyy年MM月dd日"/></div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td"><fmt:formatDate value="${prolist.modifyDate}"
+                                                                             pattern="yyyy年MM月dd日"/></div>
+                                </td>
+
+                                <td class="ui-table-operation">
+                                    <a href="provider/${prolist.proId}/deleteById.do">删除</a> &nbsp;
+                                    <a href="provider/${prolist.proId}/findById.do">编辑</a>&nbsp;
+                                    <a href="provider/${prolist.proId}/findById.do">查看详细信息</a></td>
+
+                                <td class="ui-table-blank" style="width: 10px;">
+                                    <div class="ui-table-td"></div>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
                     </table>
 
 
@@ -159,46 +232,14 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="list"  items="${prolist}">
-                            <tr>
-                                <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${list.proId}</div>
-                                </td>
-                                <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${list.proCode}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proName}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proDesc}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proContact}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proPhone}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proAddress}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.proFax}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.creationDate}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.modifyDate}</div>
-                                </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="provider/${list.proId}/deleteById.do">删除</a><a href="provider/${list.proId}/findById.do">编辑</a></td>
+                        <div class="pagination">
+                            <a href="smbmsProvider/findAllProviderByPage.do?pagenum=1">&nbsp;首页&nbsp;</a>
+                            <a href="smbmsProvider/findAllProviderByPage.do?pagenum=${pagenum-1}" >&nbsp;上一页&nbsp;</a>
+                            <a href="smbmsProvider/findAllProviderByPage.do?pagenum=${pagenum+1}">&nbsp;下一页&nbsp;</a>
+                            <a href="smbmsProvider/findAllProviderByPage.do?pagenum=5">&nbsp;尾页&nbsp;</a>
+                        </div>
 
-                                <td class="ui-table-blank" style="width: 10px;">
-                                    <div class="ui-table-td"></div>
-                                </td>
-                            </tr>
-                        </c:forEach>
                         </tbody>
                     </table>
                 </div>

@@ -31,11 +31,9 @@
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">产品分类</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="protype/list.do" data-id="20"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">产品分类管理</span></a></li>
-                        <li class="subnav-li" href="form.html" data-id="21"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">新闻频道管理</span></a></li>
-                        <li class="subnav-li" href="table.html" data-id="22"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">地方新闻管理</span></a></li>
-                        <li class="subnav-li" data-id="11"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">自定义设置1</span></a></li>
-                    </ul>
+                        <li class="subnav-li" href="protype/list.do" data-id="20"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">狗狗分类管理</span></a></li>
+                        <li class="subnav-li" href="jsp/addproductCategory.jsp" data-id="21"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">添加狗狗种类</span></a></li>
+                        </ul>
                 </li>
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">产品信息</span></a>
@@ -61,16 +59,16 @@
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">地址信息</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="address/findAllAddress.do" data-id="50"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">全部地址信息</span></a></li>
-                        <li class="subnav-li" href="jsp/addAddress.jsp" data-id="51"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">增加地址</span></a></li>
+                        <li class="subnav-li" href="smbmsAddress/findAllAddress.do" data-id="50"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">全部地址信息</span></a></li>
+                        <li class="subnav-li" href="jsp/address/addAddress.jsp" data-id="51"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">增加地址</span></a></li>
 
                     </ul>
                 </li>
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">Provider信息</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="provider/findAllProvider.do" data-id="60"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">产品管理</span></a></li>
-                        <li class="subnav-li" href="jsp/addProvider.jsp" data-id="61"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">添加产品</span></a></li>
+                        <li class="subnav-li" href="smbmsProvider/findAllProviderByPage.do" data-id="60"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">产品管理</span></a></li>
+                        <li class="subnav-li" href="jsp/provider/addProvider.jsp" data-id="61"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">添加产品</span></a></li>
 
                     </ul>
                 </li>

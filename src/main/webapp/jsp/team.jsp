@@ -160,7 +160,7 @@
                                     <div class="ui-table-td" style="width: 120px;">${tm.teamState}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"></a><a href="team/delete.do?teamId=${tm.teamId}">删除</a></a><a href="javascript:;">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 100px;"></a><a href="team/delete.do?teamId=${tm.teamId}">删除</a><a href="team/queryone.do?teamId=${tm.teamId}">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

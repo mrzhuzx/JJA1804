@@ -16,7 +16,7 @@ import java.util.Date;
 @Entity
 @Table
 @Data
-public class SmbmRole {
+public class SmbmsRole {
   @Id //这是一个主键
   @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
   private Long roleId;

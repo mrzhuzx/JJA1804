@@ -66,7 +66,7 @@
                         <i class="card"></i>
                     </span>
                     <span class="optarea">
-                        <a href="jsp/smbmrolesave.jsp" class="add">
+                        <a href="jsp/smbmsrole/rolesave.jsp" class="add">
                             <i class="icon"></i>
                             <span class="text">添加</span>
                         </a>
@@ -133,7 +133,7 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="sm"  items="${smbmRoleList}">
+                        <c:forEach   var="sm"  items="${smbmsRoleList}">
                             <tr>
                                 <td name="id">
                                     <div class="ui-table-td" style="width:70px">${sm.roleId}</div>
@@ -151,7 +151,7 @@
                                     <div class="ui-table-td" style="width:120px">${sm.roleCode}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="smbmrole/delete.do?roleId=${sm.roleId}">删除</a><a href="smbmrole/roleone.do?roleId=${sm.roleId}">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 100px;"><a href="smbmsrole/delete.do?roleId=${sm.roleId}">删除</a><a href="smbmsrole/roleone.do?roleId=${sm.roleId}">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

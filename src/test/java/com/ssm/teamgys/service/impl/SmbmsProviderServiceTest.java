@@ -8,10 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
@@ -67,8 +64,14 @@ public class SmbmsProviderServiceTest {
     public void testFindAllPage(){
         Integer pagenum=1;
         Integer sizi=4;
+
         Pageable pageable=new PageRequest(pagenum-1,sizi,new Sort(Sort.Direction.ASC,"proId"));
-        Page<SmbmsProvider> page = smbmsProviderService.findAll(pageable);
+        //Page<SmbmsProvider> page = smbmsProviderService.findAll(pageable)
+        SmbmsProvider  sp=new SmbmsProvider();
+      //  sp.setProContact("加一一");
+        Example<SmbmsProvider>  example=Example.of(sp);
+        Page<SmbmsProvider> page = smbmsProviderService.findAll(example,pageable);
+                ;
         List<SmbmsProvider> list = page.getContent();
         for (int i = 0; i < list.size(); i++) {
             SmbmsProvider smbmsProvider = list.get(i);

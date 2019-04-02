@@ -79,15 +79,10 @@ public class TeamServiceImplTest {
         teamService.deleteById("5");
     }
 
-    /**修改
-     * @return
-     */
-    @Test
-    public void  testUpdate() {
-        teamService.update(6L, "大白");
+
 
     }
 
 
 
-}
+

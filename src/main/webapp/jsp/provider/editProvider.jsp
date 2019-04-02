@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%@include file="../appcomm/basePath.jsp"%>
+<%@include file="../../appcomm/basePath.jsp"%>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,7 +33,7 @@
     <div id="hd">
     </div>
     <div id="bd">
-        <form action="address/${sa.addId}/updateById.do" method="post">
+        <form action="provider/${pr.proId}/updateById.do" method="post">
         <div id="main">
             <h2 class="subfild">
                 <span>基本信息</span>
@@ -41,27 +41,40 @@
             <div class="subfild-content base-info">
 
                 <div class="kv-item ue-clear">
+                    <label>产品名字</label>
+                    <div class="kv-item-content">
+                        <input type="text" name="proName" value="${pr.proName}" />
+                    </div>
+                </div>
+
+                <div class="kv-item ue-clear">
+                    <label>产品描述</label>
+                    <div class="kv-item-content">
+                        <input type="text" name="proDesc" value="${pr.proDesc}" />
+                    </div>
+                </div>
+                <div class="kv-item ue-clear">
                     <label>联系人</label>
                     <div class="kv-item-content">
-                        <input type="text" name="addContact" value="${sa.addContact}" />
-                    </div>
-                </div>
-                <div class="kv-item ue-clear">
-                    <label>送货地址</label>
-                    <div class="kv-item-content">
-                        <input type="text" name="addDesc" value="${sa.addDesc}" />
-                    </div>
-                </div>
-                <div class="kv-item ue-clear">
-                    <label>邮编</label>
-                    <div class="kv-item-content">
-                        <input type="text" name="addPostCode" value="${sa.addPostCode}" />
+                        <input type="text" name="proContact" value="${pr.proContact}" />
                     </div>
                 </div>
                 <div class="kv-item ue-clear">
                     <label>电话</label>
                     <div class="kv-item-content">
-                        <input type="text" name="addTelPhone" value="${sa.addTelPhone}" />
+                        <input type="text" name="proPhone" value="${pr.proPhone}" />
+                    </div>
+                </div>
+                <div class="kv-item ue-clear">
+                    <label>地址</label>
+                    <div class="kv-item-content">
+                        <input type="text" name="proAddress" value="${pr.proAddress}" />
+                    </div>
+                </div>
+                <div class="kv-item ue-clear">
+                    <label>传真</label>
+                    <div class="kv-item-content">
+                        <input type="text" name="proFax" value="${pr.proFax}" />
                     </div>
                 </div>
 

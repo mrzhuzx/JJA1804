@@ -52,20 +52,25 @@ public class UserInfoController {
     @RequestMapping("/pagelist")
     public ModelAndView page(@RequestParam(required = false) Integer pagenum ){
         ModelAndView m = new ModelAndView("jsp/userinfo/userinfo");
+        long count = userInfoService.count();
+        Integer ui=(int)count;
+        Integer size=10;
+        Integer pageall=ui%size==0?ui/size:ui/size+1;
+        if(pagenum>=pageall){
+            pagenum= pageall;
+        }
         if(pagenum ==null ||pagenum<=0){
             pagenum=1;
         }
-        Integer size=10;
+
         Pageable pageable=new PageRequest(pagenum-1,size,new Sort(Sort.Direction.ASC,"userId"));
         Page<UserInfo> pagelist=userInfoService.findAll(pageable);
         m.addObject("userInfoList",pagelist.getContent());
         m.addObject("pagenum",pagenum);
+        m.addObject("pageall",pageall);
         return  m;
 
     }
-
-
-
 
     /**
      * 根据主键ID删除

@@ -224,7 +224,7 @@
                             <a href="userinfo/pagelist.do?pagenum=1">&nbsp;首页&nbsp;</a>
                             <a href="userinfo/pagelist.do?pagenum=${pagenum-1}" >&nbsp;上一页&nbsp;</a>
                             <a href="userinfo/pagelist.do?pagenum=${pagenum+1}">&nbsp;下一页&nbsp;</a>
-                            <a href="userinfo/pagelist.do?pagenum=5">&nbsp;尾页&nbsp;</a>
+                            <a href="userinfo/pagelist.do?pagenum=${pageall}">&nbsp;尾页&nbsp;</a>
                         </div>
 
                         </tbody>

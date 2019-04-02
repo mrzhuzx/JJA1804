@@ -2,13 +2,11 @@ package com.ssm.teamgys.controller;
 
 
 import com.ssm.teamgys.appcomm.MYUUID;
-import com.ssm.teamgys.domain.ProductCategory;
 import com.ssm.teamgys.domain.ProductInfo;
 
 import com.ssm.teamgys.repositorydomain.ProductCategoryRepository;
 import com.ssm.teamgys.service.ProductInfoService;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -38,7 +36,7 @@ public class ProductInfoController {
     @RequestMapping("/pro")
     public ModelAndView list() {
 
-        ModelAndView m = new ModelAndView("jsp/product");
+        ModelAndView m = new ModelAndView("jsp/product/product");
         List<ProductInfo> findsearch = productInfoService.findsearch();
         m.addObject("findsearch", findsearch);
 
@@ -49,7 +47,7 @@ public class ProductInfoController {
     @RequestMapping("delete")
     public ModelAndView   delete(@RequestParam  String   productId){
 
-        ModelAndView  m  = new ModelAndView("jsp/product");
+        ModelAndView  m  = new ModelAndView("jsp/product/product");
 
         productInfoService.delete(productId);
         List<ProductInfo> findsearch = productInfoService.findsearch();
@@ -66,7 +64,7 @@ public class ProductInfoController {
         productInfoService.save(pro);
         System.out.println(pro.toString());
 
-        ModelAndView m = new ModelAndView("jsp/product");
+        ModelAndView m = new ModelAndView("jsp/product/product");
 
         List<ProductInfo> findsearch = productInfoService.findsearch();
         m.addObject("findsearch", findsearch);
@@ -83,7 +81,7 @@ public class ProductInfoController {
         ProductInfo one = productInfoService.findOne(searchone);
         System.out.println(one.toString()+"======================");
 
-        ModelAndView  m =   new ModelAndView("jsp/productupdate");
+        ModelAndView  m =   new ModelAndView("jsp/product/productupdate");
         m.addObject("proone",one);
 
 
@@ -94,7 +92,7 @@ public class ProductInfoController {
 
     public   ModelAndView update(@PathVariable(value ="proid")  String  proid,@ModelAttribute ProductInfo pro){
 
-        ModelAndView  m = new ModelAndView("jsp/product");
+        ModelAndView  m = new ModelAndView("jsp/product/product");
         int update = productInfoService.update(proid, pro.getProductName(), pro.getProductPrice(), pro.getProductStock(), pro.getProductDescription(), pro.getProductIcon(), pro.getProductStatus(), pro.getCategoryType());
 
 

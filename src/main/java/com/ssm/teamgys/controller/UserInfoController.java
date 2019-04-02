@@ -32,7 +32,7 @@ public class UserInfoController {
 
     @RequestMapping("/list")
     public ModelAndView list(){
-        ModelAndView u = new ModelAndView("user/userinfo");
+        ModelAndView u = new ModelAndView("jsp/userinfo/userinfo");
         List<UserInfo> userInfoList=userInfoService.findAll();
         u.addObject("userInfoList",userInfoList);
         return u;
@@ -41,7 +41,7 @@ public class UserInfoController {
 
     @RequestMapping("/userdel")
     public ModelAndView  userinfodelete(@RequestParam Long userId){
-       ModelAndView a=new ModelAndView("user/userinfo");
+       ModelAndView a=new ModelAndView("jsp/userinfo/userinfo");
        userInfoService.deleteById(String.valueOf(userId));
        List<UserInfo> userInfoList=userInfoService.findAll();
        a.addObject("userInfoList",userInfoList);
@@ -51,16 +51,16 @@ public class UserInfoController {
     @RequestMapping("/save")
     public ModelAndView usersave(@ModelAttribute UserInfo ui) {
 
-        ModelAndView u = new ModelAndView("user/userinfo");
+        ModelAndView u = new ModelAndView("jsp/userinfo/userinfo");
         UserInfo save = userInfoService.save(ui);
         if (save != null) {
-            List<UserInfo> userInfos = userInfoService.findAll();
-            u.addObject("userInfos", userInfos);
+            List<UserInfo> userInfoList=userInfoService.findAll();
+            u.addObject("userInfoList",userInfoList);
             return u;
         } else {
             log.info("添加失败");
-            List<UserInfo> userInfos = userInfoService.findAll();
-            u.addObject("userInfos", userInfos);
+            List<UserInfo> userInfoList=userInfoService.findAll();
+            u.addObject("userInfoList",userInfoList);
             return u;
 
         }
@@ -70,7 +70,7 @@ public class UserInfoController {
 
     @RequestMapping("/searchone")
     public ModelAndView userUpdate(@RequestParam String userId){
-        ModelAndView u=new ModelAndView("user/userupdate");
+        ModelAndView u=new ModelAndView("jsp/userinfo/userupdate");
         UserInfo search=userInfoService.getOne(userId);
         u.addObject("search",search);
         return u;
@@ -80,7 +80,7 @@ public class UserInfoController {
     @RequestMapping("/update")
     public ModelAndView userupdate(@ModelAttribute UserInfo  user) {
         userInfoService.update(user.getUserId(),user.getUserPassword(),user.getUserAddress(),user.getUserPhone(),user.getUserName(),user.getUserCode());
-        ModelAndView u=new ModelAndView("user/userinfo");
+        ModelAndView u=new ModelAndView("jsp/userinfo/userinfo");
         List<UserInfo> userInfoList=userInfoService.findAll();
         u.addObject("userInfoList",userInfoList);
         return u;

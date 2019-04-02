@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<%@include file="../appcomm/basePath.jsp" %>
+<%@include file="../../appcomm/basePath.jsp" %>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -43,7 +43,7 @@
 
                 <div class="subfild-content base-info">
                     <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>会员编码</label>
+                        <label><span class="impInfo">*</span>编码</label>
                         <div class="kv-item-content">
                             <input type="text" name="userCode" value="85726c73dsd55" />
                         </div>

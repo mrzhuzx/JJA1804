@@ -91,7 +91,7 @@
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">后台管理</span></a>
                     <ul class="subnav">
                         <li class="subnav-li" href="smuser/list.do" data-id="90"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">后台用户管理</span></a></li>
-                        <li class="subnav-li" href="smbmsrole/list.do" data-id="91"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">用户角色管理</span></a></li>
+                        <li class="subnav-li" href="smbmsrole/rolepage.do" data-id="91"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">用户角色管理</span></a></li>
                     </ul>
                 </li>
 

@@ -49,7 +49,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public long count() {
-        return 0;
+        return userInfoRepository.count();
     }
 
     @Override

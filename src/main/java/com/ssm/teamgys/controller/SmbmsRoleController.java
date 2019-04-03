@@ -49,14 +49,27 @@ public class SmbmsRoleController {
      */
     @RequestMapping("/rolepage")
     public ModelAndView rolepage(@RequestParam(required = false) Integer pagenum){
+
         ModelAndView s=new ModelAndView("jsp/smbmsrole/role");
+
+        long count = smbmsRoleService.count();
+        Integer sm=(int)count;
+        Integer size=10;
+        Integer pageall=sm%size==0?sm/size:sm/size+1;
+
+
         if(pagenum ==null ||pagenum<=0){
             pagenum=1;
         }
-        Integer size=10;
+
+        if(pagenum>=pageall){
+            pagenum=pageall;
+        }
+
         Pageable pageable=new PageRequest(pagenum-1,size,new Sort(Sort.Direction.ASC,"roleId"));
         Page<SmbmsRole> rolepage=smbmsRoleService.findAll(pageable);
         s.addObject("smbmsRoleList",rolepage.getContent());
+        s.addObject("pageall",pageall);
         s.addObject("pagenum",pagenum);
         return s;
 

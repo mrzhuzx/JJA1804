@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<%@include file="../appcomm/basePath.jsp" %>
+<%@include file="../../appcomm/basePath.jsp" %>
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7"/>
@@ -58,7 +58,29 @@
     <div id="hd"></div>
     <div id="bd">
         <div id="main">
+            <div class="search-box ue-clear">
+                <div class="search-area">
+                    <div class="kv-item ue-clear">
+                        <label>输入关键字：</label>
+                        <div class="kv-item-content ue-clear">
+                            <input type="text"  >
+                        </div>
 
+                        <label>选择类型:</label>
+                        <div class="kv-item-content">
+                            <select>
+                                <option>全部</option>
+                                <option>全部</option>
+                                <option>全部</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="search-button">
+                    <input class="button" type="submit" value="搜索一下" />
+                </div>
+            </div>
 
             <div class="table">
                 <div class="opt ue-clear">
@@ -138,16 +160,16 @@
                                     <div class="ui-table-td" style="width:100%">${g.ggTitle}</div>
                                 </td >
                                 <td width="20%">
-                                    <div class="ui-table-td" style="width:100%"><img src="${g.ggImg}" width="200px"height="200px"/></div>
+                                    <div class="ui-table-td" style="width:100%"><img src="${g.ggImg}" width="200px"height="180spx"/></div>
                                 </td>
                                 <td width="30%">
-                                    <div class="ui-table-td" style="width: 100%;">${g.ggUrl}</div>
+                                    <div class="ui-table-td" style="width: 100%;">  ${fn:length(g.ggUrl) > 30 ? fn:substring(g.ggUrl,0,30) : g.ggUrl}${fn:length(g.ggUrl) > 30 ? '...' : ''}</div>
                                 </td>
                                 <td   width="20%" minwidth="minWidth">
                                     <div class="ui-table-td" style="width: 100%;">${g.createTime}</div>
                                 </td>
 
-                                <td class="ui-table-operation" style="width: 10%;"><a href="javascript:;">删除</a><a href="javascript:;">编辑</a></td>
+                                <td class="ui-table-operation" style="width: 10%;"><a href="advert/delete.do?inId=${g.ggId}" class="delete">删除</a><a href="javascript:;">编辑</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>
@@ -156,6 +178,20 @@
                         </c:forEach>
                         </tbody>
                     </table>
+                </div>
+                <div class="pagination">
+
+
+
+
+                        <div class="pagination">
+                            <a href="advert/listByPage.do?pagenum=1">&nbsp;首页&nbsp;</a>
+                            <a href="advert/listByPage.do?pagenum=${pagenum-1}" >&nbsp;上一页&nbsp;</a>
+                            <a href="advert/listByPage.do?pagenum=${pagenum+1}">&nbsp;下一页&nbsp;</a>
+                            <a href="advert/listByPage.do?pagenum=5">&nbsp;尾页&nbsp;</a>
+                        </div>
+
+
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<%@include file="../appcomm/basePath.jsp" %>
+<%@include file="../../appcomm/basePath.jsp" %>
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7"/>
@@ -50,6 +50,30 @@
     <div id="bd">
         <div id="main">
 
+            <div class="search-box ue-clear">
+                <div class="search-area">
+                    <div class="kv-item ue-clear">
+                        <label>输入关键字：</label>
+                        <div class="kv-item-content ue-clear">
+                            <input type="text"  >
+                        </div>
+
+                        <label>选择类型:</label>
+                        <div class="kv-item-content">
+                            <select>
+                                <option>全部</option>
+                                <option>teamId</option>
+                                <option>teamName</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="search-button">
+                    <input class="button" type="submit" value="搜索一下" />
+                </div>
+            </div>
+
 
             <div class="table">
                 <div class="opt ue-clear">
@@ -68,7 +92,7 @@
                     <span class="optarea">
                         <a href="javascript:;" class="add">
                             <i class="icon"></i>
-                            <span class="text"><a href="jsp/teamadd.jsp">添加</a> </span>
+                            <span class="text"><a href="jsp/team/teamadd.jsp">添加</a> </span>
                         </a>
                         <a href="javascript:;" class="delete">
                             <i class="icon"></i>
@@ -171,6 +195,23 @@
 
                         </tbody>
                     </table>
+
+
+                    <div class="pagination">
+
+                        <table style="width: 100%;border:12px" align="center">
+                            <tbody class="__data">
+
+                            <div class="pagination">
+                                <a href="team/findpage.do?pagenum=1">&nbsp;首页&nbsp;</a>
+                                <a href="team/findpage.do?pagenum=${pagenum-1}" >&nbsp;上一页&nbsp;</a>
+                                <a href="team/findpage.do?pagenum=${pagenum+1}">&nbsp;下一页&nbsp;</a>
+                                <a href="team/findpage.do?pagenum=5">&nbsp;尾页&nbsp;</a>
+                            </div>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

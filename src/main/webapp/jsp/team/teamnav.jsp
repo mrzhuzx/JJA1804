@@ -39,7 +39,7 @@
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">产品信息</span></a>
                     <ul class="subnav">
 
-                        <li class="subnav-li" href="product/productfindPage.do" data-id="31"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">产品信息</span></a></li>
+                        <li class="subnav-li" href="product/pro.do" data-id="31"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">产品信息</span></a></li>
                         <%--<li class="subnav-li" href="jsp/product/productupdate.jsp" data-id="32"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">编辑产品信息</span></a></li>--%>
                         <li class="subnav-li" href="jsp/product/productsave.jsp" data-id="33"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">添加产品</span></a></li>
 
@@ -59,7 +59,7 @@
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">地址信息</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="smbmsAddress/findAllAddressByPage.do?pagenum=1" data-id="50"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">全部地址信息</span></a></li>
+                        <li class="subnav-li" href="smbmsAddress/findAllAddress.do" data-id="50"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">全部地址信息</span></a></li>
                         <li class="subnav-li" href="jsp/address/addAddress.jsp" data-id="51"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">增加地址</span></a></li>
 
                     </ul>
@@ -83,15 +83,17 @@
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">客户信息</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="userinfo/pagelist.do" data-id="80"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">客户管理</span></a></li>
-                        <li class="subnav-li" href="jsp/userinfo/usersave.jsp" data-id="81"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">用户增加</span></a></li>
+                        <li class="subnav-li" href="userinfo/list.do" data-id="80"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">客户管理</span></a></li>
+                        <li class="subnav-li" href="form.html" data-id="81"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">新闻频道管理</span></a></li>
+                        <li class="subnav-li" href="table.html" data-id="82"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">地方新闻管理</span></a></li>
+                        <li class="subnav-li" data-id="83"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">自定义设置1</span></a></li>
                     </ul>
                 </li>
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">后台管理</span></a>
                     <ul class="subnav">
                         <li class="subnav-li" href="smuser/list.do" data-id="90"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">后台用户管理</span></a></li>
-                        <li class="subnav-li" href="smbmsrole/list.do" data-id="91"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">用户角色管理</span></a></li>
+                        <li class="subnav-li" href="smbmrole/list.do" data-id="91"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">用户角色管理</span></a></li>
                     </ul>
                 </li>
 
@@ -99,8 +101,8 @@
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">项目团队开发者</span></a>
                     <ul class="subnav">
                         <li class="subnav-li" href="team/list.do" data-id="8"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">项目团队管理</span></a></li>
-                        <li class="subnav-li" href="form.html" data-id="9"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">新闻频道管理</span></a></li>
-                        <li class="subnav-li" href="table.html" data-id="10"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">地方新闻管理</span></a></li>
+                        <li class="subnav-li" href="jsp/team/teamadd.jsp" data-id="9"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">添加团队成员</span></a></li>
+                        <li class="subnav-li" href="" data-id="10"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">修改团队成员</span></a></li>
                         <li class="subnav-li" data-id="11"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">自定义设置1</span></a></li>
                     </ul>
                 </li>
@@ -108,9 +110,10 @@
                 <li class="nav-li">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">广告信息</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li" href="advert/listByPage.do" data-id="8"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">广告</span></a></li>
+                        <li class="subnav-li" href="guan/list.do" data-id="8"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">广告</span></a></li>
                         <li class="subnav-li" href="form.html" data-id="9"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">新闻频道管理</span></a></li>
-
+                        <li class="subnav-li" href="table.html" data-id="10"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">地方新闻管理</span></a></li>
+                        <li class="subnav-li" data-id="11"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">自定义设置1</span></a></li>
                     </ul>
                 </li>
 

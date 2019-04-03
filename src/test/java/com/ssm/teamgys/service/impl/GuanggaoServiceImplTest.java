@@ -1,24 +1,17 @@
 package com.ssm.teamgys.service.impl;
 
 import com.ssm.teamgys.domain.Guanggao;
-import com.ssm.teamgys.service.GuanggaoService;
-import com.ssm.teamgys.service.SmbmRoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * desc:
@@ -46,12 +39,16 @@ public class GuanggaoServiceImplTest {
 
     @Test
     public void findAllById() {
-        Sort sort=new Sort(Sort.Direction.ASC,"ggId");
+      //  Sort sort=new Sort(Sort.Direction.ASC,"ggId");
         Integer pageNum=2; //  2   3页
         Integer size=5;
 
         Pageable pageable =new PageRequest(pageNum-1,size,new Sort(Sort.Direction.ASC,"ggId"));
-        Page<Guanggao> page = guanggaoService.findAll(pageable);
+       // Page<Guanggao> page = guanggaoService.findAll(pageable);
+       Guanggao ga=new Guanggao();
+        Example<Guanggao> example=Example.of(ga);
+        Page<Guanggao> page=guanggaoService.findAll(example,pageable);
+
         List<Guanggao> content =page.getContent();
         for (int i = 0; i <content.size() ; i++) {
             Guanggao guanggao=content.get(i);

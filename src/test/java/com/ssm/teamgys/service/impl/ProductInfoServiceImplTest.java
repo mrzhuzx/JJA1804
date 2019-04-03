@@ -90,6 +90,7 @@ public class ProductInfoServiceImplTest {
 
         PageRequest pageable = new PageRequest(pageNum-1, size,new Sort(Sort.Direction.ASC,"productId")); //根据start、size、sort创建分页对象
 
+
         Page<ProductInfo> page = productInfoService.findAll(pageable);
 
         List<ProductInfo> content = page.getContent();

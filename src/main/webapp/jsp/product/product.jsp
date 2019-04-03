@@ -50,6 +50,30 @@
     <div id="bd">
         <div id="main">
 
+            <div class="search-box ue-clear">
+                <div class="search-area">
+                    <div class="kv-item ue-clear">
+                        <label>输入关键字：</label>
+                        <div class="kv-item-content ue-clear">
+                            <input type="text"  >
+                        </div>
+
+                        <label>选择类型:</label>
+                        <div class="kv-item-content">
+                            <select>
+                                <option>全部</option>
+                                <option>全部</option>
+                                <option>全部</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="search-button">
+                    <input class="button" type="submit" value="搜索一下" />
+                </div>
+            </div>
+
 
             <div class="table">
                 <div class="opt ue-clear">
@@ -138,19 +162,21 @@
 
 
                         </thead>
-                    </table>
 
 
-                </div>
 
-                <div class="pagination">
 
-                    <table style="width: 100%;border:12px" align="center" >
+
                         <tbody class="__data">
+
                         <c:forEach   var="pro"  items="${findsearch}">
                             <tr>
                                 <td name="id" align="center" >
-                                    <div class="ui-table-td" style="width:70px">${pro.productId}</div>
+                                    <div class="ui-table-td" style="width:70px">
+                                            ${fn:length(pro.productId) > 10 ? fn:substring(pro.productId,0,10) : pro.productId}${fn:length(pro.productId) > 10 ? '...' : ''}
+
+
+                                    </div>
                                 </td>
                                 <td name="name" align="center">
                                     <div class="ui-table-td" style="width:120px">${pro.productName}</div>
@@ -162,7 +188,9 @@
                                     <div class="ui-table-td" style="width:120px">${pro.productStock}</div>
                                 </td>
                                 <td minwidth="minWidth">
-                                    <div class="ui-table-td" style="width: 120px;">${pro.productDescription}</div>
+                                    <div class="ui-table-td" style="width: 120px;">
+                                            ${fn:length(pro.productDescription) > 10 ? fn:substring(pro.productDescription,0,10) : pro.productDescription}${fn:length(pro.productDescription) > 10 ? '...' : ''}
+                                    </div>
                                 </td>
                                 <td>
                                     <div class="ui-table-td" style="width:120px"><img src="${pro.productIcon}" width="100px" height="100px"/>  </div>
@@ -190,6 +218,23 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="pagination">
+
+                    <table style="width: 100%;border:12px" align="center">
+                        <tbody class="__data">
+
+                        <div class="pagination">
+                            <a href="product/productfindPage.do?pagenum=1">&nbsp;首页&nbsp;</a>
+                            <a href="product/productfindPage.do?pagenum=${pagenum-1}" >&nbsp;上一页&nbsp;</a>
+                            <a href="product/productfindPage.do?pagenum=${pagenum+1}">&nbsp;下一页&nbsp;</a>
+                            <a href="product/productfindPage.do?pagenum=5">&nbsp;尾页&nbsp;</a>
+                        </div>
+
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </div>
     </div>

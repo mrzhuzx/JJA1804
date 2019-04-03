@@ -213,9 +213,9 @@
                                 </td>
 
                                 <td class="ui-table-operation">
-                                    <a href="provider/${prolist.proId}/deleteById.do">删除</a> &nbsp;
-                                    <a href="provider/${prolist.proId}/findById.do">编辑</a>&nbsp;
-                                    <a href="provider/${prolist.proId}/findById.do">查看详细信息</a></td>
+                                    <a href="smbmsprovider/${prolist.proId}/deleteById.do">删除</a> &nbsp;
+                                    <a href="smbmsprovider/${prolist.proId}/findById.do">编辑</a>&nbsp;
+                                    <a href="smbmsprovider/${prolist.proId}/findById.do">查看详细信息</a></td>
 
                                 <td class="ui-table-blank" style="width: 10px;">
                                     <div class="ui-table-td"></div>

@@ -4,10 +4,15 @@ package com.ssm.teamgys.controller;
 import com.ssm.teamgys.appcomm.MYUUID;
 import com.ssm.teamgys.domain.ProductInfo;
 
+import com.ssm.teamgys.domain.SmbmsProvider;
 import com.ssm.teamgys.repositorydomain.ProductCategoryRepository;
 import com.ssm.teamgys.service.ProductInfoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -79,8 +84,6 @@ public class ProductInfoController {
 
     public ModelAndView  searchone(  @PathVariable(value = "proid") String  searchone){
         ProductInfo one = productInfoService.findOne(searchone);
-        System.out.println(one.toString()+"======================");
-
         ModelAndView  m =   new ModelAndView("jsp/product/productupdate");
         m.addObject("proone",one);
 
@@ -99,15 +102,34 @@ public class ProductInfoController {
         List<ProductInfo> findsearch = productInfoService.findsearch();
         m.addObject("findsearch", findsearch);
 
-
-
-
-
         return  m;
 
 
+    }
+
+    /**
+     * 查询全部Product带分页
+     * @return
+     * (required = false) 允许为空
+     */
+    @RequestMapping("productfindPage")//
+    public ModelAndView productfindPage(@RequestParam(required = false) Integer pagenum){
+        ModelAndView m = new ModelAndView("jsp/product/product");
+
+        if(pagenum ==null ||pagenum<=0){
+            pagenum=1;
+    }
+        Integer size=3;
+        Pageable pageable=new PageRequest(pagenum-1,size,new Sort(Sort.Direction.ASC,"productId"));
+
+        Page<ProductInfo> infoPage = productInfoService.findAll(pageable);
 
 
+
+        m.addObject("findsearch",infoPage.getContent());
+        m.addObject("pagenum",pagenum);
+
+        return m;
     }
 
 

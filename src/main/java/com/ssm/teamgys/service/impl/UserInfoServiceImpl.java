@@ -1,9 +1,7 @@
 package com.ssm.teamgys.service.impl;
 
 
-import com.ssm.teamgys.domain.Member;
 import com.ssm.teamgys.domain.UserInfo;
-import com.ssm.teamgys.repositorydomain.SmbmRoleRepository;
 import com.ssm.teamgys.repositorydomain.UserInfoRepository;
 import com.ssm.teamgys.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -142,7 +140,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public <S extends UserInfo> long count(Example<S> example) {
-        return 0;
+        return userInfoRepository.count(example);
     }
 
     @Override

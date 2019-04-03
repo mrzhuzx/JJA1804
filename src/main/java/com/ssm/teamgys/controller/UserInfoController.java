@@ -56,18 +56,18 @@ public class UserInfoController {
         Integer ui=(int)count;
         Integer size=10;
         Integer pageall=ui%size==0?ui/size:ui/size+1;
-        if(pagenum>=pageall){
-            pagenum= pageall;
-        }
         if(pagenum ==null ||pagenum<=0){
             pagenum=1;
+        }
+        if(pagenum>=pageall){
+            pagenum=pageall;
         }
 
         Pageable pageable=new PageRequest(pagenum-1,size,new Sort(Sort.Direction.ASC,"userId"));
         Page<UserInfo> pagelist=userInfoService.findAll(pageable);
-        m.addObject("userInfoList",pagelist.getContent());
         m.addObject("pagenum",pagenum);
         m.addObject("pageall",pageall);
+        m.addObject("userInfoList",pagelist.getContent());
         return  m;
 
     }

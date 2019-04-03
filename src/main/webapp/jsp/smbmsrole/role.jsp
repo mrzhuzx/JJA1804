@@ -215,7 +215,7 @@
                             <a href="smbmsrole/rolepage.do?pagenum=1">&nbsp;首页&nbsp;</a>
                             <a href="smbmsrole/rolepage.do?pagenum=${pagenum-1}" >&nbsp;上一页&nbsp;</a>
                             <a href="smbmsrole/rolepage.do?pagenum=${pagenum+1}">&nbsp;下一页&nbsp;</a>
-                            <a href="smbmsrole/rolepage.do?pagenum=5">&nbsp;尾页&nbsp;</a>
+                            <a href="smbmsrole/rolepage.do?pagenum=${pageall}">&nbsp;尾页&nbsp;</a>
                         </div>
 
                         </tbody>

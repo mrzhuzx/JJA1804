@@ -46,7 +46,7 @@ public class SmbmsRoleServiceImpl implements SmbmsRoleService {
 
     @Override
     public long count() {
-        return 0;
+        return smbmsRoleRepository.count();
     }
 
     @Override

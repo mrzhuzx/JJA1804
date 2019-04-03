@@ -1,0 +1,62 @@
+
+跨域:   不同的服务器，域名，二级域名，不同端口
+
+
+在本地用ajax跨域访问请求时报错：
+
+XMLHttpRequest cannot loadhttp://xxx/. No 'Access-Control-Allow-Origin' header is present on the requested resource.
+ Origin 'null' is therefore not allowed access.
+
+
+解决了跨域ajax在任何地方就都可以访问后台接口了，不管是在同一台电脑还是不在同一台电脑都可以访问。
+
+废话不多说，解决方法如下：
+
+第一步：
+
+ 
+
+新建一个Filter类：
+
+Filter是一个过滤器。对你设定的请求地址进行拦截，然后设置。
+/**
+ * desc:java后台设置可跨域访问，前端ajax获取json数据，解决浏览器限制跨域访问的问题
+ * author : tzhu
+ * time :2019/4/3 0003
+ * version: 1.2.3
+ */
+@WebFilter(filterName = "HeaderFilter",urlPatterns ={"/*"})//
+@Configuration  //注意要写上
+public class HeaderFilter implements Filter {
+    public void doFilter(ServletRequest request, ServletResponse resp, FilterChain chain) throws IOException, ServletException
+    {
+        System.out.println(" 跨域访问 执行————————------  ");
+        HttpServletResponse response = (HttpServletResponse) resp; response.setHeader("Access-Control-Allow-Origin", "*"); //解决跨域访问报错
+        response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
+        response.setHeader("Access-Control-Max-Age", "3600"); //设置过期时间
+        response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, client_id, uuid, Authorization");
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // 支持HTTP 1.1.
+        response.setHeader("Pragma", "no-cache"); // 支持HTTP 1.0. response.setHeader("Expires", "0");
+        chain.doFilter(request, resp);
+    }
+    public void init(FilterConfig filterConfig) {
+        System.out.println(" 跨域访问 init()......................................................");
+    }
+    public void destroy() {}
+}
+
+
+配置方式有三种
+1 注解
+@WebFilter(filterName = "HeaderFilter",urlPatterns ={"/*"})//
+2  web.xml
+
+3 启动类添加上
+ @Bean
+    public FilterRegistrationBean filterRegist() {
+        FilterRegistrationBean frBean = new FilterRegistrationBean();
+        frBean.setFilter(new HeaderFilter());
+        frBean.addUrlPatterns("/*");
+        return frBean;
+    }
+

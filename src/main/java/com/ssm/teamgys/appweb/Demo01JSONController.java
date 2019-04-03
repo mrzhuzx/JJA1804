@@ -6,10 +6,7 @@ import com.ssm.teamgys.appweb.vo.ProductInfoVo;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Desc:
@@ -20,16 +17,30 @@ import java.util.Map;
 @RequestMapping("app/product")
 public class Demo01JSONController {
 
+    @RequestMapping("/mapbuy")
+    public Map<String, List<ProductInfoVo>> mapdb() {
+
+        Map<String, List<ProductInfoVo>> map = new TreeMap<>();
+        //service
+
+
+        return  map;
+
+    }
+
+
 
     @RequestMapping("/map")
     public Map<String, List<ProductInfoVo>> map() {
-        Map<String, List<ProductInfoVo>> map = new HashMap<>();
+        Map<String, List<ProductInfoVo>> map = new TreeMap<>();
+        Random r=new Random();
         for (int i = 0; i < 5; i++) {
             List<ProductInfoVo> list = new ArrayList<>();
             for (int j = 0; j < 4; j++) {
                 ProductInfoVo pro = new ProductInfoVo();
                 pro.setCategoryName("类型" + i);
-                pro.setProductIcon("images/21.jpg");
+
+                pro.setProductIcon("images/"+(r.nextInt(29)+1)+".jpg");
                 pro.setProductId(j + "");
                 pro.setProductName("产品name");
                 pro.setProductPrice(123.00);

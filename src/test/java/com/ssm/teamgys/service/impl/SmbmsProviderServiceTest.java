@@ -69,9 +69,14 @@ public class SmbmsProviderServiceTest {
         //Page<SmbmsProvider> page = smbmsProviderService.findAll(pageable)
         SmbmsProvider  sp=new SmbmsProvider();
       //  sp.setProContact("加一一");
+
+
         Example<SmbmsProvider>  example=Example.of(sp);
+        
+
         Page<SmbmsProvider> page = smbmsProviderService.findAll(example,pageable);
-                ;
+
+
         List<SmbmsProvider> list = page.getContent();
         for (int i = 0; i < list.size(); i++) {
             SmbmsProvider smbmsProvider = list.get(i);

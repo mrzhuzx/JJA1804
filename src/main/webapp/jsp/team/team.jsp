@@ -50,6 +50,30 @@
     <div id="bd">
         <div id="main">
 
+            <div class="search-box ue-clear">
+                <div class="search-area">
+                    <div class="kv-item ue-clear">
+                        <label>输入关键字：</label>
+                        <div class="kv-item-content ue-clear">
+                            <input type="text"  >
+                        </div>
+
+                        <label>选择类型:</label>
+                        <div class="kv-item-content">
+                            <select>
+                                <option>全部</option>
+                                <option>teamId</option>
+                                <option>teamName</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="search-button">
+                    <input class="button" type="submit" value="搜索一下" />
+                </div>
+            </div>
+
 
             <div class="table">
                 <div class="opt ue-clear">
@@ -171,6 +195,23 @@
 
                         </tbody>
                     </table>
+
+
+                    <div class="pagination">
+
+                        <table style="width: 100%;border:12px" align="center">
+                            <tbody class="__data">
+
+                            <div class="pagination">
+                                <a href="team/findpage.do?pagenum=1">&nbsp;首页&nbsp;</a>
+                                <a href="team/findpage.do?pagenum=${pagenum-1}" >&nbsp;上一页&nbsp;</a>
+                                <a href="team/findpage.do?pagenum=${pagenum+1}">&nbsp;下一页&nbsp;</a>
+                                <a href="team/findpage.do?pagenum=5">&nbsp;尾页&nbsp;</a>
+                            </div>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

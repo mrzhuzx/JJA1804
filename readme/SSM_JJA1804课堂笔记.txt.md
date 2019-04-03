@@ -350,7 +350,17 @@ server.servlet.context-path=/springmvc
 
 
 
-1X 绑定项目功能 ，返回JSON
+### 绑定项目功能 ，返回JSON
+
+* 返回一个JSON串
+
+* springMVC @ResponeBody  Vo对象    
+
+*   Vo对象    typeName, List<Pro>
+
+
+
+
 
 
 

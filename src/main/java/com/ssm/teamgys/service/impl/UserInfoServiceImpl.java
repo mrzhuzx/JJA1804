@@ -140,7 +140,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public <S extends UserInfo> long count(Example<S> example) {
-        return userInfoRepository.count(example);
+        return 0;
     }
 
     @Override

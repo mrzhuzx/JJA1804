@@ -28,6 +28,7 @@ public class BillController {
     @RequestMapping("/listquery")//带分页查询
     public ModelAndView listquery(@RequestParam(required = false) Integer pagenum){
         ModelAndView m=new ModelAndView("jsp/bill/billOperation");
+
         long count = smbmsBillService.count();
         Integer intcount=(int)count;
         Integer size=8;

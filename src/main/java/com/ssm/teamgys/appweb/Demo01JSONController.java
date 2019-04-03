@@ -22,8 +22,6 @@ public class Demo01JSONController {
 
         Map<String, List<ProductInfoVo>> map = new TreeMap<>();
         //service
-
-
         return  map;
 
     }

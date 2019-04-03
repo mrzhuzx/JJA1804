@@ -359,6 +359,40 @@ server.servlet.context-path=/springmvc
 *   Vo对象    typeName, List<Pro>
 
 
+###  大型项目 分模板
+
+####  回顾创建项目类型
+* javase  javaweb 项目类型
+*  maven项目(javase  javaweb )
+*  springboot(web)  devtools tomcat  yml(properties)
+
+####  模块创建引用，删除
+*   创建一个模块
+*   删除模块（del两次）
+*   模块的引用
+*   模块分类
+
+####  大型项目分模板
+
+* 第一层项目类型应该是什么类型比较好
+*  maven(pom.xml 继承) 子项目可以继承父项目的pom.xml
+*  springboot (pom / yml / properties)
+*  项目子模块
+*  项目分成两个系统 
+      供应项目    线上宠物    --- 开发团队和广告模块
+      
+### MVC方式项目模块
+   * model  (maven[测试类]) 
+      entity组件      数据模块   业务模块 （DTO） 控制层 (VO)  页面表示层
+ 
+   * view （springboot） 
+   * view-controller-springboot 后台页面jsp 
+   * springboot APP(html)  模板引擎 
+   
+      
+      
+
+
 
 
 

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<%@include file="../appcomm/basePath.jsp" %>
+<%@include file="../../appcomm/basePath.jsp"%>
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7"/>
@@ -22,7 +22,7 @@
 
         /* Table Head */
         table thead th {
-            background-color:#0F8DC7;
+            background-color: #0F8DC7;
             color: #fff;
             border-bottom-width: 0;
         }
@@ -31,6 +31,7 @@
         table td {
             color: #000;
         }
+
         /* Heading and Column Style */
         table tr, table th {
             border-width: 1px;
@@ -94,11 +95,12 @@
                 </div>
 
                 <div class="grid">
-                    <table style="margin-left: 0px;width:100%;" >
+                    <table style="margin-left: 0px;width:100%;">
                         <thead>
                         <tr>
                             <th name="id">
-                                <div class="ui-table-th" style="width:70px"><span class="ui-table-thTitle">addId</span><a
+                                <div class="ui-table-th" style="width:70px"><span
+                                        class="ui-table-thTitle">addId</span><a
                                         href="javascript:;" class="ui-icon2 ui-icon2-sort"></a><span
                                         class="ui-table-drag"></span></div>
                             </th>
@@ -106,7 +108,8 @@
 
                             <th>
                                 <div class="ui-table-th" style="width:120px"><span
-                                        class="ui-table-thTitle">addContact</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">addContact</span><span class="ui-table-drag"></span>
+                                </div>
                             </th>
 
                             <th class="minWidth">
@@ -115,19 +118,23 @@
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">addPostCode</span><span class="ui-table-drag"></span></div>
-                            </th>
-                            <th class="minWidth">
-                            <div class="ui-table-th" style="width: 120px;"><span
-                                    class="ui-table-thTitle">addTelPhone</span><span class="ui-table-drag"></span></div>
-                            </th>
-                            <th class="minWidth">
-                            <div class="ui-table-th" style="width: 120px;"><span
-                                    class="ui-table-thTitle">creationDate</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">addPostCode</span><span class="ui-table-drag"></span>
+                                </div>
                             </th>
                             <th class="minWidth">
                                 <div class="ui-table-th" style="width: 120px;"><span
-                                        class="ui-table-thTitle">modifyDate</span><span class="ui-table-drag"></span></div>
+                                        class="ui-table-thTitle">addTelPhone</span><span class="ui-table-drag"></span>
+                                </div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">creationDate</span><span class="ui-table-drag"></span>
+                                </div>
+                            </th>
+                            <th class="minWidth">
+                                <div class="ui-table-th" style="width: 120px;"><span
+                                        class="ui-table-thTitle">modifyDate</span><span class="ui-table-drag"></span>
+                                </div>
                             </th>
                             <th>
                                 <div class="ui-table-th" style="width:70px"><span
@@ -135,9 +142,48 @@
                             </th>
 
                         </tr>
-
-
                         </thead>
+
+                        <tbody class="__data">
+                        <c:forEach var="list" items="${addresslist}">
+                            <tr>
+                                <td name="id">
+                                    <div class="ui-table-td" >${list.addId}</div>
+                                </td>
+                                <td name="name">
+                                    <div class="ui-table-td" >${list.addContact}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" >
+                                            ${fn:length(list.addDesc) > 10 ? fn:substring(list.addDesc,0,10) : list.addDesc}${fn:length(list.addDesc) > 10 ? '...' : ''}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" >${list.addPostCode}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" >${list.addTelPhone}</div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" ><fmt:formatDate
+                                            value="${list.creationDate}" pattern="yyyy年MM月dd日"/></div>
+                                </td>
+                                <td>
+                                    <div class="ui-table-td" ><fmt:formatDate
+                                            value="${list.modifyDate}" pattern="yyyy年MM月dd日"/></div>
+                                </td>
+
+                                <td class="ui-table-operation" ><a
+                                        href="smbmsAddress/${list.addId}/deleteById.do">删除</a>
+                                    <a href="smbmsAddress/${list.addId}/findById.do">编辑</a></td>
+
+                                <td class="ui-table-blank" >
+                                    <div class="ui-table-td"></div>
+                                </td>
+                            </tr>
+                        </c:forEach>
+
+                        </tbody>
                     </table>
 
 
@@ -147,38 +193,13 @@
 
                     <table style="width: 100%;border:12px" align="center">
                         <tbody class="__data">
-                        <c:forEach   var="list"  items="${list}">
-                            <tr>
-                                <td name="id">
-                                    <div class="ui-table-td" style="width:70px">${list.addId}</div>
-                                </td>
-                                <td name="name">
-                                    <div class="ui-table-td" style="width:120px">${list.addContact}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.addDesc}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.addPostCode}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px">${list.addTelPhone}</div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${list.creationDate}" pattern="yyyy年MM月dd日" /></div>
-                                </td>
-                                <td>
-                                    <div class="ui-table-td" style="width:120px"><fmt:formatDate value="${list.modifyDate}" pattern="yyyy年MM月dd日" /></div>
-                                </td>
 
-                                <td class="ui-table-operation" style="width: 100px;"><a href="address/${list.addId}/deleteById.do">删除</a>
-                                    <a href="address/${list.addId}/findById.do">编辑</a></td>
-
-                                <td class="ui-table-blank" style="width: 10px;">
-                                    <div class="ui-table-td"></div>
-                                </td>
-                            </tr>
-                        </c:forEach>
+                        <div class="pagination">
+                            <a href="smbmsAddress/findAllAddressByPage.do?pagenum=1">&nbsp;首页&nbsp;</a>
+                            <a href="smbmsAddress/findAllAddressByPage.do?pagenum=${pagenum-1}">&nbsp;上一页&nbsp;</a>
+                            <a href="smbmsAddress/findAllAddressByPage.do?pagenum=${pagenum+1}">&nbsp;下一页&nbsp;</a>
+                            <a href="smbmsAddress/findAllAddressByPage.do?pagenum=${pageAll}">&nbsp;尾页&nbsp;</a>
+                        </div>
                         </tbody>
                     </table>
                 </div>

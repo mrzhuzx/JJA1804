@@ -1,7 +1,7 @@
 package com.ssm.teamgys.service;
 
 import com.ssm.teamgys.appcomm.BaseService;
-import com.ssm.teamgys.domain.SmbmRole;
+import com.ssm.teamgys.domain.SmbmsRole;
 
 /**
  * desc:
@@ -9,7 +9,7 @@ import com.ssm.teamgys.domain.SmbmRole;
  * {time}
  * version:1.2.3
  */
-public interface SmbmRoleService extends BaseService<SmbmRole> {
+public interface SmbmsRoleService extends BaseService<SmbmsRole> {
 
     int update( Long roleId,String roleName,String roleDesc,Integer roleStatus,String roleCode );
 }

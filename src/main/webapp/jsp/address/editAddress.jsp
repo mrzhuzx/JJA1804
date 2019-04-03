@@ -33,7 +33,7 @@
     <div id="hd">
     </div>
     <div id="bd">
-        <form action="address/${sa.addId}/updateById.do" method="post">
+        <form action="smbmsAddress/${sa.addId}/updateById.do" method="post">
         <div id="main">
             <h2 class="subfild">
                 <span>基本信息</span>

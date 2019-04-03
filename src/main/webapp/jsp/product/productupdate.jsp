@@ -81,7 +81,7 @@
                     <div class="kv-item ue-clear">
                         <label>类目编号</label>
                         <div class="kv-item-content">
-                            <input type="text" name="categoryType" value="${oneType.categoryName}" />
+                            <input type="text" name="categoryType" value="${proone.categoryType}" />
                         </div>
                     </div>
 
